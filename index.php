@@ -1,12 +1,31 @@
+<?php
+/**
+ * Base page template
+ *
+ * @package    Configure 8 Admin
+ * @subpackage Templates
+ * @since      1.0.0
+ */
+
+?>
 <!DOCTYPE html>
-<html>
-<head>
+<html dir="auto" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
+<head data-admin-head>
 	<title><?php echo $layout['title']; ?></title>
 
 	<meta charset="<?php echo CHARSET; ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="robots" content="noindex,nofollow">
-	<meta name="generator" content="Bludit">
+
+	<?php // Preconnect and preload files. ?>
+	<link rel="preconnect" href="//fonts.adobe.com" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<?php
+
+	// Change `<html>` 'no-js' class to 'js' if JavaScript is enabled.
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n"; ?>
 
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo HTML_PATH_CORE_IMG . 'favicon.png?version=' . BLUDIT_VERSION; ?>">
 
@@ -22,10 +41,10 @@
 		);
 		echo Theme :: css(
 			[
-				'bootstrap.min.css',
-				'style.min.css'
+				'assets/css/bootstrap.min.css',
+				'assets/css/style.min.css'
 			],
-			DOMAIN_ADMIN_THEME_CSS
+			DOMAIN_ADMIN_THEME
 		);
 
 		echo Theme :: jquery();
@@ -44,7 +63,7 @@
 
 		?>
 </head>
-<body>
+<body class="bl-admin <?php echo 'admin-' . strtok( $url->slug(), '/' ); echo ( str_contains( $url->slug(), '/' ) ? ' admin-' . str_replace( '/', '-', $url->slug() ) : '' ); ?>">
 
 <?php Theme :: plugins( 'adminBodyBegin' ); ?>
 
@@ -62,9 +81,9 @@
 <?php
 // JavaScript alerts.
 echo '<div id="jsshadow"></div>';
-include( 'html/alert.php' ); ?>
+include( 'views/alert.php' ); ?>
 
-<?php include( 'html/navbar.php' ); ?>
+<?php include( 'views/navbar.php' ); ?>
 
 <div class="NOT--container">
 	<!-- 25%/75% split on large devices, small, medium devices hide -->
@@ -72,7 +91,7 @@ include( 'html/alert.php' ); ?>
 
 		<!-- LEFT SIDEBAR - Display only on large devices -->
 		<div id="admin-menu" class="admin-menu col-lg-2 d-none d-lg-block">
-		<?php include( 'html/sidebar.php' ); ?>
+		<?php include( 'views/menu.php' ); ?>
 		</div>
 
 		<!-- RIGHT MAIN -->
