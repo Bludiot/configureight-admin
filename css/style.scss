@@ -1,47 +1,86 @@
-html {
-	height: 100%;
-	font-size: 0.9rem;
-	background: #fcfcfc;
-}
+///
+/// Admin theme styles
+///
 
 body {
-	background: #fcfcfc;
+	position: relative;
+	height: 100%;
 }
 
-/* Prevent events in iframes */
-/* iframe{
-	pointer-events: none;
-} */
+#admin-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-transform: capitalize;
 
-/*
-	ICONS
-*/
+		&.text-uppercase {
+			text-transform: capitalize;
+		}
+	}
+}
+
+// Icons.
 .fa {
-	margin-right: .5rem !important;
+	display: inline-block;
+	margin-right: 0.5rem;
 	line-height: inherit;
 }
 
-/*
-	SIDEBAR
-*/
-
-div.sidebar .nav-item a {
-	padding-left: 0;
-	padding-right: 0;
-	color: #555;
-	padding-top: 5px;
-	padding-bottom: 5px;
+.row {
+	&.admin-wrapper {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
 }
 
-div.sidebar .nav-item a:hover {
-	color: #0078D4;
-}
+// Admin menu.
+.admin-menu {
+	margin: 0;
+	padding: 2rem 1rem;
 
-div.sidebar .nav-item h4 {
-	font-size: 1.2em;
-	text-transform: uppercase;
-	font-weight: 400;
-	margin-top: 10px;
+	.admin-menu-list {
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0.5rem 0 0 0;
+
+			a {
+				display: flex;
+				align-items: center;
+				padding: 0;
+				color: var( --cfe-admin--menu--link--text-color );
+				text-decoration: none;
+
+				&+ a {
+					margin-top: 0.5em;
+				}
+
+				&:hover,
+				&:focus {
+					color: var( --cfe-admin--menu--link--action--text-color );
+				}
+
+				// FontAwesome icons.
+				.fa {
+					font-size: 1.25em;
+				}
+			}
+
+			&.menu-heading {
+				margin: 1em 0 0 0;
+				font-size: 1.25rem;
+				font-weight: 700;
+
+				&:first-of-type {
+					margin: 0;
+				}
+			}
+		}
+	}
 }
 
 /*
@@ -60,14 +99,14 @@ div.sidebar .nav-item h4 {
 	BOOTSTRAP Hacks
 */
 
-@media (min-width: 1200px) {
+@media ( min-width: 1200px ) {
 	.container {
 		max-width: 1250px;
 	}
 }
 
 /* for small devices */
-@media (max-width: 575.98px) {
+@media ( max-width: 575.98px ) {
 
 	#jsmediaManagerButton,
 	#jscategoryButton,
@@ -76,9 +115,6 @@ div.sidebar .nav-item h4 {
 		text-align: left;
 	}
 }
-
-
-
 
 .btn-light {
 	color: #212529;
