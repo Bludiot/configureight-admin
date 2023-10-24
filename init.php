@@ -7,6 +7,8 @@
  * @since      1.0.0
  */
 
+namespace CFE_Admin_Theme;
+
 // Stop if accessed directly.
 if ( ! defined( 'BLUDIT' ) ) {
 	die();
