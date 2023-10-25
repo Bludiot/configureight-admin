@@ -34,10 +34,6 @@ if ( $theme_plugin ) {
 			<li>
 				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><span class="fa fa-user"></span><?php $L->p( 'Your Profile' ); ?></a>
 			</li>
-
-			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'logout'; ?>"><span class="fa fa-chevron-right"></span><?php $L->p( 'Logout' ); ?></a>
-			</li>
 		</ul>
 
 		<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
