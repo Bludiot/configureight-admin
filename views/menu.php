@@ -52,7 +52,7 @@ if ( $theme_plugin ) {
 			</li>
 
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><span class="fa fa-pencil"></span><?php $L->p( 'New content' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><span class="fa fa-pencil"></span><?php echo ucwords( $L->get( 'New Content' ) ); ?></a>
 			</li>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
