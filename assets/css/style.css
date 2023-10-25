@@ -67,6 +67,12 @@ body {
   margin: 0;
 }
 
+.form-heading {
+  margin: 1rem 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 /*
 	AUTOCOMPLETE SEARCH
 */
