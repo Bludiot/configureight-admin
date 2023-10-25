@@ -1,6 +1,10 @@
 <?php
 /**
  * Admin menu
+ *
+ * @package    Configure 8 Admin
+ * @subpackage Templates
+ * @since      1.0.0
  */
 
 // Theme plugin data.
