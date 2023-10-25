@@ -1,3 +1,13 @@
+<?php
+/**
+ * Admin menu for small screens
+ *
+ * @package    Configure 8 Admin
+ * @subpackage Templates
+ * @since      1.0.0
+ */
+
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase d-block d-lg-none">
 	<div class="container">
 		<span class="navbar-brand">

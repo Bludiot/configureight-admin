@@ -79,22 +79,20 @@
 ?>
 
 <?php
+
 // JavaScript alerts.
 echo '<div id="jsshadow"></div>';
 include( 'views/alert.php' ); ?>
 
-<?php include( 'views/navbar.php' ); ?>
+<?php include( 'views/menu-mobile.php' ); ?>
 
 <div class="NOT--container">
-	<!-- 25%/75% split on large devices, small, medium devices hide -->
 	<div class="row admin-wrapper">
 
-		<!-- LEFT SIDEBAR - Display only on large devices -->
 		<div id="admin-menu" class="admin-menu col-lg-2 d-none d-lg-block">
-		<?php include( 'views/menu.php' ); ?>
+			<?php include( 'views/menu.php' ); ?>
 		</div>
 
-		<!-- RIGHT MAIN -->
 		<div id="admin-content" class="col-lg-10 pt-3 pb-1 h-100">
 		<?php
 			if ( Sanitize :: pathFile( PATH_ADMIN_VIEWS, $layout['view'] . '.php' ) ) {
@@ -103,14 +101,13 @@ include( 'views/alert.php' ); ?>
 				echo $layout['plugin']->adminView();
 			} else {
 				echo '<h1 class="text-center">' . $L->g( 'Page not found' ) . '</h1>';
-				echo '<h2 class="text-center">' . $L->g( 'Choose a page from the sidebar.' ) . '</h2>';
+				echo '<h2 class="text-center">' . $L->g( 'Choose a page from the menu.' ) . '</h2>';
 			}
 		?>
 		</div>
 	</div>
 </div>
 
-<!-- Plugins -->
 <?php Theme :: plugins( 'adminBodyEnd' ); ?>
 
 </body>
