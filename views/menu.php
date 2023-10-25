@@ -14,7 +14,7 @@ if ( $theme_plugin ) {
 <ul class="admin-menu-list nav flex-column">
 
 	<li class="menu-heading">
-		<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Site Admin' ); ?></a>
+		<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Site Admin' ); ?></a></h3>
 	</li>
 
 	<li>
@@ -35,7 +35,7 @@ if ( $theme_plugin ) {
 
 	<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 	<li class="menu-heading">
-	<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php $L->p( 'Content' ); ?></a>
+		<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php $L->p( 'Content' ); ?></a></h3>
 	</li>
 	<?php endif; ?>
 
@@ -59,7 +59,7 @@ if ( $theme_plugin ) {
 
 	<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 	<li class="menu-heading">
-		<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Manage' ); ?></a>
+		<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Manage' ); ?></a></h3>
 	</li>
 	<?php endif; ?>
 
@@ -109,7 +109,7 @@ if ( $theme_plugin ) {
 		! empty( $plugins['adminSidebar'] )
 	) : ?>
 	<li class="menu-heading">
-		<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?></a>
+		<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?></a></h3>
 	</li>
 	<?php
 	foreach ( $plugins['adminSidebar'] as $link ) {
