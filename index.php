@@ -107,6 +107,6 @@ include( 'views/alert.php' ); ?>
 </div>
 
 <?php Theme :: plugins( 'adminBodyEnd' ); ?>
-
+<?php include( 'views/toolbar.php' ); ?>
 </body>
 </html>

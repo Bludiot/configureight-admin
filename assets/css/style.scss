@@ -2,6 +2,14 @@
 /// Admin theme styles
 ///
 
+@import 'partials/_reset';
+@import 'partials/_setup';
+
+html {
+	// Clear the toolbar.
+	margin-top: 2rem !important;
+}
+
 body {
 	position: relative;
 	height: 100%;
@@ -20,6 +28,10 @@ body {
 			text-transform: capitalize;
 		}
 	}
+}
+
+.avatar {
+	border-radius: 50%;
 }
 
 // Icons.
@@ -99,6 +111,57 @@ body {
 		ul {
 			margin: 0;
 			padding: 0;
+		}
+	}
+}
+
+// User toolbar.
+.admin-toolbar {
+	position: fixed;
+	top: 0;
+	z-index: 8888;
+	width: 100%;
+	height: 2rem;
+	padding: 0.5rem 1rem;
+	line-height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #333333;
+	color: #ffffff;
+
+	.admin-toolbar-nav-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: 1em;
+
+		li {
+			margin: 0;
+			padding: 0;
+			font-size: 15px;
+			font-weight: 600;
+
+			a {
+				display: inline-block;
+				color: #ffffff;
+				text-decoration: none;
+
+				span {
+					display: inline-block;
+				}
+			}
+
+			.toolbar-icon {
+				font-size: 1.25rem;
+			}
+		}
+
+		img {
+			display: inline-block;
+			margin: 0 0.5em;
+			transform: translateY( -0.125rem );
 		}
 	}
 }
