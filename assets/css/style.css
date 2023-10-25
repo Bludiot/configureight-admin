@@ -26,14 +26,24 @@ body {
   line-height: inherit;
 }
 
-.row.admin-wrapper {
-  max-width: 1280px;
+.admin-wrapper {
+  width: 100%;
   margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.admin-content {
+  width: 100%;
+  max-width: 1000px;
+  padding: 2rem;
 }
 
 .admin-menu {
+  min-width: 200px;
   margin: 0;
   padding: 2rem 1rem;
+  background-color: #333333;
 }
 .admin-menu .admin-menu-list {
   margin: 0;
@@ -46,25 +56,34 @@ body {
   display: flex;
   align-items: center;
   padding: 0;
-  color: var(--cfe-admin--menu--link--text-color);
+  color: var(--cfe-admin--menu--link--text-color, #ffffff);
   text-decoration: none;
 }
 .admin-menu .admin-menu-list li a + a {
   margin-top: 0.5em;
 }
 .admin-menu .admin-menu-list li a:hover, .admin-menu .admin-menu-list li a:focus {
-  color: var(--cfe-admin--menu--link--action--text-color);
+  color: var(--cfe-admin--menu--link--action--text-color, #ffffff);
 }
 .admin-menu .admin-menu-list li a .fa {
   font-size: 1.25em;
 }
 .admin-menu .admin-menu-list li.menu-heading {
   margin: 1em 0 0 0;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.125);
 }
 .admin-menu .admin-menu-list li.menu-heading:first-of-type {
   margin: 0;
+}
+.admin-menu .admin-menu-list li.menu-heading h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.admin-menu .admin-menu-list ul {
+  margin: 0;
+  padding: 0;
 }
 
 .form-heading {

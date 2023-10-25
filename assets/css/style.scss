@@ -29,17 +29,26 @@ body {
 	line-height: inherit;
 }
 
-.row {
-	&.admin-wrapper {
-		max-width: 1280px;
-		margin: 0 auto;
-	}
+.admin-wrapper {
+	width: 100%;
+	// max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	gap: 2rem;
+}
+
+.admin-content {
+	width: 100%;
+	max-width: 1000px;
+	padding: 2rem;
 }
 
 // Admin menu.
 .admin-menu {
+	min-width: 200px;
 	margin: 0;
 	padding: 2rem 1rem;
+	background-color: #333333;
 
 	.admin-menu-list {
 		margin: 0;
@@ -52,7 +61,7 @@ body {
 				display: flex;
 				align-items: center;
 				padding: 0;
-				color: var( --cfe-admin--menu--link--text-color );
+				color: var( --cfe-admin--menu--link--text-color, #ffffff );
 				text-decoration: none;
 
 				&+ a {
@@ -61,7 +70,7 @@ body {
 
 				&:hover,
 				&:focus {
-					color: var( --cfe-admin--menu--link--action--text-color );
+					color: var( --cfe-admin--menu--link--action--text-color, #ffffff );
 				}
 
 				// FontAwesome icons.
@@ -72,13 +81,24 @@ body {
 
 			&.menu-heading {
 				margin: 1em 0 0 0;
-				font-size: 1.25rem;
+				font-size: 1.125rem;
 				font-weight: 700;
+				border-bottom: solid 1px rgba( $color: white, $alpha: 0.125 );
 
 				&:first-of-type {
 					margin: 0;
 				}
+
+				h3 {
+					font-size: 1.125rem;
+					font-weight: 700;
+				}
 			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
 		}
 	}
 }
