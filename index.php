@@ -63,7 +63,7 @@
 
 		?>
 </head>
-<body class="bl-admin <?php echo 'admin-' . strtok( $url->slug(), '/' ); echo ( str_contains( $url->slug(), '/' ) ? ' admin-' . str_replace( '/', '-', $url->slug() ) : '' ); ?>">
+<body class="bl-admin <?php echo 'admin-page-' . strtok( $url->slug(), '/' ); echo ( str_contains( $url->slug(), '/' ) ? ' admin-' . str_replace( '/', '-', $url->slug() ) : '' ); ?>">
 
 <?php Theme :: plugins( 'adminBodyBegin' ); ?>
 
@@ -84,27 +84,25 @@
 echo '<div id="jsshadow"></div>';
 include( 'views/alert.php' ); ?>
 
-<?php include( 'views/menu-mobile.php' ); ?>
+<?php // include( 'views/menu-mobile.php' ); ?>
 
-<div class="NOT--container">
-	<div class="row admin-wrapper">
+<div class="admin-wrapper">
 
-		<div id="admin-menu" class="admin-menu col-lg-2 d-none d-lg-block">
-			<?php include( 'views/menu.php' ); ?>
-		</div>
+	<div id="admin-menu" class="admin-menu">
+		<?php include( 'views/menu.php' ); ?>
+	</div>
 
-		<div id="admin-content" class="col-lg-10 pt-3 pb-1 h-100">
-		<?php
-			if ( Sanitize :: pathFile( PATH_ADMIN_VIEWS, $layout['view'] . '.php' ) ) {
-				include( PATH_ADMIN_VIEWS.$layout['view'] . '.php' );
-			} elseif ( $layout['plugin'] && method_exists( $layout['plugin'], 'adminView' ) ) {
-				echo $layout['plugin']->adminView();
-			} else {
-				echo '<h1 class="text-center">' . $L->g( 'Page not found' ) . '</h1>';
-				echo '<h2 class="text-center">' . $L->g( 'Choose a page from the menu.' ) . '</h2>';
-			}
-		?>
-		</div>
+	<div id="admin-content" class="admin-content">
+	<?php
+		if ( Sanitize :: pathFile( PATH_ADMIN_VIEWS, $layout['view'] . '.php' ) ) {
+			include( PATH_ADMIN_VIEWS.$layout['view'] . '.php' );
+		} elseif ( $layout['plugin'] && method_exists( $layout['plugin'], 'adminView' ) ) {
+			echo $layout['plugin']->adminView();
+		} else {
+			echo '<h1 class="text-center">' . $L->g( 'Page not found' ) . '</h1>';
+			echo '<h2 class="text-center">' . $L->g( 'Choose a page from the menu.' ) . '</h2>';
+		}
+	?>
 	</div>
 </div>
 
