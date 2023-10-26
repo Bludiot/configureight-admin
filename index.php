@@ -84,8 +84,6 @@
 echo '<div id="jsshadow"></div>';
 include( 'views/alert.php' ); ?>
 
-<?php // include( 'views/menu-mobile.php' ); ?>
-
 <div class="admin-wrapper">
 
 	<div id="admin-menu" class="admin-menu">
