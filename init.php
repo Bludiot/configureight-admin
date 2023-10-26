@@ -15,3 +15,17 @@ if ( ! defined( 'BLUDIT' ) ) {
 }
 
 include( 'includes/classes/class-bootstrap.php' );
+
+/**
+ * Get theme plugin
+ *
+ * @since  1.0.0
+ * @return mixed Returns the companion plugin object or false.
+ */
+function plugin() {
+
+	if ( $themePlugin ) {
+		return $themePlugin;
+	}
+	return false;
+}
