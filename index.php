@@ -15,6 +15,8 @@
 
 <body class="bl-admin <?php echo 'admin-page-' . strtok( $url->slug(), '/' ); echo ( str_contains( $url->slug(), '/' ) ? ' admin-' . str_replace( '/', '-', $url->slug() ) : '' ); ?>">
 
+<?php include( 'views/toolbar.php' ); ?>
+
 <?php Theme :: plugins( 'adminBodyBegin' ); ?>
 
 <?php
@@ -55,6 +57,6 @@ include( 'views/alert.php' ); ?>
 </div>
 
 <?php Theme :: plugins( 'adminBodyEnd' ); ?>
-<?php include( 'views/toolbar.php' ); ?>
+
 </body>
 </html>
