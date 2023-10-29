@@ -1,0 +1,11 @@
+///
+/// Tabbed admin content
+///
+
+.tab-content {
+	.nav-link {
+		font-size: var( --cfe-tabs--nav-link--font-size );
+		font-weight: var( --cfe-tabs--nav-link--font-weight, 600 );
+		text-decoration: var( --cfe-tabs--nav-link--text-decoration, none );
+	}
+}

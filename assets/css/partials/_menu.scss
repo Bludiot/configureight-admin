@@ -1,0 +1,32 @@
+///
+/// Admin menu
+///
+
+div.sidebar {
+	.nav-item {
+		font-size: var( --cfe-sidebar--nav-item--font-size );
+		font-weight: var( --cfe-sidebar--nav-item--font-weight, 600 );
+
+		&:first-of-type {
+			font-size: var( --cfe-sidebar--nav-item--heading-top--font-size, 1.25rem );
+			font-weight: var( --cfe-sidebar--nav-item--heading-top--font-weight, 700 );
+			text-transform: var( --cfe-sidebar--nav-item--heading-top--text-transform, none );
+		}
+
+		h4 {
+			font-size: var( --cfe-sidebar--nav-item--heading--font-size, 1.25rem );
+			font-weight: var( --cfe-sidebar--nav-item--heading--font-weight, 700 );
+			text-transform: var( --cfe-sidebar--nav-item--heading--text-transform, none );
+		  }
+
+		a {
+			text-decoration: var( --cfe-sidebar--nav-item--link--text-decoration, none );
+			color: var( --cfe-sidebar--nav-item--link--text-color, var( --cfe-link--text-color ) );
+
+			&:hover,
+			&:focus {
+				color: var( --cfe-sidebar--nav-item--link--action--text-color, var( --cfe-link--action--text-color ) );
+			}
+		}
+	}
+}
