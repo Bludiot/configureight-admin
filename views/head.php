@@ -7,6 +7,11 @@
  * @since      1.0.0
  */
 
+// Maybe get minified assets.
+$suffix = '.min';
+if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
+	$suffix = '';
+}
 ?>
 <head data-admin-head>
 	<title><?php echo $layout['title']; ?></title>
@@ -39,8 +44,8 @@
 		);
 		echo Theme :: css(
 			[
-				'assets/css/bootstrap.min.css',
-				'assets/css/style.min.css'
+				"assets/css/bootstrap{$suffix}.css",
+				"assets/css/style{$suffix}.css"
 			],
 			DOMAIN_ADMIN_THEME
 		);
