@@ -150,8 +150,14 @@ textarea.form-control {
 	height: auto;
 }
 
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  width: 100%;
+}
+
 .form-group {
-	margin-bottom: 1rem;
+	margin: 1rem 0;
 }
 
 .form-text {
@@ -1199,3 +1205,9 @@ border-bottom-right-radius: 0;
 }
 
 // End Bootstrap classes.
+
+.form-heading {
+	margin: 1rem 0;
+	font-size: 1.125rem;
+	font-weight: 700;
+}

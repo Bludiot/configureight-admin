@@ -44,7 +44,6 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 		);
 		echo Theme :: css(
 			[
-				"assets/css/bootstrap{$suffix}.css",
 				"assets/css/style{$suffix}.css"
 			],
 			DOMAIN_ADMIN_THEME
