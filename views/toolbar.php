@@ -7,6 +7,13 @@
  * @since      1.0.0
  */
 
+// Theme plugin data.
+$theme_plugin  = getPlugin( $site->theme() );
+$theme_options = '';
+if ( $theme_plugin ) {
+	$theme_options = get_object_vars( $theme_plugin );
+}
+
 // Get a username or fallback.
 $user = new User( Session :: get( 'username' ) );
 $name = $L->get( 'profile-link-default' );
