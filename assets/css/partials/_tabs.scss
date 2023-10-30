@@ -2,10 +2,72 @@
 /// Tabbed admin content
 ///
 
-.tab-content {
+.nav-tabs {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var( --cfe-tabs--list--gap );
+	margin: var( --cfe-tabs--list--margin );
+	padding: var( --cfe-tabs--list--padding );
+	border-bottom: var( --cfe-tabs--border-style ) var( --cfe-tabs--border-width ) var( --cfe-tabs--list--border-color, var( --cfe-tabs--border-color ) );
+
+	.nav-item {
+
+		// Tabs bottom border to cover list bottom border.
+		transform: translateY( var( --cfe-tabs--border-width ) );
+	}
+
 	.nav-link {
+		display: block;
+		margin: 0;
+		padding: 0.5rem 1rem;
+		border: var( --cfe-tabs--border-style ) var( --cfe-tabs--border-width ) var( --cfe-tabs--border-color );
+		border-bottom-color: #888;
+		border-top-left-radius: 0.25rem;
+		border-top-right-radius: 0.25rem;
 		font-size: var( --cfe-tabs--nav-link--font-size );
 		font-weight: var( --cfe-tabs--nav-link--font-weight, 600 );
 		text-decoration: var( --cfe-tabs--nav-link--text-decoration, none );
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			isolation: isolate;
+			border-color: #888;
+		}
+
+		&.disabled {
+			color: #888;
+			background-color: #ccc;
+			pointer-events: none;
+			cursor: default;
+		}
+	}
+
+	.nav-link.active,
+	.nav-item.active .nav-link,
+	.nav-item.show .nav-link {
+		color: #495057;
+		background-color: #fff;
+		border-color: #888;
+		border-bottom-color: #fff;
+	}
+
+	.dropdown-menu {
+		margin-top: -1px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+
+.tab-content {
+
+	.tab-pane {
+		display: none;
+		padding: 1rem 0 0 0;
+
+		&.active {
+			display: block;
+		}
 	}
 }

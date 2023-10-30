@@ -40,6 +40,15 @@ body {
 	font-family: var( --cfe-serif-stack, serif );
 }
 
+*, *:before, *:after {
+	box-sizing: inherit;
+	backface-visibility: hidden;
+}
+
+*:before, *:after {
+	font-size: inherit;
+}
+
 ///
 /// Screen reader text
 ///
@@ -151,20 +160,24 @@ h2 {
 	line-height: var( --cfe-heading-primary--line-height );
 	letter-spacing: var( --cfe-heading-primary--letter-spacing );
 	word-spacing: var( --cfe-heading-primary--word-spacing );
-	text-decoration: var( --cfe-heading-primary--text-decoration );
+	-webkit-text-decoration: var( --cfe-heading-primary--text-decoration );
+			text-decoration: var( --cfe-heading-primary--text-decoration );
 	text-transform: var( --cfe-heading-primary--text-transform );
 	color: var( --cfe-heading-primary--text-color, var( --cfe-text-color ) );
+}
 
-	a {
-		font-weight: var( --cfe-heading-primary--link--font-weight, inherit );
-		text-decoration: var( --cfe-link--text-decoration, none );
-		color: var( --cfe-heading-primary--link--text-color, var( --cfe-link--text-color ) );
+h1 a,
+h2 a {
+	font-weight: var( --cfe-heading-primary--link--font-weight, inherit );
+	-webkit-text-decoration: var( --cfe-link--text-decoration, none );
+			text-decoration: var( --cfe-link--text-decoration, none );
+	color: var( --cfe-heading-primary--link--text-color, var( --cfe-link--text-color ) );
+}
 
-		&:hover,
-		&:focus {
-			color: var( --cfe-heading-primary--link--action--text-color, var( --cfe-link--action--text-color ) );
-		}
-	}
+h1 a:hover, h1 a:focus,
+h2 a:hover,
+h2 a:focus {
+	color: var( --cfe-heading-primary--link--action--text-color, var( --cfe-link--action--text-color ) );
 }
 
 h3,
@@ -177,9 +190,26 @@ h4 {
 	line-height: var( --cfe-heading-secondary--line-height );
 	letter-spacing: var( --cfe-heading-secondary--letter-spacing );
 	word-spacing: var( --cfe-heading-secondary--word-spacing );
-	text-decoration: var( --cfe-heading-secondary--text-decoration );
+	-webkit-text-decoration: var( --cfe-heading-secondary--text-decoration );
+			text-decoration: var( --cfe-heading-secondary--text-decoration );
 	text-transform: var( --cfe-heading-secondary--text-transform );
 	color: var( --cfe-heading-secondary--text-color, var( --cfe-text-color ) );
+}
+
+h5,
+h6 {
+	font-family: var( --cfe-heading-tertiary--font-family );
+	font-size: var( --cfe-heading-tertiary--font-size, 1.125rem );
+	font-weight: var( --cfe-heading-tertiary--font-weight, 700 );
+	font-style: var( --cfe-heading-tertiary--font-style );
+	font-variant: var( --cfe-heading-tertiary--font-variant );
+	line-height: var( --cfe-heading-tertiary--line-height );
+	letter-spacing: var( --cfe-heading-tertiary--letter-spacing );
+	word-spacing: var( --cfe-heading-tertiary--word-spacing );
+	-webkit-text-decoration: var( --cfe-heading-tertiary--text-decoration );
+			text-decoration: var( --cfe-heading-tertiary--text-decoration );
+	text-transform: var( --cfe-heading-tertiary--text-transform, none );
+	color: var( --cfe-heading-tertiary--text-color, var( --cfe-text-color ) );
 }
 
 // Theme icons.

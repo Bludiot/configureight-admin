@@ -1,0 +1,39 @@
+///
+/// CSS variables
+///
+
+:root {
+
+	--cfe-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--cfe-serif-stack: "Hoefler Text", "Baskerville Old Face", Garamond, Times, "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--cfe-heading-primary--font-size: 2rem;
+	--cfe-heading-primary--font-weight: 700;
+	--cfe-spacing--horz: 2rem;
+	--cfe-spacing--vert: 2rem;
+	--cfe-bg-color: #ffffff;
+	--cfe-font-size: 1rem;
+	--cfe-text-color: #333333;
+	--cfe-link--text-color: #0044aa;
+	--cfe-link--action--text-color: #005ce7;
+	--cfe-link--transition: all 0.15s;
+	--cfe-heading-primary--font-size: 2rem;
+	--cfe-heading-primary--letter-spacing: -0.015em;
+	--cfe-heading-primary--word-spacing: -0.0325em;
+	--cfe-heading-secondary--font-size: 1.375rem;
+	--cfe-heading-secondary--font-weight: 700;
+	--cfe-heading-secondary--word-spacing: -0.0325em;
+	--cfe-heading--link--text-decoration: none;
+	--cfe-box--border-style: solid;
+	--cfe-box--border-width: 1px;
+	--cfe-box--border-color: #cccccc;
+	--cfe-box--border: var( --cfe-box--border-style  ) var( --cfe-box--border-width  ) var( --cfe-box--border-color  );
+
+	// Tabbed content.
+	--cfe-tabs--list--gap: 0.5rem 0.25rem;
+	--cfe-tabs--list--margin: 2rem 0 0 0;
+	--cfe-tabs--list--padding: 0 0.5rem;
+	--cfe-tabs--border-style: solid;
+	--cfe-tabs--border-width: 1px;
+	--cfe-tabs--border-color: var( --cfe-box--border-color );
+	--cfe-tabs--list--border-color: #888888;
+}
