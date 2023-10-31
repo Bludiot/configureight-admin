@@ -17,6 +17,15 @@ if ( ! defined( 'BLUDIT' ) ) {
 include( 'includes/classes/class-bootstrap.php' );
 
 /**
+ * Constant: plugin class
+ *
+ * The class of the companion plugin.
+ *
+ * @since  1.0.0
+ */
+define( 'THEME_PLUGIN', 'configureight' );
+
+/**
  * Get theme plugin
  *
  * @since  1.0.0
