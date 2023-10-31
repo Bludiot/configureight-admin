@@ -7,13 +7,18 @@
  * @since      1.0.0
  */
 
+// Access namespaced functions.
+use function CFE_Admin_Theme\{
+	body_classes
+};
+
 ?>
 <!DOCTYPE html>
 <html dir="auto" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
 
 <?php include( 'views/head.php' ); ?>
 
-<body class="bl-admin <?php echo 'admin-page-' . strtok( $url->slug(), '/' ); echo ( str_contains( $url->slug(), '/' ) ? ' admin-' . str_replace( '/', '-', $url->slug() ) : '' ); ?>">
+<body class="<?php body_classes(); ?>">
 
 <?php include( 'views/toolbar.php' ); ?>
 

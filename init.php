@@ -38,3 +38,25 @@ function plugin() {
 	}
 	return false;
 }
+
+/**
+ * Body classes
+ *
+ * @since  1.0.0
+ * @return string Returns various classes.
+ */
+function body_classes() {
+
+	// Access global variables.
+	global $url;
+
+	$classes = [
+		'bl-admin',
+		'admin-page-' . strtok( $url->slug(), '/' )
+	];
+
+	if ( str_contains( $url->slug(), '/' ) ) {
+		$classes[] = 'admin-' . str_replace( '/', '-', $url->slug() );
+	}
+	echo implode( ' ', $classes );
+}
