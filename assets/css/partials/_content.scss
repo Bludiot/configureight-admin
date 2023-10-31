@@ -76,6 +76,17 @@
 }
 
 // Plugins screen.
+.admin-page-plugins {
+
+	td {
+		div {
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+		}
+	}
+}
+
 .plugin-form {
 
 	label {

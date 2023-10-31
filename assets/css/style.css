@@ -420,13 +420,15 @@ a {
   font-weight: var(--cfe-link--font-weight, inherit);
   font-style: var(--cfe-link--font-style, normal);
   font-variant: var(--cfe-link--font-variant, normal);
-  -webkit-text-decoration: var(--cfe-link--text-decoration, underline);
-          text-decoration: var(--cfe-link--text-decoration, underline);
+  -webkit-text-decoration: var(--cfe-link--text-decoration, none);
+          text-decoration: var(--cfe-link--text-decoration, none);
   text-transform: var(--cfe-link--text-transform, inherit);
   color: var(--cfe-link--text-color);
   transition: var(--cfe-link--transition);
 }
 a:hover, a:focus {
+  -webkit-text-decoration: var(--cfe-link--action--text-decoration, none);
+          text-decoration: var(--cfe-link--action--text-decoration, none);
   color: var(--cfe-link--action--text-color);
 }
 a:before {
@@ -434,12 +436,14 @@ a:before {
   display: var(--cfe-link--before--display);
   position: var(--cfe-link--before--position);
   background-color: var(--cfe-link--before--bg-color);
+  color: var(--cfe-link--before--text-color);
 }
 a:after {
   content: var(--cfe-link--after--content);
   display: var(--cfe-link--after--display);
   position: var(--cfe-link--after--position);
   background-color: var(--cfe-link--after--bg-color);
+  color: var(--cfe-link--after--text-color);
 }
 
 h1,
@@ -514,10 +518,11 @@ code.select {
   border-radius: 50%;
 }
 
+.theme-icon,
 .fa {
   display: inline-block;
   margin-right: 0.5rem;
-  line-height: inherit;
+  line-height: 1;
 }
 
 .text-muted {
@@ -4146,7 +4151,7 @@ fieldset:disabled a.btn {
   display: inline-flex;
   flex-wrap: nowrap;
   align-items: center;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
   color: var(--cfe-admin--menu--link--text-color, #ffffff);
   text-decoration: none;
 }
@@ -4175,6 +4180,7 @@ fieldset:disabled a.btn {
   border-top: solid 1px rgba(255, 255, 255, 0.125);
 }
 .admin-menu .admin-menu-list li.menu-heading h3 {
+  width: 100%;
   font-size: 1.125rem;
   font-weight: 700;
 }
@@ -4231,6 +4237,9 @@ fieldset:disabled a.btn {
   color: #ffffff;
   text-decoration: none;
 }
+.admin-toolbar ul li a:hover {
+  background-color: #555555;
+}
 .admin-toolbar ul li a span {
   display: inline-block;
 }
@@ -4261,9 +4270,6 @@ fieldset:disabled a.btn {
 .admin-toolbar ul ul li a {
   display: block;
   padding: 0 1rem;
-}
-.admin-toolbar ul ul li a:hover {
-  background-color: #555555;
 }
 .admin-toolbar ul img {
   display: inline-block;
@@ -4333,6 +4339,12 @@ fieldset:disabled a.btn {
 #dashboard .quick-links-icons {
   font-size: 3em;
   width: 100%;
+}
+
+.admin-page-plugins td div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .plugin-form label {
