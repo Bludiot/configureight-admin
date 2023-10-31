@@ -2,12 +2,45 @@
 /// General styles
 ///
 
+// Breakpoint variables.
+$break-min-xs: 0;
+$break-min-sm: 576px;
+$break-min_md: 768px;
+$break-min_lg: 992px;
+$break-min-xl: 1200px;
+$break-max-sm: 575.98px;
+$break-max_md: 767.98px;
+$break-max_lg: 991.98px;
+$break-max-xl: 1199.98px;
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+
 html {
+	box-sizing: border-box;
+	overflow-y: scroll;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+
+	// Clear the toolbar.
+	margin-top: 2rem;
 }
 
 body {
+	box-sizing: inherit;
 	display: var( --cfe-body--display, block );
 	position: var( --cfe-body--position, relative );
 	width: var( --cfe-body--width );
@@ -212,6 +245,25 @@ h6 {
 	color: var( --cfe-heading-tertiary--text-color, var( --cfe-text-color ) );
 }
 
+code.select {
+	user-select: all;
+}
+
+.avatar {
+	border-radius: 50%;
+}
+
+// Icons.
+.fa {
+	display: inline-block;
+	margin-right: 0.5rem;
+	line-height: inherit;
+}
+
+.text-muted {
+	color: var( --cfe-text-muted--text-color, #555555 );
+}
+
 // User avatar.
 .avatar {
 	vertical-align: var( --cfe-avatar--vertical-align, middle );
@@ -256,12 +308,22 @@ h6 {
 }
 
 // User alerts
+#alert {
+	display: none;
+	z-index: 1000;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	border: 0;
+	text-align: center;
+}
+
 .alert {
 	position: relative;
-	padding: 0.75rem 1.25rem;
 	margin: 1rem 0;
+	padding: 0.75rem 1rem;
 	border: 1px solid transparent;
-	border-radius: 0.25rem;
 
 	.alert-heading {
 		color: inherit;
@@ -313,9 +375,10 @@ h6 {
 	}
 
 	&.alert-success {
-		color: #155724;
-		background-color: #d4edda;
+		background-color: #4586d4;
 		border-color: #c3e6cb;
+		border-left: 6px solid #abd1ff;
+		color: #ffffff;
 
 		hr {
 			border-top-color: #b1dfbb;
@@ -355,9 +418,10 @@ h6 {
 	}
 
 	&.alert-danger {
-		color: #721c24;
-		background-color: #f8d7da;
+		background-color: #d44545;
 		border-color: #f5c6cb;
+		border-left: 6px solid #ff9c9c;
+		color: #ffffff;
 
 		hr {
 			border-top-color: #f1b0b7;

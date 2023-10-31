@@ -1,0 +1,278 @@
+///
+/// Page content styles
+///
+/// Contains styles for specific screens.
+///
+
+#admin-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-transform: capitalize;
+
+		&.text-uppercase {
+			text-transform: capitalize;
+		}
+	}
+}
+
+.search-suggestion {
+	padding: 5px;
+}
+
+.search-suggestion-options {
+	font-size: 0.9em;
+	padding-top: 2px;
+}
+
+.list-group-sortable {
+	list-style: none;
+	cursor: move;
+
+	li {
+		padding: 1rem;
+
+		&:not( :first-of-type ) {
+			border-top: var( --cfe-box--border-style ) var( --cfe-box--border-width ) var( --cfe-box--border-color );
+		}
+
+		&:hover {
+			color: var( --cfe-link--text-color );
+		}
+
+		&.sortable-dragging {
+			background-color: #cce5ff;
+		}
+	}
+}
+
+// Dashboard.
+#dashboard {
+	.list-group.list-group-striped {
+		list-style: none;
+
+		li {
+			&:first-of-type {
+				margin: 0 0 1rem 0;
+			}
+
+			&:not( :first-of-type ) {
+				padding: 0.5rem 1rem;
+			}
+
+			&:nth-of-type( even ) {
+				background-color: var( --cfe-striped--bg-color, #eeeeee );
+			}
+		}
+	}
+
+	.quick-links-icons {
+		font-size: 3em;
+		width: 100%;
+	}
+}
+
+// Plugins screen.
+.plugin-form {
+
+	label {
+		display: block;
+		margin-top: 1rem;
+	}
+
+	input[type="text"],
+	textarea,
+	select {
+		display: block;
+		width: 100%;
+		padding: .375rem .75rem;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: #495057;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid #ced4da;
+		border-radius: .25rem;
+		transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	}
+
+	textarea {
+		min-height: 120px;
+	}
+
+	span.tip {
+		display: block;
+		font-size: 80%;
+		font-weight: 400;
+		margin-top: .25rem;
+		color: #6c757d;
+	}
+}
+
+// Content management screen.
+.admin-page-plugins-position {
+	.alert {
+		padding: unset;
+		background-color: unset;
+		border: unset;
+		color: unset;
+	}
+
+	td.child {
+		padding: 0 0 0 1rem;
+	}
+}
+
+// New content screen.
+.admin-page-new-content {
+
+	#jseditorToolbar {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#jseditorToolbarLeft,
+	#jseditorToolbarRight {
+		float: none;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	#jseditorToolbarRight {
+		button {
+			span {
+				margin: 0;
+			}
+		}
+	}
+
+	#jseditor {
+		background: #fff;
+		padding: 10px 5%;
+		font-size: 16px;
+		line-height: 1.5em;
+		border: 1px solid #ced4da;
+	}
+
+	#jseditorSidebar {
+		display: none;
+		height: calc(100% - 45px);
+		width: 50%;
+		max-width: 350px;
+		position: absolute;
+		z-index: 50;
+		top: 45px;
+		right: 15px;
+		background-color: #fff;
+		overflow-x: hidden;
+		transition: 0.5s;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+	}
+
+	@media ( max-width: $break-max-sm ) {
+
+		#jseditorSidebar {
+			width: 100%;
+			max-width: 100%;
+			right: 0;
+		}
+
+		#jseditorToolbarRight button {
+			font-size: 0px;
+
+			span {
+				font-size: 1rem;
+			}
+		}
+
+		.contentTools .btn {
+			font-size: 0px;
+			margin-right: 5px;
+		}
+
+		.contentTools .btn span {
+			font-size: 16px;
+		}
+	}
+
+	#jseditorSidebar nav {
+		background: #f3f3f3;
+	}
+
+	#jseditorSidebar nav a {
+		color: #000;
+	}
+
+	#jseditorSidebar .nav-tabs .nav-link {
+		border: none;
+	}
+
+	#jseditorSidebar .nav-link.active {
+		background: none;
+		border: none;
+		border-bottom: 3px solid #ccc;
+	}
+}
+
+#jsshadow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(72, 72, 72, 0.7);
+	z-index: 10;
+	display: none;
+}
+
+img.profilePicture {
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	border: 1px solid #ccc;
+}
+
+/// New content status
+///
+/// Switches between publish and draft.
+///
+.switch-button {
+	display: var( --cfe-button--display, inline-block );
+	width: var( --cfe-button--width, auto );
+	margin: var( --cfe-button--margin );
+	padding: var( --cfe-button--padding, 0.5rem );
+	line-height: var( --cfe-button--line-height, 1);
+	font-family: var( --cfe-button--font-family, var( --cfe-font-stack, var( --cfe-sans-stack, sans-serif ) ) );
+	font-size: var( --cfe-button--font-size, 1rem );
+	font-weight: var( --cfe-button--font-weight, 600 );
+	font-style: var( --cfe-button--font-style, normal );
+	font-variant: var( --cfe-button--font-variant, normal );
+	letter-spacing: var( --cfe-button--letter-spacing, normal );
+	word-spacing: var( --cfe-button--word-spacing, normal );
+	-webkit-text-decoration: var( --cfe-button--text-decoration, none );
+	text-decoration: var( --cfe-button--text-decoration, none );
+	background-color: var( --cfe-button--bg-color, var( --cfe-bg-color, inherit ) );
+	border: solid 1px var( --cfe-button--border-color, #555555 );
+	color: var( --cfe-button--text-color, var( --cfe-text-color, #333333 ) );
+	transition: var( --cfe-button--transition, all 0.15s ease-in-out );
+	cursor: var( --cfe-button--cursor, pointer );
+
+	&:hover,
+	&:focus {
+		background-color: var( --cfe-button--action--bg-color, #333333 );
+		border-color: var( --cfe-button--action--border-color, #555555 );
+		color: var( --cfe-button--action--text-color, #ffffff );
+	}
+
+	// Square icon.
+	.switch-icon-publish,
+	.switch-icon-draft {
+		display: none;
+	}
+}

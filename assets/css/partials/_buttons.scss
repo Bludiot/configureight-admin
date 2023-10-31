@@ -88,7 +88,7 @@ fieldset:disabled a.btn {
 }
 
 // For small devices.
-@media ( max-width: 575.98px ) {
+@media ( max-width: $break-max-sm ) {
 
 	#jsmediaManagerButton,
 	#jscategoryButton,

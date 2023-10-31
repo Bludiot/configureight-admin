@@ -37,3 +37,24 @@
 	--cfe-tabs--border-color: var( --cfe-box--border-color );
 	--cfe-tabs--list--border-color: #888888;
 }
+
+@media ( prefers-color-scheme: dark ) {
+	:root {
+		--cfe-bg-color: #1e1e1e;
+		--cfe-text-color: #eeeeee;
+		--cfe-link--text-color: #ffffff;
+		--cfe-link--action--text-color: #eeeeee;
+		--cfe-heading-primary--text-color: #eeeeee;
+		--cfe-heading-primary--link--text-color: #eeeeee;
+		--cfe-heading-primary--link--action--text-color: #ffffff;
+		--cfe-button--bg-color: #333333;
+		--cfe-button--action--bg-color: #555555;
+		--cfe-button--border-color: #888888;
+		--cfe-button--text-color: #ffffff;
+		--cfe-button--primary--bg-color: #555555;
+		--cfe-button--primary--action--bg-color: #888888;
+		--cfe-button--primary--text-color: #ffffff;
+		--cfe-button--primary--action--text-color: #ffffff;
+		--cfe-text-muted--text-color: #cccccc;
+	}
+}

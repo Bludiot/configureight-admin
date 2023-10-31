@@ -3,12 +3,6 @@
 ///
 
 // Bootstrap classes, !important removed.
-$breakpoint-xs: 0;
-$breakpoint-sm: 576px;
-$breakpoint_md: 768px;
-$breakpoint_lg: 992px;
-$breakpoint-xl: 1200px;
-
 .container,
 .container-fluid,
 .container-sm,
@@ -20,25 +14,25 @@ $breakpoint-xl: 1200px;
 	margin: 0 auto;
 }
 
-@media ( min-width: $breakpoint_sm ) {
+@media ( min-width: $break-min_sm ) {
 	.container, .container-sm {
 		max-width: 540px;
 	}
 }
 
-@media ( min-width: $breakpoint_md ) {
+@media ( min-width: $break-min_md ) {
 	.container, .container-sm, .container-md {
 		max-width: 720px;
 	}
 }
 
-@media ( min-width: $breakpoint_lg ) {
+@media ( min-width: $break-min_lg ) {
 	.container, .container-sm, .container-md, .container-lg {
 		max-width: 960px;
 	}
 }
 
-@media ( min-width: $breakpoint_xl ) {
+@media ( min-width: $break-min_xl ) {
 	.container, .container-sm, .container-md, .container-lg, .container-xl {
 		max-width: 1140px;
 	}
@@ -351,7 +345,7 @@ $breakpoint-xl: 1200px;
 	margin-left: 91.666667%;
 }
 
-@media ( min-width: $breakpoint_sm ) {
+@media ( min-width: $break-min_sm ) {
 
 	.col-sm {
 		-ms-flex-preferred-size: 0;
@@ -600,7 +594,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_md ) {
+@media ( min-width: $break-min_md ) {
 
 	.col-md {
 		-ms-flex-preferred-size: 0;
@@ -849,7 +843,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_lg ) {
+@media ( min-width: $break-min_lg ) {
 
 	.col-lg {
 		-ms-flex-preferred-size: 0;
@@ -1098,7 +1092,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_xl ) {
+@media ( min-width: $break-min_xl ) {
 
 	.col-xl {
 		-ms-flex-preferred-size: 0;
@@ -1517,7 +1511,7 @@ $breakpoint-xl: 1200px;
 	align-self: stretch;
 }
 
-@media ( min-width: $breakpoint_sm ) {
+@media ( min-width: $break-min_sm ) {
 
 	.flex-sm-row {
 		-ms-flex-direction: row;
@@ -1690,7 +1684,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_md ) {
+@media ( min-width: $break-min_md ) {
 
 	.flex-md-row {
 		-ms-flex-direction: row;
@@ -1863,7 +1857,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_lg ) {
+@media ( min-width: $break-min_lg ) {
 
 	.flex-lg-row {
 		-ms-flex-direction: row;
@@ -2036,7 +2030,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_xl ) {
+@media ( min-width: $break-min_xl ) {
 
 	.flex-xl-row {
 		-ms-flex-direction: row;
@@ -2221,7 +2215,7 @@ $breakpoint-xl: 1200px;
 	float: none;
 }
 
-@media ( min-width: $breakpoint_sm ) {
+@media ( min-width: $break-min_sm ) {
 
 	.float-sm-left {
 		float: left;
@@ -2234,7 +2228,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_md ) {
+@media ( min-width: $break-min_md ) {
 
 	.float-md-left {
 		float: left;
@@ -2247,7 +2241,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_lg ) {
+@media ( min-width: $break-min_lg ) {
 
 	.float-lg-left {
 		float: left;
@@ -2260,7 +2254,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media ( min-width: $breakpoint_xl ) {
+@media ( min-width: $break-min_xl ) {
 
 	.float-xl-left {
 		float: left;
@@ -2311,7 +2305,7 @@ $breakpoint-xl: 1200px;
 	display: inline-flex !important;
 }
 
-@media (min-width: $breakpoint_sm) {
+@media (min-width: $break-min_sm) {
 	.d-sm-none {
 		display: none !important;
 	}
@@ -2343,7 +2337,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media (min-width: $breakpoint_md) {
+@media (min-width: $break-min_md) {
 	.d-md-none {
 		display: none !important;
 	}
@@ -2375,7 +2369,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media (min-width: $breakpoint_lg) {
+@media (min-width: $break-min_lg) {
 	.d-lg-none {
 		display: none !important;
 	}
@@ -2407,7 +2401,7 @@ $breakpoint-xl: 1200px;
 	}
 }
 
-@media (min-width: $breakpoint_xl) {
+@media (min-width: $break-min_xl) {
 	.d-xl-none {
 		display: none !important;
 	}
@@ -2483,4 +2477,22 @@ $breakpoint-xl: 1200px;
 	width: 100%;
 	max-width: 1280px;
 	padding: 2rem;
+}
+
+@media ( min-width: $break-min-lg ) {
+	.container {
+		max-width: 1250px;
+	}
+}
+
+@media ( min-width: $break-min-sm ) {
+	.col-sm-6,
+	.col-sm-4 {
+		align-items: center;
+		gap: 0.5rem;
+
+		&.row {
+			margin: 0;
+		}
+	}
 }
