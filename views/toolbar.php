@@ -57,12 +57,28 @@ if ( $user->profilePicture() ) {
 			</li>
 			<?php endif; ?>
 
+			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
+			<li class="has-submenu">
+				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
+
+				<ul>
+					<li>
+						<a href="<?php echo DOMAIN_ADMIN . 'about';?>"><?php $L->p( 'System' ); ?></a>
+					</li>
+
+					<li>
+						<a href="<?php echo DOMAIN_ADMIN . 'developers';?>"><?php $L->p( 'Server' ); ?></a>
+					</li>
+				</ul>
+			</li>
+			<?php else : ?>
 			<li>
 				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
 			</li>
+			<?php endif; ?>
 
-			<li>
-				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php $L->p( 'Content' ); ?></a>
+			<li class="has-submenu">
+				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php $L->p( 'Content' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
 
 				<ul>
 					<li>
@@ -86,8 +102,8 @@ if ( $user->profilePicture() ) {
 			</li>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-			<li>
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Manage' ); ?></a>
+			<li class="has-submenu">
+				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Manage' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
 
 				<ul>
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
@@ -136,7 +152,7 @@ if ( $user->profilePicture() ) {
 	</nav>
 	<nav class="admin-toolbar-nav toolbar-user-info">
 		<ul class="admin-toolbar-nav-list">
-			<li>
+			<li class="has-submenu">
 				<a id="profile-link" href="<?php echo $profile; ?>">
 					<img class="avatar user-avatar user toolbar-avatar admin-toolbar-avatar" src="<?php echo $avatar; ?>" width="24"> <span><?php echo $name; ?></span>
 				</a>
