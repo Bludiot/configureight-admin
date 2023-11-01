@@ -37,8 +37,8 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 		echo Theme :: css(
 			[
 				'jquery.datetimepicker.min.css',
-				'select2.min.css',
-				'select2-bootstrap4.min.css'
+				// 'select2.min.css',
+				// 'select2-bootstrap4.min.css'
 			],
 			DOMAIN_CORE_CSS
 		);
