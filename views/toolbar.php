@@ -148,6 +148,24 @@ if ( $user->profilePicture() ) {
 				</ul>
 			</li>
 			<?php endif; ?>
+			<?php
+			if (
+				checkRole( [ 'admin', 'editor' ], false ) &&
+				! empty( $plugins['adminSidebar'] )
+			) : ?>
+			<li class="has-submenu">
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
+				<ul>
+					<?php
+					foreach ( $plugins['adminSidebar'] as $link ) {
+						printf(
+							'<li>%s</li>',
+							$link->adminSidebar()
+						);
+					} ?>
+				</ul>
+			</li>
+			<?php endif; ?>
 		</ul>
 	</nav>
 	<nav class="admin-toolbar-nav toolbar-user-info">
