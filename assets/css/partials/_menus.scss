@@ -87,15 +87,15 @@
 	top: 0;
 	z-index: 8888;
 	width: 100%;
-	height: 2rem;
+	height: var( --cfe-toolbar--height );
 	overflow: visible;
-	padding: 0.5rem 1rem;
-	line-height: 2rem;
+	padding: var( --cfe-toolbar--padding );
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #333333;
-	color: #ffffff;
+	line-height: var( --cfe-toolbar--height );
+	background-color: var( --cfe-toolbar--bg-color );
+	color: var( --cfe-toolbar--text-color );
 
 	ul {
 		list-style: none;
@@ -112,8 +112,8 @@
 			margin: 0;
 			padding: 0;
 			max-height: 2rem;
-			font-size: 15px;
-			font-weight: 600;
+			font-size: var( --cfe-toolbar--font-size );
+			font-weight: var( --cfe-toolbar--font-weight );
 
 			&:hover {
 				ul {
@@ -126,14 +126,22 @@
 				}
 			}
 
+			&.has-submenu {
+				.fa {
+					margin: 0 0 0 0.5em;
+				}
+			}
+
 			a {
 				display: inline-block;
-				padding: 0 0.5rem;
-				color: #ffffff;
+				padding: var( --cfe-toolbar--link--padding );
+				background-color: var( --cfe-toolbar--link--bg-color );
+				color: var( --cfe-toolbar--link--text-color );
 				text-decoration: none;
 
 				&:hover {
-					background-color: #555555;
+					background-color: var( --cfe-toolbar--link--action--bg-color );
+					color: var( --cfe-toolbar--link--action--text-color );
 				}
 
 				span {
@@ -141,14 +149,10 @@
 				}
 
 				&.admin-toolbar-logo-link {
-					height: 2rem;
+					height: var( --cfe-toolbar--height );
 					display: inline-flex;
 					align-items: center;
 				}
-			}
-
-			.toolbar-icon {
-				font-size: 1.25rem;
 			}
 		}
 
@@ -159,7 +163,7 @@
 			left: -9999em;
 			padding: 0.5rem 0;
 			width: 160px;
-			background-color: #333333;
+			background-color: #555555;
 
 			&.user-actions-sublist {
 				left: auto;
@@ -172,6 +176,10 @@
 				a {
 					display: block;
 					padding: 0 1rem;
+
+					&:hover {
+						background-color: #888888;
+					}
 				}
 			}
 		}

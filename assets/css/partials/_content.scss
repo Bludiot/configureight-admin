@@ -17,6 +17,10 @@
 			text-transform: capitalize;
 		}
 	}
+
+	.page-title-icon {
+		display: none;
+	}
 }
 
 .search-suggestion {
@@ -69,6 +73,26 @@
 		}
 	}
 
+	#hello-message {
+		.fa {
+			display: none !important;
+		}
+	}
+
+	#jsclippyContainer {
+		padding: 0;
+
+		div {
+			padding: 0;
+		}
+	}
+
+	.search-suggestion-options {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
 	.quick-links-icons {
 		font-size: 3em;
 		width: 100%;
@@ -84,42 +108,6 @@
 			align-items: center;
 			gap: 0.5em;
 		}
-	}
-}
-
-.plugin-form {
-
-	label {
-		display: block;
-		margin-top: 1rem;
-	}
-
-	input[type="text"],
-	textarea,
-	select {
-		display: block;
-		width: 100%;
-		padding: .375rem .75rem;
-		font-size: 1rem;
-		line-height: 1.5;
-		color: #495057;
-		background-color: #fff;
-		background-clip: padding-box;
-		border: 1px solid #ced4da;
-		border-radius: .25rem;
-		transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-	}
-
-	textarea {
-		min-height: 120px;
-	}
-
-	span.tip {
-		display: block;
-		font-size: 80%;
-		font-weight: 400;
-		margin-top: .25rem;
-		color: #6c757d;
 	}
 }
 
@@ -143,6 +131,12 @@
 	#jseditorToolbar {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+
+		@media ( max-width: $break-max_md ) {
+			flex-direction: column-reverse;
+		}
 	}
 
 	#jseditorToolbarLeft,
@@ -156,7 +150,7 @@
 	#jseditorToolbarRight {
 		button {
 			span {
-				margin: 0;
+				display: none;
 			}
 		}
 	}
@@ -192,14 +186,6 @@
 			width: 100%;
 			max-width: 100%;
 			right: 0;
-		}
-
-		#jseditorToolbarRight button {
-			font-size: 0px;
-
-			span {
-				font-size: 1rem;
-			}
 		}
 
 		.contentTools .btn {
@@ -285,5 +271,39 @@ img.profilePicture {
 	.switch-icon-publish,
 	.switch-icon-draft {
 		display: none;
+	}
+}
+
+///
+/// Settings screen/tabs
+///
+
+// Logo image.
+#jssiteLogoPreview {
+	display: block;
+	max-width: 320px;
+
+	@media ( max-width: $break-max-lg ) {
+		margin-top: 2rem;
+	}
+}
+
+// Remove logo button.
+#jsbuttonRemoveLogo {
+	max-width: 160px;
+	margin-top: 0.5rem;
+}
+
+///
+/// User edt screen/tabs
+///
+
+// Logo image.
+#jsprofilePicturePreview {
+	display: block;
+	max-width: 320px;
+
+	@media ( max-width: $break-max-lg ) {
+		margin-top: 2rem;
 	}
 }

@@ -1,0 +1,45 @@
+///
+/// SCSS variables
+///
+
+// Breakpoint variables.
+$break-min-xs: 0;
+$break-min-sm: 576px;
+$break-min_md: 768px;
+$break-min_lg: 992px;
+$break-min-xl: 1200px;
+$break-max-sm: 575.98px;
+$break-max_md: 767.98px;
+$break-max_lg: 991.98px;
+$break-max-xl: 1199.98px;
+
+// General colors.
+$white       : #ffffff !default;
+$off_white   : #eeeeee !default;
+$black       : #000000 !default;
+$near_black  : #1e1e1e !default;
+$dark_gray   : #333333 !default;
+$medium_gray : #555555 !default;
+$light_gray  : #888888 !default;
+$pale_gray   : #cccccc !default;
+$red         : #dd0000 !default;
+$orange      : #ee6600 !default;
+$yellow      : #f8ce30 !default;
+$green       : #4b9960 !default;
+$blue        : #0044aa !default;
+$violet      :  #551a8b !default;
+$error       : $red !default;
+$notify      : $orange !default;
+$warning     : $yellow !default;
+$success     : $green !default;
+
+// Color types.
+$text_color: $dark_gray;
+
+// SVG icon colors.
+@function svg_icon_color() {
+	@return '%23' + str-slice( '#{$text_color}', 2, -1 );
+}
+@function svg_icon_action_color() {
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
+}

@@ -2,6 +2,8 @@
 /// CSS variables
 ///
 
+@import '_utility';
+
 :root {
 
 	--cfe-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -17,6 +19,7 @@
 	--cfe-link--action--text-color: #005ce7;
 	--cfe-link--transition: all 0.15s;
 	--cfe-heading-primary--font-size: 2rem;
+	--cfe-heading-primary--line-height: 1.3;
 	--cfe-heading-primary--letter-spacing: -0.015em;
 	--cfe-heading-primary--word-spacing: -0.0325em;
 	--cfe-heading-secondary--font-size: 1.375rem;
@@ -25,8 +28,53 @@
 	--cfe-heading--link--text-decoration: none;
 	--cfe-box--border-style: solid;
 	--cfe-box--border-width: 1px;
-	--cfe-box--border-color: #cccccc;
+	--cfe-box--border-color: #{$pale_gray};
 	--cfe-box--border: var( --cfe-box--border-style  ) var( --cfe-box--border-width  ) var( --cfe-box--border-color  );
+
+	// Forms & buttons.
+	--cfe-fieldset--margin: 1em 0 0;
+	--cfe-fieldset--padding: 1em 1.5em;
+	--cfe-fieldset--border: solid 1px var( --cfe-form--border-color );
+	--cfe-legend--padding: 0 0.5em;
+	--cfe-legend-font-size: 1em;
+	--cfe-legend-font-weight: 700;
+
+	--cfe-form-element--padding: 0.5em 1em;
+	--cfe-form-element--border: var( --cfe-box--border-style  ) var( --cfe-box--border-width  ) #{$light_gray};
+	--cfe-label-field--margin: 0;
+	--cfe-form-element--font-weight: 400;
+	--cfe-form--border-color: #{$light_gray};
+	--cfe-form--action--border-color: #{$blue};
+	--cfe-form--placeholder-color: #{$light_gray};
+
+	--cfe-textarea--min-height: 200px;
+	--cfe-textarea--margin: 1em 0 0;
+	--cfe-textarea--padding: 1em;
+	--cfe-select--margin: 1em 0 0;
+	--cfe-select--padding: 0.5em 1em;
+
+	--cfe-button--padding: 0.75em 1em;
+	--cfe-button--font-weight: 700;
+	--cfe-button--bg-color: var( --cfe-bg-color, inherit );
+	--cfe-button--action--bg-color: #{$dark_gray};
+	--cfe-button--border-color: var( --cfe-form--border-color );
+	--cfe-button--text-color: var( --cfe-form--text-color );
+	--cfe-button--action--text-color: #{$white};
+	--cfe-button--svg-icon--width: 1em;
+	--cfe-button--svg-icon--height: 1em;
+
+	// User toolbar.
+	--cfe-toolbar--padding: 0 1rem;
+	--cfe-toolbar--height: 2rem;
+	--cfe-toolbar--font-size: 0.875rem;
+	--cfe-toolbar--font-weight: 400;
+	--cfe-toolbar--bg-color: #{$dark_gray};
+	--cfe-toolbar--text-color: #{$white};
+	--cfe-toolbar--link--padding: 0 0.5em;
+	--cfe-toolbar--link--bg-color: inherit;
+	--cfe-toolbar--link--text-color: #{$white};
+	--cfe-toolbar--link--action--bg-color: #{$medium_gray};
+	--cfe-toolbar--link--action--text-color: #{$white};
 
 	// Tabbed content.
 	--cfe-tabs--list--gap: 0.5rem 0.25rem;
