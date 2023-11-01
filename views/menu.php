@@ -40,11 +40,11 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 			</li>
 
 			<li>
-				<a class="nav-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><span class="fa fa-home" role="icon"></span><?php $L->p( 'View Site' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><span class="fa fa-user" role="icon"></span><?php $L->p( 'Your Profile' ); ?></a>
 			</li>
 
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><span class="fa fa-user" role="icon"></span><?php $L->p( 'Your Profile' ); ?></a>
+				<a class="nav-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><span class="fa fa-home" role="icon"></span><?php $L->p( 'View Site' ); ?></a>
 			</li>
 		</ul>
 
