@@ -246,11 +246,21 @@ code.select {
 }
 
 // Icons.
-.theme-icon,
 .fa {
 	display: inline-block;
 	margin-right: 0.5rem;
 	line-height: 1;
+}
+
+.svg-icon {
+	display: inline-block;
+	line-height: 1;
+
+	svg {
+		height: 1em;
+		vertical-align: middle;
+		fill: currentColor;
+	}
 }
 
 .text-muted {

@@ -7,6 +7,11 @@
  * @since      1.0.0
  */
 
+// Access namespaced functions.
+use function CFE_Admin_Theme\{
+	svg_icon
+};
+
 // Theme plugin data.
 $theme_plugin  = getPlugin( $site->theme() );
 $theme_options = '';
@@ -59,7 +64,7 @@ if ( $user->profilePicture() ) {
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="has-submenu">
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
+				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); $L->p( 'Dashboard' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<li>
@@ -78,7 +83,7 @@ if ( $user->profilePicture() ) {
 			<?php endif; ?>
 
 			<li class="has-submenu">
-				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php $L->p( 'Content' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php svg_icon( 'file' ); ?><?php $L->p( 'Content' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<li>
@@ -103,7 +108,7 @@ if ( $user->profilePicture() ) {
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="has-submenu">
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Manage' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
+				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><?php $L->p( 'Manage' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
@@ -154,7 +159,7 @@ if ( $user->profilePicture() ) {
 				! empty( $plugins['adminSidebar'] )
 			) : ?>
 			<li class="has-submenu">
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?><span class="fa fa-angle-down" role="icon"></span></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 				<ul>
 					<?php
 					foreach ( $plugins['adminSidebar'] as $link ) {

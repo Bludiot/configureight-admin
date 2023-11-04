@@ -7,6 +7,11 @@
  * @since      1.0.0
  */
 
+// Access namespaced functions.
+use function CFE_Admin_Theme\{
+	svg_icon
+};
+
 // Theme plugin data.
 $theme_plugin  = getPlugin( $site->theme() );
 $theme_options = '';
@@ -32,19 +37,19 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 
 		<ul>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><span class="fa fa-tachometer" role="icon"></span><?php $L->p( 'Dashboard' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); ?><?php $L->p( 'Dashboard' ); ?></a>
 
 				<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'developers'; ?>"><span class="fa fa-info" role="icon"></span><span class="screen-reader-text"><?php $L->p( 'System Info' ); ?></span></a>
+				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'developers'; ?>"><?php svg_icon( 'info' ); ?><span class="screen-reader-text"><?php $L->p( 'System Info' ); ?></span></a>
 				<?php endif; ?>
 			</li>
 
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><span class="fa fa-user" role="icon"></span><?php $L->p( 'Your Profile' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><?php svg_icon( 'user' ); ?><?php $L->p( 'Your Profile' ); ?></a>
 			</li>
 
 			<li>
-				<a class="nav-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><span class="fa fa-home" role="icon"></span><?php $L->p( 'View Site' ); ?></a>
+				<a class="nav-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><?php svg_icon( 'house' ); ?><?php $L->p( 'View Site' ); ?></a>
 			</li>
 		</ul>
 
@@ -56,21 +61,21 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 
 		<ul>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><span class="fa fa-pencil" role="icon"></span><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><?php svg_icon( 'pencil' ); ?><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
 			</li>
 
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><span class="fa fa-thumb-tack" role="icon"></span><?php echo $loop; ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php svg_icon( 'pin' ); ?><?php echo $loop; ?></a>
 			</li>
 
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content#static'; ?>"><span class="fa fa-file" role="icon"></span><?php $L->p( 'Static' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content#static'; ?>"><?php svg_icon( 'file' ); ?><?php $L->p( 'Static' ); ?></a>
 			</li>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'categories'; ?>"><span class="fa fa-folder" role="icon" style="transform: rotate(-90deg) translateX(-2px);"></span><?php $L->p( 'Categories' ); ?></a>
-				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-category'; ?>"><span class="fa fa-plus" role="icon"></span><span class="screen-reader-text"><?php $L->p( 'Add Category' ); ?></span></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'categories'; ?>"><?php svg_icon( 'folder' ); ?><?php $L->p( 'Categories' ); ?></a>
+				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-category'; ?>"><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add Category' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 		</ul>
@@ -84,27 +89,27 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 		<ul>
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><span class="fa fa-gear" role="icon"></span><?php $L->p( 'Settings' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><?php $L->p( 'Settings' ); ?></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'users'; ?>"><span class="fa fa-users" role="icon"></span><?php $L->p( 'Users' ); ?></a>
-				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-user'; ?>"><span class="fa fa-plus" role="icon"></span><span class="screen-reader-text"><?php $L->p( 'Add User' ); ?></span></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'users'; ?>"><?php svg_icon( 'users' ); ?><?php $L->p( 'Users' ); ?></a>
+				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-user'; ?>"><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add User' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'plugins'; ?>"><span class="fa fa-plug" role="icon"></span><?php $L->p( 'Plugins' ); ?></a>
-				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'plugins-position'; ?>"><span class="fa fa-arrows-v" role="icon"></span><span class="screen-reader-text"><?php $L->p( 'Sort Plugins' ); ?></span></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'plugins'; ?>"><?php svg_icon( 'plug' ); ?><?php $L->p( 'Plugins' ); ?></a>
+				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'plugins-position'; ?>"><?php svg_icon( 'arrows-v' ); ?><span class="screen-reader-text"><?php $L->p( 'Sort Plugins' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'themes'; ?>"><span class="fa fa-desktop" role="icon"></span><?php $L->p( 'Themes' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'themes'; ?>"><?php svg_icon( 'paint-roller' ); ?><?php $L->p( 'Themes' ); ?></a>
 			</li>
 			<?php endif; ?>
 
@@ -114,13 +119,13 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 				$theme_plugin
 			) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><span class="fa fa-paint-brush" role="icon"></span><?php $L->p( 'Options' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li>
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . '/'; ?>"><span class="fa fa-gear" role="icon"></span><?php $L->p( 'Admin' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . '/'; ?>"><?php svg_icon( 'gears' ); ?><?php $L->p( 'Admin' ); ?></a>
 			</li>
 			<?php endif; ?>
 		</ul>

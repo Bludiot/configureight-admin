@@ -25,6 +25,7 @@
 				display: inline-flex;
 				flex-wrap: nowrap;
 				align-items: center;
+				gap: 0.5em;
 				padding: 0.5rem 1rem;
 				color: var( --cfe-admin--menu--link--text-color, #ffffff );
 				text-decoration: none;
@@ -43,9 +44,8 @@
 					color: var( --cfe-admin--menu--link--action--text-color, #ffffff );
 				}
 
-				// FontAwesome icons.
-				.fa {
-					font-size: 1.25em;
+				.svg-icon {
+					width: 1em;
 				}
 			}
 
@@ -126,14 +126,10 @@
 				}
 			}
 
-			&.has-submenu {
-				.fa {
-					margin: 0 0 0 0.5em;
-				}
-			}
-
 			a {
-				display: inline-block;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5em;
 				padding: var( --cfe-toolbar--link--padding );
 				background-color: var( --cfe-toolbar--link--bg-color );
 				color: var( --cfe-toolbar--link--text-color );
