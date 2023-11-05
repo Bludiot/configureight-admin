@@ -49,7 +49,9 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 			</li>
 
 			<li>
-				<a class="nav-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><?php svg_icon( 'house' ); ?><?php $L->p( 'View Site' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ROOT; ?>"><?php svg_icon( 'house' ); ?><?php $L->p( 'View Site' ); ?></a>
+
+				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ROOT; ?>" target="_blank"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Site in New Tab' ); ?></span></a>
 			</li>
 		</ul>
 
