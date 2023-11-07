@@ -307,3 +307,13 @@ img.profilePicture {
 		margin-top: 2rem;
 	}
 }
+
+///
+/// System info/developers page.
+///
+.admin-page-developers {
+
+	h2 {
+		font-size: calc( var( --cfe-font-size ) * 1.25 );
+	}
+}

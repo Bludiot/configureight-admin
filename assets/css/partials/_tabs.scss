@@ -43,7 +43,7 @@
 			color: #888888;
 			background-color: #cccccc;
 			pointer-events: none;
-			cursor: default;
+			cursor: not-allowed;
 		}
 	}
 
@@ -54,6 +54,7 @@
 		border-bottom-color: #ffffff;
 		background-color: #ffffff;
 		color: #333333;
+		cursor: default;
 	}
 
 	.dropdown-menu {

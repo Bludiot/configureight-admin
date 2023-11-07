@@ -3,18 +3,18 @@
   --cfe-serif-stack: "Hoefler Text", "Baskerville Old Face", Garamond, Times, "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --cfe-spacing--horz: 2rem;
   --cfe-spacing--vert: 2rem;
-  --cfe-bg-color: $body_color;
+  --cfe-bg-color: #ffffff;
   --cfe-font-size: 1rem;
   --cfe-text-color: #333333;
   --cfe-link--text-color: #0044aa;
   --cfe-link--action--text-color: #005ce7;
   --cfe-link--transition: all 0.15s;
-  --cfe-heading-primary--font-size: 2rem;
+  --cfe-heading-primary--font-size: calc( var( --cfe-font-size ) * 2 );
   --cfe-heading-primary--font-weight: 700;
   --cfe-heading-primary--line-height: 1.3;
   --cfe-heading-primary--letter-spacing: -0.015em;
   --cfe-heading-primary--word-spacing: -0.0325em;
-  --cfe-heading-secondary--font-size: 1.375rem;
+  --cfe-heading-secondary--font-size: calc( var( --cfe-font-size ) * 1.375 );
   --cfe-heading-secondary--font-weight: 700;
   --cfe-heading-secondary--word-spacing: -0.0325em;
   --cfe-heading--link--text-decoration: none;
@@ -26,7 +26,7 @@
   --cfe-fieldset--padding: 1em 1.5em;
   --cfe-fieldset--border: solid 1px var( --cfe-form--border-color );
   --cfe-legend--padding: 0 0.5em;
-  --cfe-legend-font-size: 1em;
+  --cfe-legend-font-size: var( --cfe-font-size );
   --cfe-legend-font-weight: 700;
   --cfe-form-element--padding: 0.5em 1em;
   --cfe-form-element--border: var( --cfe-box--border-style ) var( --cfe-box--border-width ) #888888;
@@ -49,13 +49,13 @@
   --cfe-button--action--text-color: #ffffff;
   --cfe-button--svg-icon--width: 1em;
   --cfe-button--svg-icon--height: 1em;
-  --cfe-toolbar--padding: 0 1rem;
+  --cfe-toolbar--padding: 0 0.5rem;
   --cfe-toolbar--height: 2rem;
-  --cfe-toolbar--font-size: 0.875rem;
+  --cfe-toolbar--font-size: calc( var( --cfe-font-size ) * 0.875 );
   --cfe-toolbar--font-weight: 400;
   --cfe-toolbar--bg-color: #333333;
   --cfe-toolbar--text-color: #ffffff;
-  --cfe-toolbar--link--padding: 0;
+  --cfe-toolbar--link--padding: 0 0.5rem;
   --cfe-toolbar--link--bg-color: inherit;
   --cfe-toolbar--link--text-color: #ffffff;
   --cfe-toolbar--link--action--bg-color: #555555;
@@ -67,7 +67,7 @@
   --cfe-tabs--border-width: 1px;
   --cfe-tabs--border-color: #888888;
   --cfe-tabs--list--border-color: #888888;
-  --cfe-tabs--nav-link--bg-color: #f0f0f0;
+  --cfe-tabs--nav-link--bg-color: #eeeeee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -3041,6 +3041,10 @@ input[type=button].btn-block {
   margin-left: 0;
 }
 
+.form-field p + textarea {
+  margin-top: 1em;
+}
+
 .valid-feedback {
   display: none;
   width: 100%;
@@ -3660,7 +3664,7 @@ textarea.form-control.is-invalid {
 
 .custom-select:disabled {
   color: #6c757d;
-  background-color: #e9ecef;
+  background-color: #eeeeee;
 }
 
 .custom-select::-ms-expand {
@@ -4768,7 +4772,7 @@ select[disabled] {
   padding-left: 0.15em;
   margin-top: 0.125em;
   border-radius: 100%;
-  background-color: #c8c8c8;
+  background-color: var(--cfe-bg-color);
   color: #f8f9fa;
   float: right;
   margin-right: 0.3em;
@@ -4776,6 +4780,10 @@ select[disabled] {
 
 .select2-container--bootstrap4 .select2-selection__clear:hover {
   background-color: #afafaf;
+}
+
+select option {
+  background-color: var(--cfe-bg-color) !important;
 }
 
 .btn-group {
@@ -4907,6 +4915,7 @@ fieldset:disabled a.btn {
 }
 .admin-menu .admin-menu-list li a.icon-link span {
   margin: 0;
+  text-align: center;
 }
 .admin-menu .admin-menu-list li a:hover, .admin-menu .admin-menu-list li a:focus {
   background-color: #555555;
@@ -4914,6 +4923,7 @@ fieldset:disabled a.btn {
 }
 .admin-menu .admin-menu-list li a .svg-icon {
   width: 1em;
+  margin: 0 0.25em 0 0;
 }
 .admin-menu .admin-menu-list li.menu-heading {
   margin: 0.5rem 0 0 0;
@@ -4960,7 +4970,7 @@ fieldset:disabled a.btn {
 }
 .admin-toolbar ul.admin-toolbar-nav-list {
   display: flex;
-  gap: 1rem;
+  gap: 0;
   padding: 0;
 }
 .admin-toolbar ul li {
@@ -5272,6 +5282,10 @@ img.profilePicture {
   }
 }
 
+.admin-page-developers h2 {
+  font-size: calc(var(--cfe-font-size) * 1.25);
+}
+
 .nav-tabs {
   list-style: none;
   display: flex;
@@ -5309,7 +5323,7 @@ img.profilePicture {
   color: #888888;
   background-color: #cccccc;
   pointer-events: none;
-  cursor: default;
+  cursor: not-allowed;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.active .nav-link,
@@ -5318,6 +5332,7 @@ img.profilePicture {
   border-bottom-color: #ffffff;
   background-color: #ffffff;
   color: #333333;
+  cursor: default;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;

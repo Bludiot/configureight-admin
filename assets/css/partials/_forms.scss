@@ -207,6 +207,12 @@ input[type="button"].btn-block {
 	margin-left: 0;
 }
 
+.form-field {
+	p + textarea {
+		margin-top: 1em;
+	}
+}
+
 .valid-feedback {
 	display: none;
 	width: 100%;
@@ -891,7 +897,7 @@ border-bottom-right-radius: 0;
 
 .custom-select:disabled {
 	color: #6c757d;
-	background-color: #e9ecef;
+	background-color: #eeeeee;
 }
 
 .custom-select::-ms-expand {
@@ -1928,7 +1934,7 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection {}
     padding-left: 0.15em;
     margin-top: 0.125em;
     border-radius: 100%;
-    background-color: #c8c8c8;
+    background-color: var( --cfe-bg-color );
     color: #f8f9fa;
     float: right;
     margin-right: 0.3em;
@@ -1937,4 +1943,8 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection {}
     background-color: #afafaf;
 }
 
-
+select {
+	option {
+		background-color: var( --cfe-bg-color ) !important;
+	}
+}
