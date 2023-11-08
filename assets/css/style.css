@@ -5032,6 +5032,7 @@ fieldset:disabled a.btn {
 }
 .admin-toolbar ul ul li {
   margin: 0;
+  max-height: 100%;
 }
 .admin-toolbar ul ul li a {
   display: block;
