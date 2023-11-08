@@ -120,3 +120,36 @@ function svg_icon( $filename, $wrap = true, $class = '' ) {
 		echo get_svg_icon( $filename );
 	}
 }
+
+/**
+ * Plugin sidebars count
+ *
+ * This counts plugins with the `adminSidebar()`
+ * method implemented. Theme options plugin is
+ * excluded from the count because this theme
+ * adds a link for theme options if a theme plugin
+ * is available. So if the theme options plugin
+ * is the only plugin activated with a sidebar link
+ * then the plugin links section is not printed.
+ *
+ * @since  1.0.0
+ * @global array $plugins Array of active plugins.
+ * @return integer Returns a number of plugins.
+ */
+function plugin_sidebars_count() {
+
+	// Access global variables.
+	global $plugins;
+
+	if ( empty( $plugins['`adminSidebar()`'] ) ) {
+		return 0;
+	}
+
+	$count = 0;
+	foreach ( $plugins['adminSidebar'] as $link ) {
+		if ( 'theme' != $link->type() ) {
+			$count++;
+		}
+	}
+	return $count;
+}

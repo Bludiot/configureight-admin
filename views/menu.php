@@ -9,7 +9,8 @@
 
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
-	svg_icon
+	svg_icon,
+	plugin_sidebars_count
 };
 
 // Theme plugin data.
@@ -135,18 +136,22 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 		<?php
 		if (
 			checkRole( [ 'admin', 'editor' ], false ) &&
-			! empty( $plugins['adminSidebar'] )
-		) : ?>
+			plugin_sidebars_count() > 0
+		) :
+
+		?>
 		<li class="menu-heading">
 			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?></a></h3>
 		</li>
 		<ul>
 			<?php
 			foreach ( $plugins['adminSidebar'] as $link ) {
-				printf(
-					'<li>%s</li>',
-					$link->adminSidebar()
-				);
+				if ( 'theme' != $link->type() ) {
+					printf(
+						'<li>%s</li>',
+						$link->adminSidebar()
+					);
+				}
 			} ?>
 		</ul>
 		<?php endif; ?>
