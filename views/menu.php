@@ -125,12 +125,6 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>
 			</li>
 			<?php endif; ?>
-
-			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-			<li class="admin-menu-item">
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . '/'; ?>"><?php svg_icon( 'gears' ); ?><?php $L->p( 'Admin' ); ?></a>
-			</li>
-			<?php endif; ?>
 		</ul>
 
 		<?php
