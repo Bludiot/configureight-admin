@@ -9,7 +9,8 @@
 
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
-	svg_icon
+	svg_icon,
+	plugin_sidebars_count
 };
 
 // Theme plugin data.
@@ -156,17 +157,19 @@ if ( $user->profilePicture() ) {
 			<?php
 			if (
 				checkRole( [ 'admin', 'editor' ], false ) &&
-				! empty( $plugins['adminSidebar'] )
+				plugin_sidebars_count() > 0
 			) : ?>
 			<li class="has-submenu">
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'banner-v' ); ?><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 				<ul>
 					<?php
 					foreach ( $plugins['adminSidebar'] as $link ) {
-						printf(
-							'<li>%s</li>',
-							$link->adminSidebar()
-						);
+						if ( 'theme' != $link->type() ) {
+							printf(
+								'<li>%s</li>',
+								$link->adminSidebar()
+							);
+						}
 					} ?>
 				</ul>
 			</li>
