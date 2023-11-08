@@ -153,3 +153,47 @@ function plugin_sidebars_count() {
 	}
 	return $count;
 }
+
+/**
+ * Default theme
+ *
+ * Restore admin theme to default in the site database.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function restore_default_theme() {
+
+	// Access global variables.
+	global $site;
+
+	// Define database file.
+	$db_file = DB_SITE;
+
+	// Get current admin theme.
+	$current = '"adminTheme":"' . $site->adminTheme() . '"';
+	if ( DEBUG_MODE ) {
+		$current = '"adminTheme": "' . $site->adminTheme() . '"';
+	}
+
+	// Get database content.
+	$content = file_get_contents( $db_file );
+	$replace = '"adminTheme":"booty"';
+	if ( DEBUG_MODE ) {
+		$replace = '"adminTheme": "booty"';
+	}
+
+	// Change admin theme to default.
+	$content = str_replace( $current, $replace, $content );
+
+	// Write theme into the database file.
+	file_put_contents ( $db_file, $content );
+}
+
+/**
+ * Restore the default admin theme if the
+ * Configure 8 frontend theme is not active.
+ */
+if ( 'configureight' != $site->theme() ) {
+	restore_default_theme();
+}
