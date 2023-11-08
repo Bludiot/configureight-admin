@@ -141,7 +141,7 @@ function plugin_sidebars_count() {
 	// Access global variables.
 	global $plugins;
 
-	if ( empty( $plugins['`adminSidebar()`'] ) ) {
+	if ( empty( $plugins['adminSidebar'] ) ) {
 		return 0;
 	}
 
