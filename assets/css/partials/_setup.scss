@@ -315,9 +315,14 @@ code.select {
 	display: none;
 	z-index: 1000;
 	position: fixed;
-	bottom: 0;
-	right: 0;
+	top: auto;
+	left: auto;
+	bottom: 2rem;
+	right: 1rem;
 	margin: 0;
+	padding: 0.5rem;
+	background-color: #333333;
+	color: #ffffff;
 	border: 0;
 	text-align: center;
 }
@@ -325,8 +330,9 @@ code.select {
 .alert {
 	position: relative;
 	margin: 1rem 0;
-	padding: 0.75rem 1rem;
-	border: 1px solid transparent;
+	padding: 0;
+	border: none !important;
+	color: inherit;
 
 	.alert-heading {
 		color: inherit;
@@ -350,88 +356,88 @@ code.select {
 	}
 
 	&.alert-primary {
-		color: #004085;
-		background-color: #cce5ff;
-		border-color: #b8daff;
+		color: unset;
+		background-color: unset;
+		border-color: unset;
 
 		hr {
-			border-top-color: #9fcdff;
+			border-top-color: unset;
 		}
 
 		.alert-link {
-			color: #002752;
+			color: unset;
 		}
 	}
 
 	&.alert-secondary {
-		color: #383d41;
-		background-color: #e2e3e5;
-		border-color: #d6d8db;
+		color: unset;
+		background-color: unset;
+		border-color: unset;
 
 		hr {
-			border-top-color: #c8cbcf;
+			border-top-color: unset;
 		}
 
 		.alert-link {
-			color: #202326;
+			color: unset;
 		}
 	}
 
 	&.alert-success {
-		background-color: #4586d4;
-		border-color: #c3e6cb;
-		border-left: 6px solid #abd1ff;
-		color: #ffffff;
+		background-color: unset;
+		border-color: unset;
+		border-left: unset;
+		color: unset;
 
 		hr {
-			border-top-color: #b1dfbb;
+			border-top-color: unset;
 		}
 
 		.alert-link {
-			color: #0b2e13;
+			color: unset;
 		}
 	}
 
 	&.alert-info {
-		color: #0c5460;
-		background-color: #d1ecf1;
-		border-color: #bee5eb;
+		color: unset;
+		background-color: unset;
+		border-color: unset;
 
 		hr {
-			border-top-color: #abdde5;
+			border-top-color: unset;
 		}
 
 		.alert-link {
-			color: #062c33;
+			color: unset;
 		}
 	}
 
 	&.alert-warning {
-		color: #856404;
-		background-color: #fff3cd;
-		border-color: #ffeeba;
+		color: unset;
+		background-color: unset;
+		border-color: unset;
 
 		hr {
-			border-top-color: #ffe8a1;
+			border-top-color: unset;
 		}
 
 		.alert-link {
-			color: #533f03;
+			color: unset;
 		}
 	}
 
 	&.alert-danger {
-		background-color: #d44545;
-		border-color: #f5c6cb;
-		border-left: 6px solid #ff9c9c;
-		color: #ffffff;
+		background-color: unset;
+		border-color: unset;
+		border-left: unset;
+		color: unset;
 
 		hr {
-			border-top-color: #f1b0b7;
+			border-top-color: unset;
 		}
 
 		.alert-link {
-			color: #491217;
+			color: unset;
 		}
 	}
 }
