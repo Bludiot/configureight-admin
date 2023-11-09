@@ -12,6 +12,9 @@ use function CFE_Admin_Theme\{
 	body_classes
 };
 
+// Get theme plugin object or false.
+$theme_plugin = getPlugin( $site->theme() );
+
 ?>
 <!DOCTYPE html>
 <html dir="auto" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
@@ -20,7 +23,16 @@ use function CFE_Admin_Theme\{
 
 <body class="<?php body_classes(); ?>">
 
-<?php include( 'views/toolbar.php' ); ?>
+<?php
+// Get user toolbar if option is set.
+if ( $theme_plugin &&
+	( 'enabled' == $theme_plugin->show_user_toolbar() ||
+	'backend' == $theme_plugin->show_user_toolbar() )
+) {
+	include( 'views/toolbar.php' );
+}
+
+?>
 
 <?php Theme :: plugins( 'adminBodyBegin' ); ?>
 
