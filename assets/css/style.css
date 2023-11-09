@@ -5316,6 +5316,7 @@ img.profilePicture {
   -webkit-text-decoration: var(--cfe-tabs--nav-link--text-decoration, none);
           text-decoration: var(--cfe-tabs--nav-link--text-decoration, none);
   text-decoration: none;
+  text-transform: capitalize;
   border: var(--cfe-tabs--border-style) var(--cfe-tabs--border-width) var(--cfe-tabs--border-color);
   border-bottom-color: #888888;
   border-top-left-radius: 0.25rem;
