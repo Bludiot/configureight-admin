@@ -61,7 +61,19 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 			DOMAIN_CORE_JS, null
 		);
 
+		// Hook for plugins.
 		Theme :: plugins( 'adminHead' );
 
-		?>
+		// Admin CSS from Configure 8 theme options plugin.
+		$theme_plugin = getPlugin( $site->theme() );
+		if ( $theme_plugin && 'configureight' === $theme_plugin->className() ) :
+
+			if ( ! empty( $theme_plugin->admin_css() ) ) {
+				$style  = '<style>';
+				$style .= strip_tags( $theme_plugin->admin_css() );
+				$style .= '</style>';
+
+				echo $style;
+			}
+		endif; ?>
 </head>
