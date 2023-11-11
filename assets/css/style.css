@@ -41,6 +41,7 @@
   --cfe-select--margin: 1em 0 0;
   --cfe-select--padding: 0.5em 1em;
   --cfe-button--padding: 0.75em 1em;
+  --cfe-button--border-radius: 0px;
   --cfe-button--font-weight: 700;
   --cfe-button--bg-color: var( --cfe-bg-color, inherit );
   --cfe-button--action--bg-color: #333333;
@@ -49,6 +50,7 @@
   --cfe-button--action--text-color: #ffffff;
   --cfe-button--svg-icon--width: 1em;
   --cfe-button--svg-icon--height: 1em;
+  --cfe-color-picker--button--font-size: 0.75rem;
   --cfe-toolbar--padding: 0 0.5rem;
   --cfe-toolbar--height: 2rem;
   --cfe-toolbar--font-size: calc( var( --cfe-font-size ) * 0.875 );
@@ -2875,6 +2877,10 @@ code.select {
   transition: all 0.25s ease-in-out;
 }
 
+form .col-sm-1, form .col-sm-2, form .col-sm-3, form .col-sm-4, form .col-sm-5, form .col-sm-6, form .col-sm-7, form .col-sm-8, form .col-sm-9, form .col-sm-10, form .col-sm-11, form .col-sm-12 {
+  max-width: 640px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .form-control {
     transition: none;
@@ -3927,7 +3933,7 @@ select[disabled] {
   gap: 1em;
   width: 100%;
   margin: 0;
-  padding: 0 15px;
+  padding: 0;
 }
 .form-range-controls .form-control-range {
   max-width: 320px;

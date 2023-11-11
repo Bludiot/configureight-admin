@@ -53,6 +53,7 @@
 	--cfe-select--padding: 0.5em 1em;
 
 	--cfe-button--padding: 0.75em 1em;
+	--cfe-button--border-radius: 0px;
 	--cfe-button--font-weight: 700;
 	--cfe-button--bg-color: var( --cfe-bg-color, inherit );
 	--cfe-button--action--bg-color: #{$dark_gray};
@@ -61,6 +62,8 @@
 	--cfe-button--action--text-color: #{$white};
 	--cfe-button--svg-icon--width: 1em;
 	--cfe-button--svg-icon--height: 1em;
+
+	--cfe-color-picker--button--font-size: 0.75rem;
 
 	// User toolbar.
 	--cfe-toolbar--padding: 0 0.5rem;
