@@ -46,7 +46,7 @@ if ( plugin() && THEME_PLUGIN == $theme_options['className'] ) {
 			</li>
 
 			<li class="admin-menu-item">
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><?php svg_icon( 'user' ); ?><?php $L->p( 'Your Profile' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><?php svg_icon( 'id-tag' ); ?><?php $L->p( 'Your Profile' ); ?></a>
 			</li>
 
 			<li class="admin-menu-item has-icon-link">
@@ -98,7 +98,7 @@ if ( plugin() && THEME_PLUGIN == $theme_options['className'] ) {
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'users'; ?>"><?php svg_icon( 'users' ); ?><?php $L->p( 'Users' ); ?></a>
+				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'users'; ?>"><?php svg_icon( 'user' ); ?><?php $L->p( 'Users' ); ?></a>
 				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-user'; ?>"><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add User' ); ?></span></a>
 			</li>
 			<?php endif; ?>
