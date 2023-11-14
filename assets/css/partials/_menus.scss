@@ -9,6 +9,12 @@
 	padding: 0 0 1rem 0;
 	background-color: #333333;
 
+	@media ( max-width: $break-max-lg ) {
+		z-index: 10;
+		overflow: visible;
+		width: 3rem;
+	}
+
 	.admin-menu-list {
 		margin: 0;
 		padding: 0;
@@ -33,9 +39,25 @@
 				padding: 0.5em 1em;
 				color: var( --cfe-admin--menu--link--text-color, #ffffff );
 				text-decoration: none;
+				transition: background-color .15s, color .15s;
+
+				@media ( max-width: $break-max-lg ) {
+					text-indent: -9999em;
+
+					&:hover {
+						text-indent: 0px;
+						width: auto;
+						max-width: unset;
+						min-width: max-content;
+					}
+				}
 
 				&.icon-link {
 					width: auto;
+
+					@media ( max-width: $break-max-lg ) {
+						display: none;
+					}
 
 					span {
 						margin: 0;
@@ -52,6 +74,11 @@
 				.svg-icon {
 					width: 1em;
 					margin: 0 0.25em 0 0;
+
+					@media ( max-width: $break-max-lg ) {
+						margin: 0;
+						text-indent: 0px;
+					}
 				}
 			}
 
@@ -59,6 +86,10 @@
 				margin: 0.5rem 0 0 0;
 				font-size: 1.125rem;
 				font-weight: 700;
+
+				@media ( max-width: $break-max-lg ) {
+					display: none;
+				}
 
 				&:first-of-type {
 					margin: 0;

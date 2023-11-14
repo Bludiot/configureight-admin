@@ -4899,6 +4899,13 @@ fieldset:disabled a.btn {
   padding: 0 0 1rem 0;
   background-color: #333333;
 }
+@media (max-width: 991.98px) {
+  .admin-menu {
+    z-index: 10;
+    overflow: visible;
+    width: 3rem;
+  }
+}
 .admin-menu .admin-menu-list {
   margin: 0;
   padding: 0;
@@ -4922,9 +4929,27 @@ fieldset:disabled a.btn {
   padding: 0.5em 1em;
   color: var(--cfe-admin--menu--link--text-color, #ffffff);
   text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+@media (max-width: 991.98px) {
+  .admin-menu .admin-menu-list li a {
+    text-indent: -9999em;
+  }
+  .admin-menu .admin-menu-list li a:hover {
+    text-indent: 0px;
+    width: auto;
+    max-width: unset;
+    min-width: -moz-max-content;
+    min-width: max-content;
+  }
 }
 .admin-menu .admin-menu-list li a.icon-link {
   width: auto;
+}
+@media (max-width: 991.98px) {
+  .admin-menu .admin-menu-list li a.icon-link {
+    display: none;
+  }
 }
 .admin-menu .admin-menu-list li a.icon-link span {
   margin: 0;
@@ -4938,10 +4963,21 @@ fieldset:disabled a.btn {
   width: 1em;
   margin: 0 0.25em 0 0;
 }
+@media (max-width: 991.98px) {
+  .admin-menu .admin-menu-list li a .svg-icon {
+    margin: 0;
+    text-indent: 0px;
+  }
+}
 .admin-menu .admin-menu-list li.menu-heading {
   margin: 0.5rem 0 0 0;
   font-size: 1.125rem;
   font-weight: 700;
+}
+@media (max-width: 991.98px) {
+  .admin-menu .admin-menu-list li.menu-heading {
+    display: none;
+  }
 }
 .admin-menu .admin-menu-list li.menu-heading:first-of-type {
   margin: 0;
