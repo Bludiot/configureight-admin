@@ -33,7 +33,7 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 	<ul class="admin-menu-list nav flex-column">
 
 		<li class="admin-menu-item menu-heading">
-			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Site Admin' ); ?></a></h3>
+			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Admin' ); ?></a></h3>
 		</li>
 
 		<ul>
