@@ -239,3 +239,39 @@ function restore_default_theme() {
 if ( 'configureight' != $site->theme() ) {
 	restore_default_theme();
 }
+
+/**
+ * Menu link
+ *
+ * Prints an `<a>` element for use in the
+ * admin menu. Adds a current page class.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function menu_link( $slug = '', $classes = '' ) {
+
+	// Access global variables.
+	global $url;
+
+	$tag = '<a>';
+	if ( ! empty( $slug ) ) {
+
+		$class = 'nav-link';
+
+		if ( ! empty( $classes ) ) {
+			$class .= ' ' . $classes;
+		}
+
+		if ( $slug === $url->slug() ) {
+			$class .= ' current-link';
+		}
+
+		$tag = sprintf(
+			'<a class="%s" href="%s">',
+			$class,
+			HTML_PATH_ADMIN_ROOT . $slug
+		);
+	}
+	echo $tag;
+}

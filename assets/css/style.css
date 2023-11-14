@@ -4962,7 +4962,7 @@ fieldset:disabled a.btn {
   margin: 0;
   text-align: center;
 }
-.admin-menu .admin-menu-list li a:hover, .admin-menu .admin-menu-list li a:focus {
+.admin-menu .admin-menu-list li a.current-link, .admin-menu .admin-menu-list li a:hover, .admin-menu .admin-menu-list li a:focus {
   background-color: #555555;
   color: var(--cfe-admin--menu--link--action--text-color, #ffffff);
 }
