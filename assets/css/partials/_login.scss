@@ -1,0 +1,31 @@
+///
+/// Login styles
+///
+
+html {
+	margin: 0;
+}
+
+.bl-admin-login {
+	min-height: 100vh;
+	padding: var( --cfe-spacing--vert ) var( --cfe-spacing--horz );
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h1 {
+		margin: 0;
+		text-align: center;
+		color: var( --cfe-heading-primary--text-color, var( --cfe-text-color ) ) !important;
+	}
+
+	form + p {
+		display: none;
+	}
+
+	.site-logo {
+		display: flex;
+		justify-content: center;
+	}
+}
