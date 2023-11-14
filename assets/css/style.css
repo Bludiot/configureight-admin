@@ -57,7 +57,7 @@
   --cfe-toolbar--font-weight: 400;
   --cfe-toolbar--bg-color: #333333;
   --cfe-toolbar--text-color: #ffffff;
-  --cfe-toolbar--link--padding: 0 0.5rem;
+  --cfe-toolbar--link--padding: 0 0.75rem;
   --cfe-toolbar--link--bg-color: inherit;
   --cfe-toolbar--link--text-color: #ffffff;
   --cfe-toolbar--link--action--bg-color: #555555;
@@ -4990,10 +4990,22 @@ fieldset:disabled a.btn {
 .admin-toolbar ul li {
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: var(--cfe-toolbar--link--padding);
   max-height: 2rem;
   font-size: var(--cfe-toolbar--font-size);
   font-weight: var(--cfe-toolbar--font-weight);
+  background-color: var(--cfe-toolbar--link--bg-color);
+  color: var(--cfe-toolbar--link--text-color);
+}
+.admin-toolbar ul li.has-submenu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0 0.5em;
+  cursor: pointer;
+}
+.admin-toolbar ul li:hover, .admin-toolbar ul li:focus {
+  background-color: var(--cfe-toolbar--link--action--bg-color);
+  color: var(--cfe-toolbar--link--action--text-color);
 }
 .admin-toolbar ul li:hover ul {
   left: 0;
@@ -5002,21 +5014,22 @@ fieldset:disabled a.btn {
   left: auto;
   right: 0;
 }
+.admin-toolbar ul li span {
+  display: inline-block;
+}
+.admin-toolbar ul li span.svg-icon {
+  cursor: pointer;
+}
 .admin-toolbar ul li a {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  padding: var(--cfe-toolbar--link--padding);
-  background-color: var(--cfe-toolbar--link--bg-color);
-  color: var(--cfe-toolbar--link--text-color);
   text-decoration: none;
+  color: var(--cfe-toolbar--link--text-color);
 }
 .admin-toolbar ul li a:hover {
   background-color: var(--cfe-toolbar--link--action--bg-color);
   color: var(--cfe-toolbar--link--action--text-color);
-}
-.admin-toolbar ul li a span {
-  display: inline-block;
 }
 .admin-toolbar ul li a.admin-toolbar-logo-link {
   height: var(--cfe-toolbar--height);
@@ -5039,12 +5052,15 @@ fieldset:disabled a.btn {
 .admin-toolbar ul ul li {
   margin: 0;
   max-height: 100%;
+  padding: 0;
+  background-color: transparent;
+  color: transparent;
 }
 .admin-toolbar ul ul li a {
   display: block;
   padding: 0 1rem;
 }
-.admin-toolbar ul ul li a:hover {
+.admin-toolbar ul ul li a:hover, .admin-toolbar ul ul li a:focus {
   background-color: #888888;
 }
 .admin-toolbar ul img {
