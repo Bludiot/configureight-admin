@@ -26,7 +26,7 @@ $theme_plugin = getPlugin( $site->theme() );
 <?php Theme :: plugins( 'adminBodyBegin' );
 
 // Get user toolbar if option is set.
-if ( $theme_plugin &&
+if ( $theme_plugin && 'configureight' == $theme_plugin &&
 	( 'enabled' == $theme_plugin->show_user_toolbar() ||
 	'backend' == $theme_plugin->show_user_toolbar() )
 ) {
