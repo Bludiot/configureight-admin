@@ -12,7 +12,7 @@
 	@media ( max-width: $break-max-lg ) {
 		z-index: 10;
 		overflow: visible;
-		width: 3rem;
+		width: 3.25rem;
 	}
 
 	.admin-menu-list {
@@ -21,6 +21,10 @@
 
 		li {
 			margin: 0;
+
+			@media ( max-width: $break-max-lg ) {
+				margin: 0.325rem 0;
+			}
 
 			&.has-icon-link {
 				display: flex;
@@ -43,6 +47,8 @@
 
 				@media ( max-width: $break-max-lg ) {
 					text-indent: -9999em;
+					padding: 1em;
+					gap: 1em;
 
 					&:hover {
 						text-indent: 0px;
@@ -72,12 +78,16 @@
 				}
 
 				.svg-icon {
-					width: 1em;
+					width: 1.25rem;
 					margin: 0 0.25em 0 0;
 
 					@media ( max-width: $break-max-lg ) {
 						margin: 0;
 						text-indent: 0px;
+
+						svg {
+							height: 1.25rem;
+						}
 					}
 				}
 			}

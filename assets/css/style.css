@@ -4903,7 +4903,7 @@ fieldset:disabled a.btn {
   .admin-menu {
     z-index: 10;
     overflow: visible;
-    width: 3rem;
+    width: 3.25rem;
   }
 }
 .admin-menu .admin-menu-list {
@@ -4912,6 +4912,11 @@ fieldset:disabled a.btn {
 }
 .admin-menu .admin-menu-list li {
   margin: 0;
+}
+@media (max-width: 991.98px) {
+  .admin-menu .admin-menu-list li {
+    margin: 0.325rem 0;
+  }
 }
 .admin-menu .admin-menu-list li.has-icon-link {
   display: flex;
@@ -4934,6 +4939,8 @@ fieldset:disabled a.btn {
 @media (max-width: 991.98px) {
   .admin-menu .admin-menu-list li a {
     text-indent: -9999em;
+    padding: 1em;
+    gap: 1em;
   }
   .admin-menu .admin-menu-list li a:hover {
     text-indent: 0px;
@@ -4960,13 +4967,16 @@ fieldset:disabled a.btn {
   color: var(--cfe-admin--menu--link--action--text-color, #ffffff);
 }
 .admin-menu .admin-menu-list li a .svg-icon {
-  width: 1em;
+  width: 1.25rem;
   margin: 0 0.25em 0 0;
 }
 @media (max-width: 991.98px) {
   .admin-menu .admin-menu-list li a .svg-icon {
     margin: 0;
     text-indent: 0px;
+  }
+  .admin-menu .admin-menu-list li a .svg-icon svg {
+    height: 1.25rem;
   }
 }
 .admin-menu .admin-menu-list li.menu-heading {
