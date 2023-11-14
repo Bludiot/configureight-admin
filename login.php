@@ -7,6 +7,11 @@
  * @since      1.0.0
  */
 
+// Access namespaced functions.
+use function CFE_Admin_Theme\{
+	svg_icon
+};
+
 // Maybe get minified assets.
 $suffix = '.min';
 if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
@@ -43,7 +48,6 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 
 	<?php Theme :: plugins( 'loginHead' ); ?>
 </head>
-
 <body class="bl-admin bl-admin-login">
 
 	<?php Theme :: plugins( 'loginBodyBegin' ); ?>
@@ -71,10 +75,9 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 			}
 			?>
 			</div>
+			<p class="login-site-link"><a href="<?php echo HTML_PATH_ROOT; ?>"><?php $L->p( 'Go to Site' ); ?><?php svg_icon( 'arrow-right' ); ?></a></p>
 		</div>
 	</div>
-
 	<?php Theme :: plugins( 'loginBodyEnd' ); ?>
-
 </body>
 </html>

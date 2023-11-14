@@ -2792,11 +2792,12 @@ fieldset:disabled a.btn {
   }
 }
 html {
+  height: 100%;
   margin: 0;
 }
 
 .bl-admin-login {
-  min-height: 100vh;
+  height: 100%;
   padding: var(--cfe-spacing--vert) var(--cfe-spacing--horz);
   display: flex;
   flex-direction: column;
@@ -2814,4 +2815,14 @@ html {
 .bl-admin-login .site-logo {
   display: flex;
   justify-content: center;
+}
+.bl-admin-login .form-check label {
+  text-transform: capitalize;
+}
+.bl-admin-login .login-site-link {
+  text-align: right;
+  transform: translateY(-3.25rem);
+}
+.bl-admin-login .login-site-link .svg-icon {
+  margin-left: 0.5em;
 }

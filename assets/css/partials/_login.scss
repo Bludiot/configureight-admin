@@ -3,11 +3,12 @@
 ///
 
 html {
+	height: 100%;
 	margin: 0;
 }
 
 .bl-admin-login {
-	min-height: 100vh;
+	height: 100%;
 	padding: var( --cfe-spacing--vert ) var( --cfe-spacing--horz );
 	display: flex;
 	flex-direction: column;
@@ -27,5 +28,20 @@ html {
 	.site-logo {
 		display: flex;
 		justify-content: center;
+	}
+
+	.form-check {
+		label {
+			text-transform: capitalize;
+		}
+	}
+
+	.login-site-link {
+		text-align: right;
+		transform: translateY( -3.25rem );
+
+		.svg-icon {
+			margin-left: 0.5em;
+		}
 	}
 }
