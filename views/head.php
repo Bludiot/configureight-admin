@@ -12,6 +12,7 @@ $suffix = '.min';
 if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 	$suffix = '';
 }
+
 ?>
 <head data-admin-head>
 	<title><?php echo $layout['title']; ?></title>
@@ -36,9 +37,7 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 		echo Theme :: cssLineAwesome();
 		echo Theme :: css(
 			[
-				'jquery.datetimepicker.min.css',
-				// 'select2.min.css',
-				// 'select2-bootstrap4.min.css'
+				'jquery.datetimepicker.min.css'
 			],
 			DOMAIN_CORE_CSS
 		);
