@@ -91,6 +91,15 @@ function body_classes() {
 	if ( str_contains( $url->slug(), '/' ) ) {
 		$classes[] = 'admin-' . str_replace( '/', '-', $url->slug() );
 	}
+
+	// User toolbar.
+	if ( plugin() && (
+			'enabled' == plugin()->show_user_toolbar() ||
+			'backend' == plugin()->show_user_toolbar()
+		)
+	) {
+		$classes[] = 'toolbar-active';
+	}
 	echo implode( ' ', $classes );
 }
 

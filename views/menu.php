@@ -9,20 +9,20 @@
 
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
+	plugin,
 	svg_icon,
 	plugin_sidebars_count
 };
 
 // Theme plugin data.
-$theme_plugin  = getPlugin( $site->theme() );
 $theme_options = '';
-if ( $theme_plugin ) {
-	$theme_options = get_object_vars( $theme_plugin );
+if ( plugin() ) {
+	$theme_options = get_object_vars( plugin() );
 }
 
 // Posts label.
 $loop = $L->get( 'Blog' );
-if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
+if ( plugin() && THEME_PLUGIN == $theme_options['className'] ) {
 	if ( 'news' == $theme_options['db']['loop_style'] ) {
 		$loop = $L->get( 'News' );
 	}
@@ -119,7 +119,7 @@ if ( $theme_plugin && THEME_PLUGIN == $theme_options['className'] ) {
 			<?php
 			if (
 				checkRole( [ 'admin' ], false ) &&
-				$theme_plugin
+				plugin()
 			) : ?>
 			<li class="admin-menu-item">
 				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>

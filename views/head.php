@@ -7,6 +7,12 @@
  * @since      1.0.0
  */
 
+// Access namespaced functions.
+use function CFE_Admin_Theme\{
+	plugin,
+	favicon_tag
+};
+
 // Maybe get minified assets.
 $suffix = '.min';
 if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
@@ -31,7 +37,7 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 	// Change `<html>` 'no-js' class to 'js' if JavaScript is enabled.
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n"; ?>
 
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo HTML_PATH_CORE_IMG . 'favicon.png?version=' . BLUDIT_VERSION; ?>">
+	<?php echo favicon_tag(); ?>
 
 	<?php
 		echo Theme :: cssLineAwesome();
@@ -64,12 +70,11 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 		Theme :: plugins( 'adminHead' );
 
 		// Admin CSS from Configure 8 theme options plugin.
-		$theme_plugin = getPlugin( $site->theme() );
-		if ( $theme_plugin && 'configureight' === $theme_plugin->className() ) :
+		if ( plugin() && 'configureight' === plugin()->className() ) :
 
-			if ( ! empty( $theme_plugin->admin_css() ) ) {
+			if ( ! empty( plugin()->admin_css() ) ) {
 				$style  = '<style>';
-				$style .= strip_tags( $theme_plugin->admin_css() );
+				$style .= strip_tags( plugin()->admin_css() );
 				$style .= '</style>';
 
 				echo $style;

@@ -9,15 +9,15 @@
 
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
+	plugin,
 	svg_icon,
 	plugin_sidebars_count
 };
 
 // Theme plugin data.
-$theme_plugin  = getPlugin( $site->theme() );
 $theme_options = '';
-if ( $theme_plugin ) {
-	$theme_options = get_object_vars( $theme_plugin );
+if ( plugin() ) {
+	$theme_options = get_object_vars( plugin() );
 }
 
 // Get a username or fallback.
@@ -142,7 +142,7 @@ if ( $user->profilePicture() ) {
 					<?php
 					if (
 						checkRole( [ 'admin' ], false ) &&
-						$theme_plugin
+						plugin()
 					) : ?>
 					<li>
 						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><?php $L->p( 'Options' ); ?></a>

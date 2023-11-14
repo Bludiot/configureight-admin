@@ -9,11 +9,9 @@
 
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
+	plugin,
 	body_classes
 };
-
-// Get theme plugin object or false.
-$theme_plugin = getPlugin( $site->theme() );
 
 ?>
 <!DOCTYPE html>
@@ -26,9 +24,9 @@ $theme_plugin = getPlugin( $site->theme() );
 <?php Theme :: plugins( 'adminBodyBegin' );
 
 // Get user toolbar if option is set.
-if ( $theme_plugin && 'configureight' == $theme_plugin &&
-	( 'enabled' == $theme_plugin->show_user_toolbar() ||
-	'backend' == $theme_plugin->show_user_toolbar() )
+if ( plugin() && 'configureight' == plugin()->className() &&
+	( 'enabled' == plugin()->show_user_toolbar() ||
+	'backend' == plugin()->show_user_toolbar() )
 ) {
 	include( 'views/toolbar.php' );
 }
