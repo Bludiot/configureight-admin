@@ -33,10 +33,43 @@ define( 'THEME_PLUGIN', 'configureight' );
  */
 function plugin() {
 
-	if ( $themePlugin ) {
-		return $themePlugin;
+	// Access global variables.
+	global $site;
+
+	$plugin = false;
+	if ( getPlugin( $site->theme() ) ) {
+		$plugin = getPlugin( $site->theme() );
 	}
-	return false;
+	return $plugin;
+}
+
+/**
+ * Favicon tag
+ *
+ * Returns the site icon meta tag.
+ *
+ * @since  1.0.0
+ * @return mixed Returns the icon tag or null.
+ */
+function favicon_tag() {
+
+	// If plugin has icon URL.
+	if ( plugin() && plugin()->favicon_src() ) {
+
+		// Get icon src.
+		$favicon = plugin()->favicon_src();
+
+		// Get the image file extension.
+		$info = pathinfo( $favicon );
+		$type = $info['extension'];
+
+		return sprintf(
+			'<link rel="icon" href="%s" type="image/%s">',
+			$favicon,
+			$type
+		);
+	}
+	return null;
 }
 
 /**
