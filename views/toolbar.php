@@ -52,22 +52,25 @@ if ( $user->profilePicture() ) {
 	<nav class="admin-toolbar-nav toolbar-user-action">
 		<ul class="admin-toolbar-nav-list">
 			<?php if ( $site->logo() ) : ?>
-			<li>
+			<li class="top-level-item">
 				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>" title="<?php $L->p( 'View Site' ); ?>">
 					<img class="admin-toolbar-logo" src="<?php echo $site->logo(); ?>" alt="<?php $L->p( 'View Site' ); ?>" />
 				</a>
 			</li>
 			<?php else : ?>
-			<li>
+			<li class="top-level-item">
 				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><?php $L->p( 'View Site' ); ?></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-			<li class="has-submenu">
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); $L->p( 'Dashboard' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+			<li class="top-level-item has-submenu">
+				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); $L->p( 'Admin' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
+					<li>
+						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"></a>
+					</li>
 					<li>
 						<a href="<?php echo DOMAIN_ADMIN . 'about';?>"><?php $L->p( 'System' ); ?></a>
 					</li>
@@ -83,7 +86,7 @@ if ( $user->profilePicture() ) {
 			</li>
 			<?php endif; ?>
 
-			<li class="has-submenu">
+			<li class="top-level-item has-submenu">
 				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php svg_icon( 'file' ); ?><?php $L->p( 'Content' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
@@ -108,7 +111,7 @@ if ( $user->profilePicture() ) {
 			</li>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-			<li class="has-submenu">
+			<li class="top-level-item has-submenu">
 				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><?php $L->p( 'Manage' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
@@ -159,7 +162,7 @@ if ( $user->profilePicture() ) {
 				checkRole( [ 'admin', 'editor' ], false ) &&
 				plugin_sidebars_count() > 0
 			) : ?>
-			<li class="has-submenu">
+			<li class="top-level-item has-submenu">
 				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'banner-v' ); ?><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 				<ul>
 					<?php
@@ -178,7 +181,7 @@ if ( $user->profilePicture() ) {
 	</nav>
 	<nav class="admin-toolbar-nav toolbar-user-info">
 		<ul class="admin-toolbar-nav-list">
-			<li class="has-submenu">
+			<li class="top-level-item has-submenu">
 				<a id="profile-link" href="<?php echo $profile; ?>">
 					<img class="avatar user-avatar user toolbar-avatar admin-toolbar-avatar" src="<?php echo $avatar; ?>" width="24"> <span><?php echo $name; ?></span>
 				</a>
