@@ -9,6 +9,8 @@
 
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
+	favicon_tag,
+	plugin,
 	svg_icon
 };
 
@@ -23,7 +25,7 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 <html dir="auto" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>">
 
 <head>
-	<title>Bludit</title>
+	<title><?php $L->p( 'User Login' ); ?> | <?php echo $site->title(); ?></title>
 
 	<meta charset="<?php echo CHARSET; ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -32,7 +34,7 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 	<?php // Change `<html>` 'no-js' class to 'js' if JavaScript is enabled.
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n"; ?>
 
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo HTML_PATH_CORE_IMG . 'favicon.png?version=' . BLUDIT_VERSION; ?>">
+	<?php echo favicon_tag(); ?>
 
 	<?php
 	echo Theme :: css(
@@ -60,7 +62,7 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 		<div class="site-logo" data-site-logo>
 			<figure>
 				<a href="<?php echo $site->url(); ?>">
-					<img src="<?php echo $site->logo(); ?>" alt="<?php echo $site->title(); ?>" width="80">
+					<img src="<?php echo $site->logo(); ?>" width="80">
 				</a>
 				<figcaption class="screen-reader-text"><?php echo $site->title(); ?></figcaption>
 			</figure>
