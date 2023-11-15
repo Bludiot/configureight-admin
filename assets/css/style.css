@@ -3969,7 +3969,6 @@ select[disabled] {
 
 .plugin-form label {
   display: block;
-  margin-top: 1rem;
 }
 .plugin-form input[type=text],
 .plugin-form textarea,
