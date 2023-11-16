@@ -2817,8 +2817,9 @@ html {
   text-transform: capitalize;
 }
 .bl-admin-login .login-site-link {
+  margin: 0;
   text-align: right;
-  transform: translateY(-3.25rem);
+  transform: translateY(-4.25rem);
 }
 .bl-admin-login .login-site-link .svg-icon {
   margin-left: 0.5em;
