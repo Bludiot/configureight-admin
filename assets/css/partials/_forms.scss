@@ -152,7 +152,11 @@ input[type="button"].btn-block {
 }
 
 .form-group {
-	margin: 1rem 0;
+	margin: 2rem 0;
+
+	&.row {
+		gap: 0 2rem;
+	}
 }
 
 .form-text {
@@ -1175,14 +1179,10 @@ select[disabled] {
 	display: flex;
 	align-items: center;
 	flex-wrap: nowrap;
-	gap: 1em;
+	gap: 2em;
 	width: 100%;
 	margin: 0;
 	padding: 0;
-
-	.form-control-range {
-		max-width: 320px;
-	}
 }
 
 .form-range-small {
@@ -1270,7 +1270,7 @@ select[disabled] {
 
 		.select2-selection__rendered {
 			display: block;
-			padding: var( --cfe-form-element--padding );
+			// padding: var( --cfe-form-element--padding );
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
