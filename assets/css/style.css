@@ -4642,6 +4642,10 @@ select[disabled] {
   position: absolute;
 }
 
+.select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
+  padding: var(--cfe-form-element--padding);
+}
+
 .select2-search--dropdown .select2-search__field {
   border: var(--cfe-form-element--border);
 }
@@ -4795,6 +4799,12 @@ select[disabled] {
 
 select option {
   background-color: var(--cfe-bg-color) !important;
+}
+
+.field-has-buttons {
+  display: flex;
+  gap: 0 0.25rem;
+  flex-wrap: nowrap;
 }
 
 .btn-group {
