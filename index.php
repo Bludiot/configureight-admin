@@ -13,6 +13,15 @@ use function CFE_Admin_Theme\{
 	body_classes
 };
 
+// User toolbar option.
+$show_toolbar = true;
+if (
+	'frontend' == plugin()->show_user_toolbar() ||
+	'disabled' == plugin()->show_user_toolbar()
+) {
+	$show_toolbar = false;
+}
+
 ?>
 <!DOCTYPE html>
 <html dir="auto" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
@@ -24,10 +33,7 @@ use function CFE_Admin_Theme\{
 <?php Theme :: plugins( 'adminBodyBegin' );
 
 // Get user toolbar if option is set.
-if ( plugin() && 'configureight' == plugin()->className() &&
-	( 'enabled' == plugin()->show_user_toolbar() ||
-	'backend' == plugin()->show_user_toolbar() )
-) {
+if ( plugin() && 'configureight' == plugin()->className() && $show_toolbar ) {
 	include( 'views/toolbar.php' );
 }
 
@@ -52,9 +58,14 @@ include( 'views/alert.php' ); ?>
 
 <div class="admin-wrapper">
 
+	<?php if (
+		plugin() && 'configureight' == plugin()->className()
+		&& plugin()->admin_menu()
+	) : ?>
 	<div id="admin-menu" class="admin-menu">
 		<?php include( 'views/menu.php' ); ?>
 	</div>
+	<?php endif; ?>
 
 	<div id="admin-content" class="admin-content">
 	<?php
