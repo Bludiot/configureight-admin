@@ -69,7 +69,7 @@ if ( $user->profilePicture() ) {
 
 				<ul>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"></a>
+						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
 					</li>
 					<li>
 						<a href="<?php echo DOMAIN_ADMIN . 'about';?>"><?php $L->p( 'System' ); ?></a>
@@ -91,15 +91,11 @@ if ( $user->profilePicture() ) {
 
 				<ul>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php $L->p( 'Blog' ); ?></a>
+						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
 					</li>
 
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'content#static'; ?>"><?php $L->p( 'Static' ); ?></a>
-					</li>
-
-					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><?php echo ucwords( $L->get( 'New Content' ) ); ?></a>
+						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php $L->p( 'Pages' ); ?></a>
 					</li>
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
@@ -146,12 +142,6 @@ if ( $user->profilePicture() ) {
 					) : ?>
 					<li>
 						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><?php $L->p( 'Options' ); ?></a>
-					</li>
-					<?php endif; ?>
-
-					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . '/'; ?>"><?php $L->p( 'Admin' ); ?></a>
 					</li>
 					<?php endif; ?>
 				</ul>
