@@ -72,6 +72,17 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 		// Admin CSS from Configure 8 theme options plugin.
 		if ( plugin() && 'configureight' === plugin()->className() ) :
 
+			if ( ! empty( plugin()->modal_bg_color() ) ) {
+				$style  = '<style>';
+				$style .= sprintf(
+					':root { --cfe-modal-overlay--bg-color: %s; }',
+					plugin()->modal_bg_color()
+				);
+				$style .= '</style>';
+
+				echo $style;
+			}
+
 			if ( ! empty( plugin()->admin_css() ) ) {
 				$style  = '<style>';
 				$style .= strip_tags( plugin()->admin_css() );

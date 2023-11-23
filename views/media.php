@@ -28,10 +28,7 @@ $numberOfPages = count($listOfFilesByPage);
 <div class="row">
 	<div class="col p-3">
 
-	<!--
-		UPLOAD INPUT
-	-->
-		<h3 class="mt-2 mb-3"><i class="fa fa-image"></i> <?php $L->p('Images'); ?></h3>
+		<h3 class="mt-2 mb-3"><?php $L->p( 'Images' ); ?></h3>
 
 		<div id="jsalertMedia" class="alert alert-warning d-none" role="alert"></div>
 
@@ -39,7 +36,7 @@ $numberOfPages = count($listOfFilesByPage);
 		<form name="bluditFormUpload" id="jsbluditFormUpload" enctype="multipart/form-data">
 			<div class="custom-file">
 				<input type="file" class="custom-file-input" id="jsimages" name="images[]" multiple>
-				<label class="custom-file-label" for="jsimages"><?php $L->p('Choose images to upload'); ?></label>
+				<label class="custom-file-label" for="jsimages"><?php $L->p( 'Choose images to upload' ); ?></label>
 			</div>
 		</form>
 
@@ -54,7 +51,7 @@ $numberOfPages = count($listOfFilesByPage);
 		<!-- Table for list files -->
 		<table id="jsbluditMediaTable" class="table mt-3">
 			<tr>
-				<td><?php $L->p('There are no images'); ?></td>
+				<td><?php $L->p( 'There are no images' ); ?></td>
 			</tr>
 		</table>
 
@@ -75,24 +72,24 @@ echo 'var preLoadFiles = '.json_encode($preLoadFiles).';';
 ?>
 
 function openMediaManager() {
-	$('#jsmediaManagerModal').modal('show');
+	$( '#jsmediaManagerModal' ).modal( 'show' );
 }
 
 function closeMediaManager() {
-	$('#jsmediaManagerModal').modal('hide');
+	$( '#jsmediaManagerModal' ).modal( 'hide' );
 }
 
 // Remove all files from the table
 function cleanTable() {
-	$('#jsbluditMediaTable').empty();
+	$( '#jsbluditMediaTable' ).empty();
 }
 
 function showMediaAlert(message) {
-	$("#jsalertMedia").html(message).removeClass('d-none');
+	$("#jsalertMedia").html(message).removeClass( 'd-none' );
 }
 
 function hideMediaAlert() {
-	$("#jsalertMedia").addClass('d-none');
+	$("#jsalertMedia").addClass( 'd-none' );
 }
 
 // Show the files in the table
@@ -115,29 +112,29 @@ function displayFiles(files, numberOfPages = <?= $numberOfPages ?>) {
 					'<td class="information">'+
 						'<div class="text-secondary pb-2">'+filename+'<\/div>'+
 						'<div>'+
-							'<a href="#" class="mr-3 text-primary" onClick="editorInsertMedia(\''+image+'\'); closeMediaManager();"><i class="fa fa-plus-circle"></i><?php $L->p('Insert') ?><\/a>'+
-							'<a href="#" class="mr-3 text-primary" onClick="editorInsertMedia(\''+thumbnail+'\'); closeMediaManager();"><i class="fa fa-image"></i><?php $L->p('Insert thumbnail') ?><\/a>'+
-							'<a href="#" class="mr-3 text-primary" onClick="editorInsertLinkedMedia(\''+thumbnail+'\',\''+image+'\'); closeMediaManager();"><i class="fa fa-link"></i><?php $L->p('Insert linked thumbnail') ?><\/a>'+
-							'<a href="#" class="text-primary" onClick="setCoverImage(\''+filename+'\'); closeMediaManager();"><i class="fa fa-desktop"></i><?php $L->p('Set as cover image') ?><\/button>'+
-							'<a href="#" class="float-right text-danger" onClick="deleteMedia(\''+filename+'\')"><i class="fa fa-trash-o"></i><?php $L->p('Delete') ?><\/a>'+
+							'<a href="#" class="mr-3 text-primary" onClick="editorInsertMedia(\''+image+'\' ); closeMediaManager();"><i class="fa fa-plus-circle"></i><?php $L->p( 'Insert' ) ?><\/a>'+
+							'<a href="#" class="mr-3 text-primary" onClick="editorInsertMedia(\''+thumbnail+'\' ); closeMediaManager();"><?php $L->p( 'Insert thumbnail' ) ?><\/a>'+
+							'<a href="#" class="mr-3 text-primary" onClick="editorInsertLinkedMedia(\''+thumbnail+'\',\''+image+'\' ); closeMediaManager();"><i class="fa fa-link"></i><?php $L->p( 'Insert linked thumbnail' ) ?><\/a>'+
+							'<a href="#" class="text-primary" onClick="setCoverImage(\''+filename+'\' ); closeMediaManager();"><i class="fa fa-desktop"></i><?php $L->p( 'Set as cover image' ) ?><\/button>'+
+							'<a href="#" class="float-right text-danger" onClick="deleteMedia(\''+filename+'\' )"><i class="fa fa-trash-o"></i><?php $L->p( 'Delete' ) ?><\/a>'+
 						'<\/div>'+
 					'<\/td>'+
 				'<\/tr>';
-			$('#jsbluditMediaTable').append(tableRow);
+			$( '#jsbluditMediaTable' ).append(tableRow);
 		});
 
 		mediaPagination = '<ul class="pagination justify-content-center flex-wrap">';
 		for (var i = 1; i <= numberOfPages; i++) {
-			mediaPagination += '<li class="page-item"><button type="button" class="btn btn-link page-link" onClick="getFiles('+i+')">'+i+'</button></li>';
+			mediaPagination += '<li class="page-item"><button type="button" class="btn btn-link page-link" onClick="getFiles( '+i+' )">'+i+'</button></li>';
 		}
 		mediaPagination += '</ul>';
-		$('#jsbluditMediaTablePagination').html(mediaPagination);
+		$( '#jsbluditMediaTablePagination' ).html(mediaPagination);
 
 	}
 
 	if (files.length == 0) {
-		$('#jsbluditMediaTable').html("<p><?php (IMAGE_RESTRICT ? $L->p('There are no images for the page') : $L->p('There are no images')) ?></p>");
-		$('#jsbluditMediaTablePagination').html('');
+		$( '#jsbluditMediaTable' ).html("<p><?php (IMAGE_RESTRICT ? $L->p( 'There are no images for the page' ) : $L->p( 'There are no images' )) ?></p>");
+		$( '#jsbluditMediaTablePagination' ).html( '' );
 	}
 }
 
@@ -191,13 +188,13 @@ function uploadImages() {
 		// Check file type/extension
 		const validImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/svg+xml', 'image/webp'];
 		if (!validImageTypes.includes(images[i].type)) {
-			showMediaAlert("<?php echo $L->g('File type is not supported. Allowed types:').' '.implode(', ',$GLOBALS['ALLOWED_IMG_EXTENSION']) ?>");
+			showMediaAlert("<?php echo $L->g( 'File type is not supported. Allowed types:' ).' '.implode( ', ',$GLOBALS['ALLOWED_IMG_EXTENSION']) ?>");
 			return false;
 		}
 
 		// Check file size and compare with PHP upload_max_filesize
 		if (images[i].size > UPLOAD_MAX_FILESIZE) {
-			showMediaAlert("<?php echo $L->g('Maximum load file size allowed:').' '.ini_get('upload_max_filesize') ?>");
+			showMediaAlert("<?php echo $L->g( 'Maximum load file size allowed:' ).' '.ini_get( 'upload_max_filesize' ) ?>");
 			return false;
 		}
 	};

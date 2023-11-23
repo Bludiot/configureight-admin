@@ -20,6 +20,7 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	padding: 0 !important;
 	outline: 0;
 }
 
@@ -134,7 +135,7 @@
 	z-index: 1040;
 	width: 100vw;
 	height: 100vh;
-	background-color: #000;
+	background-color: transparent;
 }
 
 .modal-backdrop.fade {
@@ -142,7 +143,8 @@
 }
 
 .modal-backdrop.show {
-	opacity: 0.5;
+	opacity: 1;
+	background-color: var( --cfe-modal-overlay--bg-color, rgba( $color: black, $alpha: 0.625 ) );
 }
 
 .modal-header {
@@ -207,7 +209,7 @@
 
 	.modal-dialog {
 		max-width: 500px;
-		margin: 1.75rem auto;
+		margin: 4rem auto 2rem;
 	}
 
 	.modal-dialog-scrollable {
@@ -244,5 +246,54 @@
 @media ( min-width: $break-min_xl ) {
 	.modal-xl {
 		max-width: 1140px;
+	}
+}
+
+#jsmediaManagerModal {
+
+	.container-fluid {
+		padding: 1rem;
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.fa {
+		display: none !important;
+	}
+
+	.custom-file-label {
+		top: 1rem;
+	}
+
+	.progress {
+		margin-top: 2rem;
+	}
+
+	td.information {
+		div {
+			&:last-of-type {
+				a {
+					display: inline-block;
+					float: none;
+					line-height: 1.2;
+
+					&:not( :last-of-type ) {
+						margin-right: 0.5em;
+						padding-right: 0.5em;
+						border-right: solid 1px var( --cfe-separator--inline--bg-color );
+					}
+
+					&:last-of-type {
+						color: $danger;
+					}
+				}
+			}
+		}
 	}
 }

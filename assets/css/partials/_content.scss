@@ -5,6 +5,8 @@
 ///
 
 #admin-content {
+	position: relative;
+
 	h1,
 	h2,
 	h3,
@@ -126,7 +128,8 @@
 }
 
 // New content screen.
-.admin-page-new-content {
+.admin-page-new-content,
+.admin-page-edit-content {
 
 	#jseditorToolbar {
 		display: flex;
@@ -165,19 +168,45 @@
 
 	#jseditorSidebar {
 		display: none;
-		height: calc(100% - 45px);
+		height: calc(100% - 7rem);
 		width: 50%;
-		max-width: 350px;
+		width: 480px;
 		position: absolute;
 		z-index: 50;
-		top: 45px;
-		right: 15px;
+		top: 5rem;
+		left: 2rem;
+		padding: 0 1rem 1rem 1rem;
 		background-color: #fff;
 		overflow-x: hidden;
 		transition: 0.5s;
 		border-left: 1px solid #ccc;
 		border-right: 1px solid #ccc;
 		border-top: 1px solid #ccc;
+
+		label + * {
+			margin-top: 0.5rem;
+		}
+
+		.nav-link {
+			transform: translateY( 1px );
+		}
+
+		.tab-pane {
+
+			div {
+				&:last-of-type {
+					width: 100%;
+					margin: 1rem 0 0 0;
+					display: flex;
+					justify-content: center;
+					gap: 0.5rem;
+
+					button {
+						text-transform: capitalize;
+					}
+				}
+			}
+		}
 	}
 
 	@media ( max-width: $break-max-sm ) {
@@ -197,35 +226,17 @@
 			font-size: 16px;
 		}
 	}
-
-	#jseditorSidebar nav {
-		background: #f3f3f3;
-	}
-
-	#jseditorSidebar nav a {
-		color: #000;
-	}
-
-	#jseditorSidebar .nav-tabs .nav-link {
-		border: none;
-	}
-
-	#jseditorSidebar .nav-link.active {
-		background: none;
-		border: none;
-		border-bottom: 3px solid #ccc;
-	}
 }
 
 #jsshadow {
+	z-index: 10;
+	display: none;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(72, 72, 72, 0.7);
-	z-index: 10;
-	display: none;
+	background-color: var( --cfe-modal-overlay--bg-color, rgba( $color: black, $alpha: 0.625 ) );
 }
 
 img.profilePicture {

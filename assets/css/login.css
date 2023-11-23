@@ -22,6 +22,7 @@
   --cfe-box--border-width: 1px;
   --cfe-box--border-color: #cccccc;
   --cfe-box--border: var( --cfe-box--border-style ) var( --cfe-box--border-width ) var( --cfe-box--border-color );
+  --cfe-separator--inline--bg-color: #939393;
   --cfe-fieldset--margin: 1em 0 0;
   --cfe-fieldset--padding: 1em 1.5em;
   --cfe-fieldset--border: solid 1px var( --cfe-form--border-color );

@@ -29,6 +29,7 @@
 	--cfe-box--border-width: 1px;
 	--cfe-box--border-color: #{$pale_gray};
 	--cfe-box--border: var( --cfe-box--border-style  ) var( --cfe-box--border-width  ) var( --cfe-box--border-color  );
+	--cfe-separator--inline--bg-color: #{lighten( $color: $text_color, $amount: 37.5% )};
 
 	// Forms & buttons.
 	--cfe-fieldset--margin: 1em 0 0;

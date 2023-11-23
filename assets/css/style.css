@@ -22,6 +22,7 @@
   --cfe-box--border-width: 1px;
   --cfe-box--border-color: #cccccc;
   --cfe-box--border: var( --cfe-box--border-style ) var( --cfe-box--border-width ) var( --cfe-box--border-color );
+  --cfe-separator--inline--bg-color: #939393;
   --cfe-fieldset--margin: 1em 0 0;
   --cfe-fieldset--padding: 1em 1.5em;
   --cfe-fieldset--border: solid 1px var( --cfe-form--border-color );
@@ -5128,6 +5129,9 @@ fieldset:disabled a.btn {
   max-height: 24px;
 }
 
+#admin-content {
+  position: relative;
+}
 #admin-content h1,
 #admin-content h2,
 #admin-content h3,
@@ -5221,43 +5225,51 @@ fieldset:disabled a.btn {
   padding: 0 0 0 1rem;
 }
 
-.admin-page-new-content #jseditorToolbar {
+.admin-page-new-content #jseditorToolbar,
+.admin-page-edit-content #jseditorToolbar {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.25rem;
 }
 @media (max-width: 767.98px) {
-  .admin-page-new-content #jseditorToolbar {
+  .admin-page-new-content #jseditorToolbar,
+  .admin-page-edit-content #jseditorToolbar {
     flex-direction: column-reverse;
   }
 }
 .admin-page-new-content #jseditorToolbarLeft,
-.admin-page-new-content #jseditorToolbarRight {
+.admin-page-new-content #jseditorToolbarRight,
+.admin-page-edit-content #jseditorToolbarLeft,
+.admin-page-edit-content #jseditorToolbarRight {
   float: none;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
 }
-.admin-page-new-content #jseditorToolbarRight button span {
+.admin-page-new-content #jseditorToolbarRight button span,
+.admin-page-edit-content #jseditorToolbarRight button span {
   display: none;
 }
-.admin-page-new-content #jseditor {
+.admin-page-new-content #jseditor,
+.admin-page-edit-content #jseditor {
   background: #fff;
   padding: 10px 5%;
   font-size: 16px;
   line-height: 1.5em;
   border: 1px solid #ced4da;
 }
-.admin-page-new-content #jseditorSidebar {
+.admin-page-new-content #jseditorSidebar,
+.admin-page-edit-content #jseditorSidebar {
   display: none;
-  height: calc(100% - 45px);
+  height: calc(100% - 7rem);
   width: 50%;
-  max-width: 350px;
+  width: 480px;
   position: absolute;
   z-index: 50;
-  top: 45px;
-  right: 15px;
+  top: 5rem;
+  left: 2rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: #fff;
   overflow-x: hidden;
   transition: 0.5s;
@@ -5265,44 +5277,53 @@ fieldset:disabled a.btn {
   border-right: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }
+.admin-page-new-content #jseditorSidebar label + *,
+.admin-page-edit-content #jseditorSidebar label + * {
+  margin-top: 0.5rem;
+}
+.admin-page-new-content #jseditorSidebar .nav-link,
+.admin-page-edit-content #jseditorSidebar .nav-link {
+  transform: translateY(1px);
+}
+.admin-page-new-content #jseditorSidebar .tab-pane div:last-of-type,
+.admin-page-edit-content #jseditorSidebar .tab-pane div:last-of-type {
+  width: 100%;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.admin-page-new-content #jseditorSidebar .tab-pane div:last-of-type button,
+.admin-page-edit-content #jseditorSidebar .tab-pane div:last-of-type button {
+  text-transform: capitalize;
+}
 @media (max-width: 575.98px) {
-  .admin-page-new-content #jseditorSidebar {
+  .admin-page-new-content #jseditorSidebar,
+  .admin-page-edit-content #jseditorSidebar {
     width: 100%;
     max-width: 100%;
     right: 0;
   }
-  .admin-page-new-content .contentTools .btn {
+  .admin-page-new-content .contentTools .btn,
+  .admin-page-edit-content .contentTools .btn {
     font-size: 0px;
     margin-right: 5px;
   }
-  .admin-page-new-content .contentTools .btn span {
+  .admin-page-new-content .contentTools .btn span,
+  .admin-page-edit-content .contentTools .btn span {
     font-size: 16px;
   }
 }
-.admin-page-new-content #jseditorSidebar nav {
-  background: #f3f3f3;
-}
-.admin-page-new-content #jseditorSidebar nav a {
-  color: #000;
-}
-.admin-page-new-content #jseditorSidebar .nav-tabs .nav-link {
-  border: none;
-}
-.admin-page-new-content #jseditorSidebar .nav-link.active {
-  background: none;
-  border: none;
-  border-bottom: 3px solid #ccc;
-}
 
 #jsshadow {
+  z-index: 10;
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(72, 72, 72, 0.7);
-  z-index: 10;
-  display: none;
+  background-color: var(--cfe-modal-overlay--bg-color, rgba(0, 0, 0, 0.625));
 }
 
 img.profilePicture {
@@ -5453,6 +5474,7 @@ img.profilePicture {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  padding: 0 !important;
   outline: 0;
 }
 
@@ -5551,7 +5573,7 @@ img.profilePicture {
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: transparent;
 }
 
 .modal-backdrop.fade {
@@ -5559,7 +5581,8 @@ img.profilePicture {
 }
 
 .modal-backdrop.show {
-  opacity: 0.5;
+  opacity: 1;
+  background-color: var(--cfe-modal-overlay--bg-color, rgba(0, 0, 0, 0.625));
 }
 
 .modal-header {
@@ -5615,7 +5638,7 @@ img.profilePicture {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
-    margin: 1.75rem auto;
+    margin: 4rem auto 2rem;
   }
   .modal-dialog-scrollable {
     max-height: calc(100% - 3.5rem);
@@ -5645,4 +5668,35 @@ img.profilePicture {
   .modal-xl {
     max-width: 1140px;
   }
+}
+#jsmediaManagerModal .container-fluid {
+  padding: 1rem;
+}
+#jsmediaManagerModal h3 {
+  margin: 0;
+}
+#jsmediaManagerModal ul {
+  list-style: none;
+}
+#jsmediaManagerModal .fa {
+  display: none !important;
+}
+#jsmediaManagerModal .custom-file-label {
+  top: 1rem;
+}
+#jsmediaManagerModal .progress {
+  margin-top: 2rem;
+}
+#jsmediaManagerModal td.information div:last-of-type a {
+  display: inline-block;
+  float: none;
+  line-height: 1.2;
+}
+#jsmediaManagerModal td.information div:last-of-type a:not(:last-of-type) {
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+  border-right: solid 1px var(--cfe-separator--inline--bg-color);
+}
+#jsmediaManagerModal td.information div:last-of-type a:last-of-type {
+  color: #dd0000;
 }
