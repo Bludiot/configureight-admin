@@ -127,104 +127,99 @@
 	}
 }
 
-// New content screen.
-.admin-page-new-content,
-.admin-page-edit-content {
+#jseditorToolbar {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.25rem;
 
-	#jseditorToolbar {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 0.25rem;
+	@media ( max-width: $break-max_md ) {
+		flex-direction: column-reverse;
+	}
+}
 
-		@media ( max-width: $break-max_md ) {
-			flex-direction: column-reverse;
+#jseditorToolbarLeft,
+#jseditorToolbarRight {
+	float: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+#jseditorToolbarRight {
+	button {
+		span {
+			display: none;
 		}
 	}
+}
 
-	#jseditorToolbarLeft,
-	#jseditorToolbarRight {
-		float: none;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.25rem;
+#jseditor {
+	background: #fff;
+	padding: 10px 5%;
+	font-size: 16px;
+	line-height: 1.5em;
+	border: 1px solid #ced4da;
+}
+
+#jseditorSidebar {
+	display: none;
+	height: calc( 100% - 7rem );
+	width: 480px;
+	max-width: 480px;
+	position: absolute;
+	z-index: 50;
+	top: 5rem;
+	left: 2rem;
+	padding: 0 1rem 1rem 1rem;
+	background-color: #fff;
+	overflow-x: hidden;
+	transition: 0.5s;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+
+	label + * {
+		margin-top: 0.5rem;
 	}
 
-	#jseditorToolbarRight {
-		button {
-			span {
-				display: none;
-			}
-		}
+	.nav-link {
+		transform: translateY( 1px );
 	}
 
-	#jseditor {
-		background: #fff;
-		padding: 10px 5%;
-		font-size: 16px;
-		line-height: 1.5em;
-		border: 1px solid #ced4da;
-	}
+	.tab-pane {
 
-	#jseditorSidebar {
-		display: none;
-		height: calc(100% - 7rem);
-		width: 50%;
-		width: 480px;
-		position: absolute;
-		z-index: 50;
-		top: 5rem;
-		left: 2rem;
-		padding: 0 1rem 1rem 1rem;
-		background-color: #fff;
-		overflow-x: hidden;
-		transition: 0.5s;
-		border-left: 1px solid #ccc;
-		border-right: 1px solid #ccc;
-		border-top: 1px solid #ccc;
+		div {
+			&:last-of-type {
+				width: 100%;
+				margin: 1rem 0 0 0;
+				display: flex;
+				justify-content: center;
+				gap: 0.5rem;
 
-		label + * {
-			margin-top: 0.5rem;
-		}
-
-		.nav-link {
-			transform: translateY( 1px );
-		}
-
-		.tab-pane {
-
-			div {
-				&:last-of-type {
-					width: 100%;
-					margin: 1rem 0 0 0;
-					display: flex;
-					justify-content: center;
-					gap: 0.5rem;
-
-					button {
-						text-transform: capitalize;
-					}
+				button {
+					text-transform: capitalize;
 				}
 			}
 		}
 	}
+}
 
-	@media ( max-width: $break-max-sm ) {
+@media ( max-width: $break-max-sm ) {
 
-		#jseditorSidebar {
-			width: 100%;
-			max-width: 100%;
-			right: 0;
-		}
+	#jseditorSidebar {
+		width: 100%;
+		max-width: 100%;
+		right: 0;
+	}
 
-		.contentTools .btn {
-			font-size: 0px;
-			margin-right: 5px;
-		}
+	.contentTools .btn {
+		font-size: 0px;
+		margin-right: 5px;
+	}
 
-		.contentTools .btn span {
-			font-size: 16px;
-		}
+	.contentTools .btn span {
+		font-size: 16px;
 	}
 }
 
