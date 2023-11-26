@@ -14,12 +14,6 @@ use function CFE_Admin_Theme\{
 	plugin_sidebars_count
 };
 
-// Theme plugin data.
-$theme_options = '';
-if ( plugin() ) {
-	$theme_options = get_object_vars( plugin() );
-}
-
 // Get a username or fallback.
 $user = new User( Session :: get( 'username' ) );
 $name = $L->get( 'profile-link-default' );
@@ -141,7 +135,7 @@ if ( $user->profilePicture() ) {
 						plugin()
 					) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $theme_options['directoryName']; ?>"><?php $L->p( 'Options' ); ?></a>
+						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . plugin()->className(); ?>"><?php $L->p( 'Options' ); ?></a>
 					</li>
 					<?php endif; ?>
 				</ul>

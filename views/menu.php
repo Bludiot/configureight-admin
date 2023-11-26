@@ -15,12 +15,6 @@ use function CFE_Admin_Theme\{
 	plugin_sidebars_count
 };
 
-// Theme plugin data.
-$theme_options = '';
-if ( plugin() ) {
-	$theme_options = get_object_vars( plugin() );
-}
-
 ?>
 <nav>
 	<ul class="admin-menu-list nav flex-column">
@@ -111,7 +105,7 @@ if ( plugin() ) {
 				plugin()
 			) : ?>
 			<li class="admin-menu-item">
-				<?php menu_link( 'configure-plugin/' . $theme_options['directoryName'] ); ?><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>
+				<?php menu_link( 'configure-plugin/' . plugin()->className() ); ?><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>
 			</li>
 			<?php endif; ?>
 		</ul>
