@@ -4942,6 +4942,7 @@ fieldset:disabled a.btn {
 .admin-menu .admin-menu-list {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 .admin-menu .admin-menu-list li {
   margin: 0;
@@ -5039,6 +5040,7 @@ fieldset:disabled a.btn {
 .admin-menu .admin-menu-list ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .admin-toolbar {

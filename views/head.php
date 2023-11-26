@@ -10,6 +10,7 @@
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
 	plugin,
+	is_rtl,
 	favicon_tag
 };
 
@@ -53,6 +54,15 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 			],
 			DOMAIN_ADMIN_THEME
 		);
+
+		if ( is_rtl() ) {
+			echo Theme :: css(
+				[
+					"assets/css/style-rtl{$suffix}.css"
+				],
+				DOMAIN_ADMIN_THEME
+			);
+		}
 
 		echo Theme :: jquery();
 		echo Theme :: jsBootstrap();

@@ -10,8 +10,15 @@
 // Access namespaced functions.
 use function CFE_Admin_Theme\{
 	plugin,
+	is_rtl,
 	body_classes
 };
+
+// Site direction.
+$dir = 'ltr';
+if ( is_rtl() ) {
+	$dir = 'rtl';
+}
 
 // User toolbar option.
 $show_toolbar = true;
@@ -24,7 +31,7 @@ if (
 
 ?>
 <!DOCTYPE html>
-<html dir="auto" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
+<html dir="<?php echo $dir; ?>" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
 
 <?php include( 'views/head.php' ); ?>
 

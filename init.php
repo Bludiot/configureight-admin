@@ -44,6 +44,51 @@ function plugin() {
 }
 
 /**
+ * Current language
+ *
+ * The language from site settings.
+ *
+ * @since  1.0.0
+ * @global object $L The Language class.
+ * @return string
+ */
+function current_lang() {
+
+	// Access global variables.
+	global $L;
+
+	return $L->currentLanguageShortVersion();
+}
+
+/**
+ * Is RTL language
+ *
+ * @since  1.0.0
+ * @return boolean Returns true if site is in RTL language.
+ */
+function is_rtl() {
+
+	$rtl = [
+		'ar',
+		'fa',
+		'he',
+		'ks',
+		'ku',
+		'pa',
+		'ps',
+		'sd',
+		'ug',
+		'ur'
+	];
+	$lang = current_lang();
+
+	if ( in_array( $lang, $rtl ) ) {
+		return true;
+	}
+	return false;
+}
+
+/**
  * Favicon tag
  *
  * Returns the site icon meta tag.
