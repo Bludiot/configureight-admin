@@ -20,6 +20,14 @@ if ( is_rtl() ) {
 	$dir = 'rtl';
 }
 
+// HTML element class.
+$html_class = 'no-js';
+
+// Class removed on click by script in the theme plugin.
+if ( plugin() && 'theme' == plugin()->admin_theme() && 'themes' == $url->slug() ) {
+	$html_class .= ' no-scroll';
+}
+
 // User toolbar option.
 $show_toolbar = true;
 if (
@@ -31,7 +39,7 @@ if (
 
 ?>
 <!DOCTYPE html>
-<html dir="<?php echo $dir; ?>" class="no-js" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
+<html dir="<?php echo $dir; ?>" class="<?php echo $html_class; ?>" lang="<?php echo $L->currentLanguageShortVersion(); ?>" xmlns:og="http://opengraphprotocol.org/schema/" data-admin-page>
 
 <?php include( 'views/head.php' ); ?>
 
