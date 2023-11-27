@@ -1,0 +1,8 @@
+{
+	"theme-data" :
+	{
+		"name"        : "Configure 8 Admin",
+		"description" : "An admin theme for Bludit CMS, designed as part of the Configure 8 theme-plugin suite."
+	},
+	"menu-link-admin" : "Hello"
+}
