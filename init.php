@@ -315,7 +315,7 @@ function menu_link( $slug = '', $classes = '' ) {
 		$tag = sprintf(
 			'<a class="%s" href="%s">',
 			$class,
-			HTML_PATH_ADMIN_ROOT . $slug
+			DOMAIN_ADMIN . $slug
 		);
 	}
 	echo $tag;
