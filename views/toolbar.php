@@ -14,6 +14,14 @@ use function CFE_Admin_Theme\{
 	plugin_sidebars_count
 };
 
+// View page link.
+$view_slug = '';
+$view_page = '';
+if ( str_contains( $url->slug(), 'edit-content' ) ) {
+	$view_slug = str_replace( 'edit-content/', '', $url->slug() );
+	$view_page = DOMAIN_BASE . $view_slug;
+}
+
 // Get a username or fallback.
 $user = new User( Session :: get( 'username' ) );
 $name = $L->get( 'profile-link-default' );
@@ -47,23 +55,23 @@ if ( $user->profilePicture() ) {
 		<ul class="admin-toolbar-nav-list">
 			<?php if ( $site->logo() ) : ?>
 			<li class="top-level-item">
-				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>" title="<?php $L->p( 'View Site' ); ?>">
+				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo DOMAIN_BASE; ?>" title="<?php $L->p( 'View Site' ); ?>">
 					<img class="admin-toolbar-logo" src="<?php echo $site->logo(); ?>" alt="<?php $L->p( 'View Site' ); ?>" />
 				</a>
 			</li>
 			<?php else : ?>
 			<li class="top-level-item">
-				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo HTML_PATH_ROOT; ?>"><?php $L->p( 'View Site' ); ?></a>
+				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo DOMAIN_BASE; ?>"><?php $L->p( 'View Site' ); ?></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="top-level-item has-submenu">
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); $L->p( 'Admin' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); $L->p( 'Admin' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
 					</li>
 					<li>
 						<a href="<?php echo DOMAIN_ADMIN . 'about';?>"><?php $L->p( 'System' ); ?></a>
@@ -76,7 +84,7 @@ if ( $user->profilePicture() ) {
 			</li>
 			<?php else : ?>
 			<li>
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
 			</li>
 			<?php endif; ?>
 
@@ -85,47 +93,59 @@ if ( $user->profilePicture() ) {
 
 				<ul>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'new-content'; ?>"><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'new-content'; ?>"><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
 					</li>
 
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php $L->p( 'Pages' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'content'; ?>"><?php $L->p( 'Pages' ); ?></a>
 					</li>
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'categories'; ?>"></span><?php $L->p( 'Categories' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'categories'; ?>"></span><?php $L->p( 'Categories' ); ?></a>
+					</li>
+					<?php endif; ?>
+
+					<?php if ( str_contains( $url->slug(), 'edit-content' ) ) : ?>
+					<li class="top-level-item">
+						<a href="<?php echo $view_page; ?>"><?php $L->p( 'View Page ' ); ?></a>
 					</li>
 					<?php endif; ?>
 				</ul>
 			</li>
 
+			<?php if ( str_contains( $url->slug(), 'edit-content' ) ) : ?>
+			<li class="top-level-item">
+				<a href="<?php echo $view_page; ?>"><?php $L->p( 'View Page' ); ?></a>
+			</li>
+			<?php endif; ?>
+
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="top-level-item has-submenu">
-				<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><?php $L->p( 'Manage' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><?php $L->p( 'Manage' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"></span><?php $L->p( 'Settings' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"></span><?php $L->p( 'Settings' ); ?></a>
 					</li>
 					<?php endif; ?>
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'users'; ?>"></span><?php $L->p( 'Users' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'users'; ?>"></span><?php $L->p( 'Users' ); ?></a>
 					</li>
 					<?php endif; ?>
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'plugins'; ?>"><?php $L->p( 'Plugins' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'plugins'; ?>"><?php $L->p( 'Plugins' ); ?></a>
 					</li>
 					<?php endif; ?>
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'themes'; ?>"></span><?php $L->p( 'Themes' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'themes'; ?>"></span><?php $L->p( 'Themes' ); ?></a>
 					</li>
 					<?php endif; ?>
 
@@ -135,7 +155,7 @@ if ( $user->profilePicture() ) {
 						plugin()
 					) : ?>
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . plugin()->className(); ?>"><?php $L->p( 'Options' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'configure-plugin/' . plugin()->className(); ?>"><?php $L->p( 'Options' ); ?></a>
 					</li>
 					<?php endif; ?>
 				</ul>
@@ -147,7 +167,7 @@ if ( $user->profilePicture() ) {
 				plugin_sidebars_count() > 0
 			) : ?>
 			<li class="top-level-item has-submenu">
-				<a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php svg_icon( 'banner-v' ); ?><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php svg_icon( 'banner-v' ); ?><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
 				<ul>
 					<?php
 					foreach ( $plugins['adminSidebar'] as $link ) {
@@ -172,11 +192,11 @@ if ( $user->profilePicture() ) {
 
 				<ul class="user-actions-sublist">
 					<li>
-						<a href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-user/' . $login->username(); ?>"><?php $L->p( 'Your Profile' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'edit-user/' . $login->username(); ?>"><?php $L->p( 'Your Profile' ); ?></a>
 					</li>
 
 					<li>
-						<a id="toolbar-logout" href="<?php echo HTML_PATH_ADMIN_ROOT . 'logout'; ?>"><?php $L->p( 'Log Out' ); ?></a>
+						<a id="toolbar-logout" href="<?php echo DOMAIN_ADMIN . 'logout'; ?>"><?php $L->p( 'Log Out' ); ?></a>
 					</li>
 				</ul>
 			</li>

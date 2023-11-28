@@ -15,12 +15,20 @@ use function CFE_Admin_Theme\{
 	plugin_sidebars_count
 };
 
+// View page link.
+$view_slug = '';
+$view_page = '';
+if ( str_contains( $url->slug(), 'edit-content' ) ) {
+	$view_slug = str_replace( 'edit-content/', '', $url->slug() );
+	$view_page = DOMAIN_BASE . $view_slug;
+}
+
 ?>
 <nav>
 	<ul class="admin-menu-list nav flex-column">
 
 		<li class="admin-menu-item menu-heading">
-			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'dashboard'; ?>"><?php $L->p( 'Admin' ); ?></a></h3>
+			<h3><a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php $L->p( 'Admin' ); ?></a></h3>
 		</li>
 
 		<ul>
@@ -37,19 +45,27 @@ use function CFE_Admin_Theme\{
 			</li>
 
 			<li class="admin-menu-item has-icon-link">
-				<a class="nav-link" href="<?php echo HTML_PATH_ROOT; ?>"><?php svg_icon( 'house' ); ?><?php $L->p( 'View Site' ); ?></a>
+				<a class="nav-link" href="<?php echo DOMAIN_BASE; ?>"><?php svg_icon( 'house' ); ?><?php $L->p( 'View Site' ); ?></a>
 
-				<a class="nav-link icon-link" href="<?php echo HTML_PATH_ROOT; ?>" target="_blank"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Site in New Tab' ); ?></span></a>
+				<a class="nav-link icon-link" href="<?php echo DOMAIN_BASE; ?>" target="_blank"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Site in New Tab' ); ?></span></a>
 			</li>
 		</ul>
 
 		<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 		<li class="admin-menu-item menu-heading">
-			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'content'; ?>"><?php $L->p( 'Content' ); ?></a></h3>
+			<h3><a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'content'; ?>"><?php $L->p( 'Content' ); ?></a></h3>
 		</li>
 		<?php endif; ?>
 
 		<ul>
+			<?php if ( str_contains( $url->slug(), 'edit-content' ) ) : ?>
+			<li class="admin-menu-item has-icon-link">
+				<a href="<?php echo $view_page; ?>"><?php svg_icon( 'screen' ); ?><?php $L->p( 'View Page' ); ?></a>
+
+				<a class="nav-link icon-link" href="<?php echo $view_page; ?>" target="_blank"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Page in New Tab' ); ?></span></a>
+			</li>
+			<?php endif; ?>
+
 			<li class="admin-menu-item">
 				<?php menu_link( 'new-content' ); ?><?php svg_icon( 'pencil' ); ?><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
 			</li>
@@ -68,7 +84,7 @@ use function CFE_Admin_Theme\{
 
 		<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 		<li class="admin-menu-item menu-heading">
-			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Manage' ); ?></a></h3>
+			<h3><a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php $L->p( 'Manage' ); ?></a></h3>
 		</li>
 		<?php endif; ?>
 
@@ -118,7 +134,7 @@ use function CFE_Admin_Theme\{
 
 		?>
 		<li class="admin-menu-item menu-heading">
-			<h3><a class="nav-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'settings'; ?>"><?php $L->p( 'Features ' ); ?></a></h3>
+			<h3><a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php $L->p( 'Features ' ); ?></a></h3>
 		</li>
 		<ul>
 			<?php
