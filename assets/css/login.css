@@ -2699,20 +2699,21 @@ select[disabled] {
 }
 
 .select2-container--bootstrap4 .select2-selection__clear {
-  width: 0.9em;
-  height: 0.9em;
-  line-height: 0.75em;
+  width: 1em;
+  height: 1em;
+  line-height: 0.675em;
   padding-left: 0.15em;
   margin-top: 0.125em;
+  font-weight: bold;
   border-radius: 100%;
-  background-color: var(--cfe-bg-color);
-  color: #f8f9fa;
+  background-color: #cc0000;
+  color: #ffffff;
   float: right;
   margin-right: 0.3em;
 }
 
 .select2-container--bootstrap4 .select2-selection__clear:hover {
-  background-color: #afafaf;
+  background-color: #ff0000;
 }
 
 select option {
