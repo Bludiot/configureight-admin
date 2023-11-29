@@ -23,6 +23,13 @@ if ( is_rtl() ) {
 // HTML element class.
 $html_class = 'no-js';
 
+// Language direction class.
+if ( is_rtl() ) {
+	$html_class .= ' rtl';
+} else {
+	$html_class .= ' ltr';
+}
+
 // Class removed on click by script in the theme plugin.
 if ( plugin() && 'theme' == plugin()->admin_theme() && 'themes' == $url->slug() ) {
 	$html_class .= ' no-scroll';
