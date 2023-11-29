@@ -234,6 +234,20 @@ h6 {
 	color: var( --cfe-heading-tertiary--text-color, var( --cfe-text-color ) );
 }
 
+.cite {
+	margin: 0.5em 0 0 0;
+	text-align: right;
+	font-style: italic;
+
+	&:before {
+		content: '—';
+	}
+}
+
+.rtl .cite {
+	text-align: left;
+}
+
 code.select {
 	user-select: all;
 }

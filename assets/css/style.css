@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --cfe-sans-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --cfe-serif-stack: "Hoefler Text", "Baskerville Old Face", Garamond, Times, "Times New Roman", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -547,6 +548,19 @@ h6 {
   text-decoration: var(--cfe-heading-tertiary--text-decoration);
   text-transform: var(--cfe-heading-tertiary--text-transform, none);
   color: var(--cfe-heading-tertiary--text-color, var(--cfe-text-color));
+}
+
+.cite {
+  margin: 0.5em 0 0 0;
+  text-align: right;
+  font-style: italic;
+}
+.cite:before {
+  content: "—";
+}
+
+.rtl .cite {
+  text-align: left;
 }
 
 code.select {
