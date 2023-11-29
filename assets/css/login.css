@@ -2531,13 +2531,8 @@ select[disabled] {
   border-color: #5897fb;
 }
 
-.select2-container--bootstrap4 .select2-selection--single {
-  height: calc(1.5em + 0.75rem + 2px) !important;
-}
-
 .select2-container--bootstrap4 .select2-selection--single .select2-selection__placeholder {
-  color: #757575;
-  line-height: calc(1.5em + 0.75rem);
+  color: var(--cfe-form--placeholder-color);
 }
 
 .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
