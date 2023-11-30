@@ -426,6 +426,10 @@ body.toolbar-active {
   display: none !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .wrapper-general {
   display: var(--cfe-wrapper--general--display, block);
   position: var(--cfe-wrapper--general--position, static);

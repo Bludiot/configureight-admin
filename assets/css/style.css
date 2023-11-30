@@ -426,6 +426,10 @@ body.toolbar-active {
   display: none !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .wrapper-general {
   display: var(--cfe-wrapper--general--display, block);
   position: var(--cfe-wrapper--general--position, static);
@@ -5186,6 +5190,16 @@ fieldset:disabled a.btn {
   display: none;
 }
 
+.tab-pane ul,
+.tab-pane ol {
+  padding: 0 0 0 1em;
+}
+
+.rtl .tab-pane ul,
+.rtl .tab-pane ol {
+  padding: 0 1em 0 0;
+}
+
 .search-suggestion {
   padding: 5px;
 }
@@ -5228,7 +5242,7 @@ fieldset:disabled a.btn {
   display: none !important;
 }
 #dashboard #jsclippyContainer {
-  padding: 0;
+  padding: 0 0 3rem 0;
 }
 #dashboard #jsclippyContainer div {
   padding: 0;
@@ -5241,6 +5255,45 @@ fieldset:disabled a.btn {
 #dashboard .quick-links-icons {
   font-size: 3em;
   width: 100%;
+}
+#dashboard .dashboard-options h2 {
+  margin: 0;
+  font-family: var(--cfe-heading-secondary--font-family);
+  font-size: var(--cfe-heading-secondary--font-size);
+  font-weight: var(--cfe-heading-secondary--font-weight);
+  font-style: var(--cfe-heading-secondary--font-style);
+  font-variant: var(--cfe-heading-secondary--font-variant);
+  line-height: var(--cfe-heading-secondary--line-height);
+  letter-spacing: var(--cfe-heading-secondary--letter-spacing);
+  word-spacing: var(--cfe-heading-secondary--word-spacing);
+  -webkit-text-decoration: var(--cfe-heading-secondary--text-decoration);
+  text-decoration: var(--cfe-heading-secondary--text-decoration);
+  text-transform: var(--cfe-heading-secondary--text-transform);
+  color: var(--cfe-heading-secondary--text-color, var(--cfe-text-color));
+}
+#dashboard .dashboard-options p {
+  margin: 0;
+}
+#dashboard .dashboard-options ul {
+  list-style: none;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+#dashboard .dashboard-options ul li {
+  padding: 0.25em 0.5em;
+}
+#dashboard .dashboard-options ul li:nth-of-type(odd) {
+  background-color: #eeeeee;
+}
+#dashboard .dashboard-options ul span {
+  display: inline-block;
+}
+#dashboard .dashboard-options .option-name {
+  font-family: "Source Code Pro", "Roboto Mono", "Fira Code", "Liberation Mono", Inconsolata, Menlo, Monaco, Consolas, "Cascadia Mono", "Segoe UI Mono", "Oxygen Mono", "Ubuntu Monospace", "Fira Mono", "Droid Sans Mono", "Courier New", Courier, ui-monospace, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+}
+#dashboard .dashboard-options .option-value {
+  font-weight: 600;
 }
 
 .admin-page-plugins td div {

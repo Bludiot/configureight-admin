@@ -105,6 +105,10 @@ body {
 	}
 }
 
+.hidden {
+	display: none !important;
+}
+
 // General layout styles
 .wrapper-general {
 	display: var( --cfe-wrapper--general--display, block );
