@@ -238,6 +238,14 @@ h6 {
 	color: var( --cfe-heading-tertiary--text-color, var( --cfe-text-color ) );
 }
 
+*.text-uppercase {
+	text-transform: capitalize !important;
+}
+
+*.semi-bold {
+	font-weight: 600;
+}
+
 .cite {
 	margin: 0.5em 0 0 0;
 	text-align: right;
