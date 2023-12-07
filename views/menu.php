@@ -120,8 +120,9 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 				checkRole( [ 'admin' ], false ) &&
 				plugin()
 			) : ?>
-			<li class="admin-menu-item">
+			<li class="admin-menu-item has-icon-link">
 				<?php menu_link( 'configure-plugin/' . plugin()->className() ); ?><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>
+				<?php menu_link( 'plugin/' . plugin()->className(), 'icon-link' ); ?><?php svg_icon( 'book-open' ); ?><span class="screen-reader-text"><?php $L->p( 'Theme Guide' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 		</ul>
