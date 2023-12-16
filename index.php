@@ -80,10 +80,11 @@ include( 'views/alert.php' ); ?>
 
 <div class="admin-wrapper">
 
-	<?php if (
-		plugin() && 'configureight' == plugin()->className()
-		&& plugin()->admin_menu()
-	) : ?>
+	<?php if ( plugin() && 'configureight' == plugin()->className() ) : ?>
+	<div id="admin-menu" class="admin-menu" style="display: <?php echo ( plugin()->admin_menu() ? 'block' : 'none' ); ?>;">
+		<?php include( 'views/menu.php' ); ?>
+	</div>
+	<?php else : ?>
 	<div id="admin-menu" class="admin-menu">
 		<?php include( 'views/menu.php' ); ?>
 	</div>

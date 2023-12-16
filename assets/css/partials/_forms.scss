@@ -1175,6 +1175,16 @@ select[disabled] {
 	cursor: not-allowed;
 }
 
+.form-control-has-button {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 0.25em;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 .form-range-controls {
 	display: flex;
 	align-items: center;
