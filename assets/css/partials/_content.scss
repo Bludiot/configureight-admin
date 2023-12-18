@@ -121,54 +121,55 @@
 		font-size: 3em;
 		width: 100%;
 	}
+}
 
-	.dashboard-options {
+#dashboard-options,
+#database-list {
 
-		h2 {
-			margin: 0;
-			font-family: var( --cfe-heading-secondary--font-family );
-			font-size: var( --cfe-heading-secondary--font-size );
-			font-weight: var( --cfe-heading-secondary--font-weight );
-			font-style: var( --cfe-heading-secondary--font-style );
-			font-variant: var( --cfe-heading-secondary--font-variant );
-			line-height: var( --cfe-heading-secondary--line-height );
-			letter-spacing: var( --cfe-heading-secondary--letter-spacing );
-			word-spacing: var( --cfe-heading-secondary--word-spacing );
-			-webkit-text-decoration: var( --cfe-heading-secondary--text-decoration );
-					text-decoration: var( --cfe-heading-secondary--text-decoration );
-			text-transform: var( --cfe-heading-secondary--text-transform );
-			color: var( --cfe-heading-secondary--text-color, var( --cfe-text-color ) );
-		}
+	h2 {
+		margin: 0;
+		font-family: var( --cfe-heading-secondary--font-family );
+		font-size: var( --cfe-heading-secondary--font-size );
+		font-weight: var( --cfe-heading-secondary--font-weight );
+		font-style: var( --cfe-heading-secondary--font-style );
+		font-variant: var( --cfe-heading-secondary--font-variant );
+		line-height: var( --cfe-heading-secondary--line-height );
+		letter-spacing: var( --cfe-heading-secondary--letter-spacing );
+		word-spacing: var( --cfe-heading-secondary--word-spacing );
+		-webkit-text-decoration: var( --cfe-heading-secondary--text-decoration );
+				text-decoration: var( --cfe-heading-secondary--text-decoration );
+		text-transform: var( --cfe-heading-secondary--text-transform );
+		color: var( --cfe-heading-secondary--text-color, var( --cfe-text-color ) );
+	}
 
-		p {
-			margin: 0;
-		}
+	p {
+		margin: 0;
+	}
 
-		ul {
-			list-style: none;
-			max-width: max-content;
+	ul {
+		list-style: none;
+		max-width: max-content;
 
-			li {
-				padding: 0.25em 0.5em;
+		li {
+			padding: 0.25em 0.5em;
 
-				&:nth-of-type(odd) {
-					background-color: $off_white;
-				}
-			}
-
-			span {
-				display: inline-block;
+			&:nth-of-type(odd) {
+				background-color: $off_white;
 			}
 		}
 
-		.option-name {
-			font-family: $monospace_stack;
-			font-weight: 500;
+		span {
+			display: inline-block;
 		}
+	}
 
-		.option-value {
-			font-weight: 600;
-		}
+	.option-name {
+		font-family: $monospace_stack;
+		font-weight: 500;
+	}
+
+	.option-value {
+		font-weight: 600;
 	}
 }
 
