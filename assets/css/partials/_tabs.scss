@@ -21,6 +21,7 @@
 		display: block;
 		margin: 0;
 		padding: 0.5rem 1rem;
+		font-family: var( --cfe-tabs--nav-link--font-family );
 		font-size: var( --cfe-tabs--nav-link--font-size );
 		font-weight: var( --cfe-tabs--nav-link--font-weight, 600 );
 		text-decoration: var( --cfe-tabs--nav-link--text-decoration, none );
@@ -30,8 +31,13 @@
 		border-bottom-color: #888888;
 		border-top-left-radius: 0.25rem;
 		border-top-right-radius: 0.25rem;
-		background-color: var( --cfe-tabs--nav-link--bg-color );
-		color: #333333;
+		background-color: var( --cfe-tabs--nav-link--bg-color, var( --cfe-bg-color ) );
+		color: var( --cfe-tabs--nav-link--text-color );
+
+		@media ( prefers-color-scheme: dark ) {
+			background-color: var( --cfe-tabs--nav-link--bg-color--dark, var( --cfe-bg-color--dark ) );
+			color: var( --cfe-tabs--nav-link--text-color--dark );
+		}
 
 		&:hover,
 		&:focus {

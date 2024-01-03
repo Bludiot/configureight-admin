@@ -164,7 +164,7 @@
 	}
 
 	.option-name {
-		font-family: $monospace_stack;
+		font-family: var( --cfe-fonts--monospace-stack, monospace );
 		font-weight: 500;
 	}
 

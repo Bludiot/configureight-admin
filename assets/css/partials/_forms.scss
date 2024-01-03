@@ -1209,7 +1209,7 @@ select[disabled] {
 	color: #495057;
 	background-color: #fff;
 	background-clip: padding-box;
-	border: 1px solid #ced4da;
+	border: 1px solid var( --cfe-form-element--border );
 
 	&.px-range-value {
 		min-width: 7ch;
@@ -1220,12 +1220,63 @@ select[disabled] {
 	}
 }
 
+.plugin-form {
+	.multi-check-wrap {
+		margin-top: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.125em 1em;
+
+		label {
+			margin: 0;
+			display: inline-block;
+			cursor: pointer;
+
+			input {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
 // Image fields.
 .image-field-preview {
 	display: block;
 	width: 100%;
 	max-width: 80px;
 	height: auto;
+}
+
+.image-field-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 0.25rem;
+}
+
+// Color fields.
+#form-color-thumbs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	ul {
+		list-style: none;
+		margin: 0.5em 0 0 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 0.25rem;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			width: 1.5rem;
+			height: 1.5rem;
+			border: var( --cfe-form-element--border );
+			border-radius: 50%;
+		}
+	}
 }
 
 .plugin-form {

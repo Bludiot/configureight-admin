@@ -7,7 +7,14 @@
 	width: 200px;
 	margin: 0;
 	padding: 0 0 1rem 0;
-	background-color: #333333;
+	background-color: var( --cfe-admin-menu--bg-color, $dark_gray );
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: rgba( $color: white, $alpha: 0.125 );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: var( --cfe-admin-menu--bg-color, $near_black );
+	}
 
 	@media ( max-width: $break-max-lg ) {
 		z-index: 10;
@@ -46,6 +53,8 @@
 				text-decoration: none;
 				transition: background-color .15s, color .15s;
 
+				@media ( prefers-color-scheme: dark ) {}
+
 				@media ( max-width: $break-max-lg ) {
 					text-indent: -9999em;
 					padding: 1em;
@@ -75,8 +84,13 @@
 				&.current-link,
 				&:hover,
 				&:focus {
-					background-color: #555555;
+					background-color: var( --cfe-admin--menu--link--action--bg-color );
 					color: var( --cfe-admin--menu--link--action--text-color, #ffffff );
+
+					@media ( prefers-color-scheme: dark ) {
+						background-color: var( --cfe-admin--menu--link--action--bg-color--dark );
+						color: var( --cfe-admin--menu--link--action--text-color--dark, #ffffff );
+					}
 				}
 
 				.svg-icon {
@@ -109,6 +123,8 @@
 
 				&:not( :first-of-type ) {
 					border-top: solid 1px rgba( $color: white, $alpha: 0.125 );
+
+					@media ( prefers-color-scheme: dark ) {}
 				}
 
 				h3 {
@@ -146,6 +162,11 @@
 	line-height: var( --cfe-toolbar--height );
 	background-color: var( --cfe-toolbar--bg-color );
 	color: var( --cfe-toolbar--text-color );
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: rgba( $color: white, $alpha: 0.125 );
+
+	@media ( prefers-color-scheme: dark ) {}
 
 	ul {
 		list-style: none;
@@ -167,6 +188,8 @@
 			background-color: var( --cfe-toolbar--link--bg-color );
 			color: var( --cfe-toolbar--link--text-color );
 
+			@media ( prefers-color-scheme: dark ) {}
+
 			&.has-submenu {
 				display: inline-flex;
 				align-items: center;
@@ -178,6 +201,8 @@
 			&:focus {
 				background-color: var( --cfe-toolbar--link--action--bg-color );
 				color: var( --cfe-toolbar--link--action--text-color );
+
+				@media ( prefers-color-scheme: dark ) {}
 			}
 
 			&:hover {
@@ -206,9 +231,13 @@
 				text-decoration: none;
 				color: var( --cfe-toolbar--link--text-color );
 
+				@media ( prefers-color-scheme: dark ) {}
+
 				&:hover {
 					background-color: var( --cfe-toolbar--link--action--bg-color );
 					color: var( --cfe-toolbar--link--action--text-color );
+
+					@media ( prefers-color-scheme: dark ) {}
 				}
 
 				&.admin-toolbar-logo-link {
@@ -226,7 +255,9 @@
 			left: -9999em;
 			padding: 0.5rem 0;
 			width: 160px;
-			background-color: #555555;
+			background-color: var( --cfe-toolbar--submenu--bg-color, inherit );
+
+			@media ( prefers-color-scheme: dark ) {}
 
 			&.user-actions-sublist {
 				left: auto;
@@ -240,13 +271,24 @@
 				background-color: transparent;
 				color: transparent;
 
+				@media ( prefers-color-scheme: dark ) {}
+
 				a {
 					display: block;
 					padding: 0 1rem;
+					background-color: var( --cfe-toolbar--submenu--link--bg-color, inherit );
+
+					@media ( prefers-color-scheme: dark ) {
+						background-color: var( --cfe-toolbar--submenu--link--bg-color--dark, inherit );
+					}
 
 					&:hover,
 					&:focus {
-						background-color: #888888;
+						background-color: var( --cfe-toolbar--submenu--link--action--bg-color, inherit );
+
+						@media ( prefers-color-scheme: dark ) {
+							background-color: var( --cfe-toolbar--submenu--link--action--bg-color--dark, inherit );
+						}
 					}
 				}
 			}
