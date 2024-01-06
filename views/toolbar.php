@@ -102,7 +102,7 @@ if ( $user->profilePicture() ) {
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo DOMAIN_ADMIN . 'categories'; ?>"></span><?php $L->p( 'Categories' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'categories'; ?>"><?php $L->p( 'Categories' ); ?></a>
 					</li>
 					<?php endif; ?>
 
@@ -127,13 +127,13 @@ if ( $user->profilePicture() ) {
 				<ul>
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"></span><?php $L->p( 'Settings' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php $L->p( 'Settings' ); ?></a>
 					</li>
 					<?php endif; ?>
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo DOMAIN_ADMIN . 'users'; ?>"></span><?php $L->p( 'Users' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'users'; ?>"><?php $L->p( 'Users' ); ?></a>
 					</li>
 					<?php endif; ?>
 
@@ -145,7 +145,7 @@ if ( $user->profilePicture() ) {
 
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 					<li>
-						<a href="<?php echo DOMAIN_ADMIN . 'themes'; ?>"></span><?php $L->p( 'Themes' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'themes'; ?>"><?php $L->p( 'Themes' ); ?></a>
 					</li>
 					<?php endif; ?>
 
