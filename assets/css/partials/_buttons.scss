@@ -24,7 +24,7 @@
 	letter-spacing: var( --cfe-button--letter-spacing, normal );
 	word-spacing: var( --cfe-button--word-spacing, normal );
 	text-decoration: var( --cfe-button--text-decoration, none );
-	background-color: var( --cfe-button--bg-color, var( --cfe-bg-color, inherit ) );
+	background-color: var( --cfe-button--bg-color, var( --cfe-body--bg-color, inherit ) );
 	border: solid 1px var( --cfe-button--border-color, #555555 );
 	color: var( --cfe-button--text-color, var( --cfe-text-color, #333333 ) );
 	transition: var( --cfe-button--transition, all 0.15s ease-in-out );

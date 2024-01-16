@@ -139,8 +139,8 @@ function body_classes() {
 
 	// User toolbar.
 	if ( plugin() && (
-			'enabled' == plugin()->show_user_toolbar() ||
-			'backend' == plugin()->show_user_toolbar()
+			'enabled' == plugin()->user_toolbar() ||
+			'backend' == plugin()->user_toolbar()
 		)
 	) {
 		$classes[] = 'toolbar-active';

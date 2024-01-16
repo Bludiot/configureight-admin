@@ -38,8 +38,8 @@ if ( plugin() && 'theme' == plugin()->admin_theme() && 'themes' == $url->slug() 
 // User toolbar option.
 $show_toolbar = true;
 if (
-	'frontend' == plugin()->show_user_toolbar() ||
-	'disabled' == plugin()->show_user_toolbar()
+	'frontend' == plugin()->user_toolbar() ||
+	'disabled' == plugin()->user_toolbar()
 ) {
 	$show_toolbar = false;
 }
@@ -89,7 +89,7 @@ include( 'views/alert.php' ); ?>
 
 <div class="admin-wrapper">
 
-	<div id="admin-menu" class="admin-menu" <?php echo $menu_style; ?>">
+	<div id="admin-menu" class="admin-menu" <?php echo $menu_style; ?>>
 		<?php include( 'views/menu.php' ); ?>
 	</div>
 

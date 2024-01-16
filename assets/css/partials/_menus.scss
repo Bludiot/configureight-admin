@@ -277,6 +277,7 @@
 					display: block;
 					padding: 0 1rem;
 					background-color: var( --cfe-toolbar--submenu--link--bg-color, inherit );
+					color: var( --cfe-toolbar--submenu--link--text-color, inherit );
 
 					@media ( prefers-color-scheme: dark ) {
 						background-color: var( --cfe-toolbar--submenu--link--bg-color--dark, inherit );
@@ -285,9 +286,11 @@
 					&:hover,
 					&:focus {
 						background-color: var( --cfe-toolbar--submenu--link--action--bg-color, inherit );
+						color: var( --cfe-toolbar--submenu--link--action--text-color, inherit );
 
 						@media ( prefers-color-scheme: dark ) {
 							background-color: var( --cfe-toolbar--submenu--link--action--bg-color--dark, inherit );
+							color: var( --cfe-toolbar--submenu--link--action--text-color--dark, inherit );
 						}
 					}
 				}

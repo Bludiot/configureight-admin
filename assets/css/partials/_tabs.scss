@@ -1,54 +1,85 @@
 ///
-/// Tabbed admin content
+/// Tabbed content
 ///
 
 .nav-tabs {
 	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
+	width: var( --cfe-tabs--list--width, 100% );
+	height: var( --cfe-tabs--list--height );
+	max-width: var( --cfe-tabs--list--max-width );
+	max-height: var( --cfe-tabs--list--max-height );
+	display: flex; // No need to modify.
+	flex-direction: var( --cfe-tabs--list--flex-direction, row );
+	align-items: var( --cfe-tabs--list--align-items );
+	justify-content: var( --cfe-tabs--list--justify-content );
+	flex-wrap: var( --cfe-tabs--list--flex-wrap, wrap );
 	gap: var( --cfe-tabs--list--gap );
 	margin: var( --cfe-tabs--list--margin );
 	padding: var( --cfe-tabs--list--padding );
-	border-bottom: var( --cfe-tabs--border-style ) var( --cfe-tabs--border-width ) var( --cfe-tabs--list--border-color, var( --cfe-tabs--border-color ) );
+	border: var( --cfe-tabs--list--border-style ) var( --cfe-tabs--list--border-width ) var( --cfe-tabs--list--border-color );
+	border-bottom: var( --cfe-tabs--list--border-bottom-style ) var( --cfe-tabs--list--border-bottom-width ) var( --cfe-tabs--list--border-bottom-color );
+	background-color: var( --cfe-tabs--list--bg-color );
+	color: var( --cfe-tabs--list--text-color );
+
+	@media ( prefers-color-scheme: dark ) {
+		border-color: var( --cfe-tabs--list--border-color--dark );
+		border-bottom-color: var( --cfe-tabs--list--border-bottom-color--dark );
+		background-color: var( --cfe-tabs--list--bg-color--dark );
+		color: var( --cfe-tabs--list--text-color--dark );
+	}
 
 	.nav-item {
+		display: var( --cfe-tabs--list--item--display, inline-block );
+		margin: var( --cfe-tabs--list--item--margin );
+		padding: var( --cfe-tabs--list--item--padding );
 
 		// Tabs bottom border to cover list bottom border.
-		transform: translateY( var( --cfe-tabs--border-width ) );
+		transform: translateY( var( --cfe-tabs--list--border-bottom-width ) );
 	}
 
 	.nav-link {
-		display: block;
-		margin: 0;
-		padding: 0.5rem 1rem;
-		font-family: var( --cfe-tabs--nav-link--font-family );
-		font-size: var( --cfe-tabs--nav-link--font-size );
-		font-weight: var( --cfe-tabs--nav-link--font-weight, 600 );
-		text-decoration: var( --cfe-tabs--nav-link--text-decoration, none );
-		text-decoration: none;
-		text-transform: capitalize;
-		border: var( --cfe-tabs--border-style ) var( --cfe-tabs--border-width ) var( --cfe-tabs--border-color );
-		border-bottom-color: #888888;
-		border-top-left-radius: 0.25rem;
-		border-top-right-radius: 0.25rem;
-		background-color: var( --cfe-tabs--nav-link--bg-color, var( --cfe-bg-color ) );
-		color: var( --cfe-tabs--nav-link--text-color );
+		display: var( --cfe-tabs--list--link--display, block );
+		margin: var( --cfe-tabs--list--link--margin, 0 0 0 0 );
+		padding: var( --cfe-tabs--list--link--padding, 0.75rem 1rem );
+		font-family: var( --cfe-tabs--list--link--font-family );
+		font-size: var( --cfe-tabs--list--link--font-size, var( --cfe-body--font-size, inherit ) );
+		font-weight: var( --cfe-tabs--list--link--font-weight, 600 );
+		font-style: var( --cfe-tabs--list--link--font-style, normal );
+		font-variant: var( --cfe-tabs--list--link--font-variant );
+		text-decoration: var( --cfe-tabs--list--link--text-decoration, none );
+		text-transform: var( --cfe-tabs--list--link--text-transform, capitalize );
+		letter-spacing: var( --cfe-tabs--list--link--letter-spacing, normal );
+		word-spacing: var( --cfe-tabs--list--link--word-spacing, normal );
+		white-space: var( --cfe-tabs--list--link--text-transform );
+		word-break: var( --cfe-tabs--list--link--text-transform );
+		line-height: var( --cfe-tabs--list--link--line-height, 1 );
+		border: var( --cfe-tabs--list--link--border-style ) var( --cfe-tabs--list--link--border-width ) var( --cfe-tabs--list--link--border-color );
+		border-top-left-radius: var( --cfe-tabs--list--corner-radius, 0.25rem );
+		border-top-right-radius: var( --cfe-tabs--list--corner-radius, 0.25rem );
+		background-color: var( --cfe-tabs--list--link--bg-color, var( --cfe-body--bg-color ) );
+		color: var( --cfe-tabs--list--link--text-color, var( --cfe-body--text-color ) );
 
 		@media ( prefers-color-scheme: dark ) {
-			background-color: var( --cfe-tabs--nav-link--bg-color--dark, var( --cfe-bg-color--dark ) );
-			color: var( --cfe-tabs--nav-link--text-color--dark );
+			border-color: var( --cfe-tabs--list--link--border-color--dark );
+			background-color: var( --cfe-tabs--list--link--bg-color--dark, var( --cfe-body--bg-color--dark ) );
+			color: var( --cfe-tabs--list--link--text-color--dark );
 		}
 
 		&:hover,
 		&:focus {
 			isolation: isolate;
-			border-color: #888888;
-			background-color: #ffffff;
+			border-color: var( --cfe-tabs--list--link--action--border-color, var( --cfe-tabs--list--link--border-color ) );
+			background-color: var( --cfe-tabs--list--link--action--bg-color );
+			color: var( --cfe-tabs--list--link--action--text-color );
+
+			@media ( prefers-color-scheme: dark ) {
+				border-color: var( --cfe-tabs--list--link--action--border-color--dark, var( --cfe-tabs--list--link--border-color--dark ) );
+				background-color: var( --cfe-tabs--list--link--action--bg-color--dark );
+				color: var( --cfe-tabs--list--link--action--text-color--dark, var( --cfe-tabs--list--link--text-color--dark ) );
+			}
 		}
 
 		&.disabled {
-			color: #888888;
-			background-color: #cccccc;
 			pointer-events: none;
 			cursor: not-allowed;
 		}
@@ -57,11 +88,18 @@
 	.nav-link.active,
 	.nav-item.active .nav-link,
 	.nav-item.show .nav-link {
-		border-color: #888888;
-		border-bottom-color: #ffffff;
-		background-color: #ffffff;
-		color: #333333;
+		border: var( --cfe-tabs--list--link--border-style ) var( --cfe-tabs--list--link--border-width ) var( --cfe-tabs--list--link--border-color );
+		border-bottom-color: var( --cfe-body--bg-color );
+		background-color: var( --cfe-body--bg-color );
+		color: var( --cfe-tabs--list--link--active--text-color );
 		cursor: default;
+
+		@media ( prefers-color-scheme: dark ) {
+			border: var( --cfe-tabs--list--link--border-style ) var( --cfe-tabs--list--link--border-width ) var( --cfe-tabs--list--link--border-color--dark );
+			border-bottom-color: var( --cfe-body--bg-color--dark );
+			background-color: var( --cfe-body--bg-color--dark );
+			color: var( --cfe-tabs--list--link--active--text-color--dark );
+		}
 	}
 
 	.dropdown-menu {
@@ -75,10 +113,14 @@
 
 	.tab-pane {
 		display: none;
-		padding: 1rem 0 0 0;
+		padding: var( --cfe-tabs--content--pane--padding, 1rem 0 0 0 );
 
 		&.active {
-			display: block;
+			display: var( --cfe-tabs--content--pane--active--display, block );
+		}
+
+		.text-uppercase {
+			text-transform: none !important;
 		}
 	}
 }

@@ -20,8 +20,8 @@ $color_one_dark:   $white;
 $color_two_dark:   $yellow;
 $color_three_dark: $dark_gray;
 $color_four_dark:  $medium_gray;
-$color_five_dark:  $medium_gray;
-$color_six_dark:   $light_gray;
+$color_five_dark:  $dark_gray;
+$color_six_dark:   $medium_gray;
 
 :root {
 
@@ -59,8 +59,8 @@ $color_six_dark:   $light_gray;
 	// Layout elements.
 	--cfe-box--border-style: solid;
 	--cfe-box--border-width: 1px;
-	--cfe-box--border-color: #{$light_gray};
-	--cfe-box--border-color--dark: #{$medium_gray};
+	--cfe-box--border-color: #{rgba( $color: $color_text, $alpha: 0.5 )};
+	--cfe-box--border-color--dark: #{rgba( $color: $color_text_dark, $alpha: 0.5 )};
 	--cfe-box--border: var( --cfe-box--border-style ) var( --cfe-box--border-width ) var( --cfe-box--border-color );
 	--cfe-box--border--dark: var( --cfe-box--border-style ) var( --cfe-box--border-width ) var( --cfe-box--border-color--dark );
 
@@ -74,6 +74,8 @@ $color_six_dark:   $light_gray;
 	--cfe-text-shadow: 0.05em 0.05em 0.05em #{rgba( $color: black, $alpha: 0.625 )};
 
 	// Links.
+	--cfe-link--text-decoration: underline;
+	--cfe-link--text-underline-offset: 0.325em;
 	--cfe-link--text-color: var( --cfe-scheme-color--one );
 	--cfe-link--text-color--dark: var( --cfe-scheme-color--one--dark );
 	--cfe-link--action--text-color: var( --cfe-scheme-color--two );
@@ -102,11 +104,12 @@ $color_six_dark:   $light_gray;
 	--cfe-form-element--padding: 0.5em 1em;
 	--cfe-form-element--border-style: solid;
 	--cfe-form-element--border-width: 1px;
-	--cfe-form-element--border-color: var( --cfe-scheme-color--text );
-	--cfe-form-element--border-color--dark: var( --cfe-scheme-color--text--dark );
+	--cfe-form-element--border-color: var( --cfe-box--border-color );
+	--cfe-form-element--border-color--dark: var( --cfe-box--border-color--dark );
 	--cfe-form-element--action--border-color: var( --cfe-scheme-color--two );
 	--cfe-form-element--action--border-color--dark: var( --cfe-scheme-color--two--dark );
 	--cfe-form-element--border: var( --cfe-form-element--border-style ) var( --cfe-form-element--border-width ) var( --cfe-form-element--border-color );
+	--cfe-form-element--border--dark: var( --cfe-form-element--border-style ) var( --cfe-form-element--border-width ) var( --cfe-form-element--border-color--dark );
 	--cfe-form-element--font-weight: 400;
 	--cfe-form--placeholder-color: #{$light_gray};
 	--cfe-form--placeholder-color--dark: #{$light_gray};
@@ -118,7 +121,7 @@ $color_six_dark:   $light_gray;
 	--cfe-select--margin: 1em 0 0;
 	--cfe-select--padding: 0.5em 1em;
 
-	--cfe-button--padding: 0.75em 1em;
+	--cfe-button--padding: 0.75rem 1rem;
 	--cfe-button--font-weight: 700;
 	--cfe-button--bg-color: var( --cfe-scheme-color--three );
 	--cfe-button--bg-color--dark: var( --cfe-scheme-color--three--dark );
@@ -134,6 +137,9 @@ $color_six_dark:   $light_gray;
 	--cfe-button--action--text-color--dark: #{$white};
 	--cfe-button--svg-icon--width: 1em;
 	--cfe-button--svg-icon--height: 1em;
+
+	--cfe-text-muted--text-color: var( --cfe-scheme-color--text );
+	--cfe-text-muted--text-color--dark: var( --cfe-scheme-color--text--dark );
 
 	// User toolbar.
 	--cfe-toolbar--padding: 0 1rem;
@@ -152,89 +158,28 @@ $color_six_dark:   $light_gray;
 	--cfe-toolbar--link--action--bg-color--dark: var( --cfe-scheme-color--five--dark );
 	--cfe-toolbar--link--action--text-color: #{$white};
 	--cfe-toolbar--link--action--text-color--dark: #{$white};
-	--cfe-toolbar--submenu--bg-color: var( --cfe-scheme-color--five );
-	--cfe-toolbar--submenu--bg-color--dark: var( --cfe-scheme-color--five--dark );
 	--cfe-toolbar--submenu--link--action--bg-color: var( --cfe-scheme-color--six );
 	--cfe-toolbar--submenu--link--action--bg-color--dark: var( --cfe-scheme-color--six--dark );
+	--cfe-toolbar--submenu--link--text-color: #{$white};
+	--cfe-toolbar--submenu--link--text-color--dark: #{$white};
 
 	// Admin menu.
 	--cfe-admin-menu--bg-color: var( --cfe-body--bg-color--dark );
 	--cfe-admin--menu--link--action--bg-color: var( --cfe-scheme-color--five );
 	--cfe-admin--menu--link--action--bg-color--dark: var( --cfe-scheme-color--five--dark );
 
-	// Header.
-	--cfe-site-header--bg-color: var( --cfe-body--bg-color );
-	--cfe-site-header--bg-color--dark: var( --cfe-body--bg-color--dark );
-	--cfe-site-logo--min-width: 80px;
-	--cfe-cover--description--font-size: 1.3125rem;
-	--cfe-cover-overlay--bg-color: #{rgba( $color: black, $alpha: 0.625 )};
-	--cfe-cover-blend--bg-color: #3e6caf;
-
-	// Navigation.
-	--cfe-site-nav--max-width: 50vw;
-	--cfe-site-nav--item--font-size: var( --cfe-font-size );
-	--cfe-site-nav--item--font-weight: 600;
-	--cfe-site-nav--sub-list--bg-color: var( --cfe-scheme-color--five );
-	--cfe-site-nav--sub-list--bg-color--dark: var( --cfe-scheme-color--five--dark );
-	--cfe-site-nav--sub-list--action--bg-color: var( --cfe-scheme-color--six );
-	--cfe-site-nav--sub-list--action--bg-color--dark: var( --cfe-scheme-color--six--dark );
-	--cfe-site-nav--sub-list--text-color: #{$white};
-	--cfe-site-nav--sub-list--text-color--dark: #{$white};
-	--cfe-site-nav--sub-list--action--text-color: #{$white};
-	--cfe-site-nav--sub-list--action--text-color--dark: #{$white};
-	--cfe-pagination-list--numeric--link--border: var( --cfe-form--border-style ) var( --cfe-form--border-width ) transparent;
-	--cfe-pagination-list--numeric--link--border--dark: var( --cfe-form--border-style ) var( --cfe-form--border-width ) transparent;
-	--cfe-pagination-list--numeric--link--active--border: var( --cfe-form--border-style ) var( --cfe-form--border-width ) var( --cfe-scheme-color--two );
-	--cfe-pagination-list--numeric--link--active--border--dark: var( --cfe-form--border-style ) var( --cfe-form--border-width ) var( --cfe-scheme-color--two--dark );
-
-	// Content.
-	--cfe-content-wrap--padding: var( --cfe-spacing--vert ) var( --cfe-spacing--horz );
-	--cfe-page-main--padding: 0;
-
-	--cfe-page-header--heading--font-size: 2rem;
-	--cfe-post-header--list--heading--font-size: 1.75rem;
-	--cfe-post-header--list--heading--font-weight: 700;
-	--cfe-post-header--list--heading--line-height: 1.2;
-
-	--cfe-categories-list--buttons--link--text-decoration: none;
-	--cfe-categories-list--buttons--link--font-size: 0.8125rem;
-	--cfe-categories-list--buttons--link--font-weight: 600;
-	--cfe-categories-list--buttons--link--bg-color: var( --cfe-button--bg-color );
-	--cfe-categories-list--buttons--link--bg-color--dark: var( --cfe-button--bg-color--dark );
-	--cfe-categories-list--buttons--link--border-color: var( --cfe-button--border-color );
-	--cfe-categories-list--buttons--link--border-color--dark: var( --cfe-button--border-color--dark );
-	--cfe-categories-list--buttons--link--text-color: var( --cfe-button--text-color );
-	--cfe-categories-list--buttons--link--text-color--dark: var( --cfe-button--text-color--dark );
-	--cfe-categories-list--buttons--link--action--bg-color: var( --cfe-button--action--bg-color );
-	--cfe-categories-list--buttons--link--action--bg-color--dark: var( --cfe-button--action--bg-color--dark );
-	--cfe-categories-list--buttons--link--action--border-color: var( --cfe-button--border-color );
-	--cfe-categories-list--buttons--link--action--border-color--dark: var( --cfe-button--border-color--dark );
-	--cfe-categories-list--buttons--link--action--text-color: var( --cfe-button--action--text-color );
-	--cfe-categories-list--buttons--link--action--text-color--dark: var( --cfe-button--action--text-color--dark );
-
-	--cfe-tags-list--buttons--link--text-decoration: none;
-	--cfe-tags-list--buttons--link--font-size: 0.8125rem;
-	--cfe-tags-list--buttons--link--font-weight: 600;
-	--cfe-tags-list--buttons--link--bg-color: var( --cfe-button--bg-color );
-	--cfe-tags-list--buttons--link--bg-color--dark: var( --cfe-button--bg-color--dark );
-	--cfe-tags-list--buttons--link--border-color: var( --cfe-button--border-color );
-	--cfe-tags-list--buttons--link--border-color--dark: var( --cfe-button--border-color--dark );
-	--cfe-tags-list--buttons--link--text-color: var( --cfe-button--text-color );
-	--cfe-tags-list--buttons--link--text-color--dark: var( --cfe-button--text-color--dark );
-	--cfe-tags-list--buttons--link--action--text-color: var( --cfe-button--action--text-color );
-	--cfe-tags-list--buttons--link--action--text-color--dark: var( --cfe-button--action--text-color--dark );
-	--cfe-tags-list--buttons--link--action--bg-color: var( --cfe-button--action--bg-color );
-	--cfe-tags-list--buttons--link--action--bg-color--dark: var( --cfe-button--action--bg-color--dark );
-	--cfe-tags-list--buttons--link--action--border-color: var( --cfe-button--action--border-color );
-	--cfe-tags-list--buttons--link--action--border-color--dark: var( --cfe-button--action--border-color--dark );
-
 	// Tabbed content.
 	--cfe-tabs--list--gap: 0.5rem 0.25rem;
 	--cfe-tabs--list--margin: 2rem 0 0 0;
 	--cfe-tabs--list--padding: 0 0.5rem;
-	--cfe-tabs--border-style: solid;
-	--cfe-tabs--border-width: 1px;
-	--cfe-tabs--border-color: #888888;
-	--cfe-tabs--list--border-color: #888888;
-	--cfe-tabs--nav-link--bg-color: #{darken( $color: $body_color, $amount: 6.666% )};
+	--cfe-tabs--list--border-bottom-style: solid;
+	--cfe-tabs--list--border-bottom-width: 1px;
+	--cfe-tabs--list--border-bottom-color: var( --cfe-box--border-color );
+	--cfe-tabs--list--border-bottom-color--dark: var( --cfe-box--border-color--dark );
+	--cfe-tabs--list--link--border-style: solid;
+	--cfe-tabs--list--link--border-width: 1px;
+	--cfe-tabs--list--link--border-color: var( --cfe-box--border-color );
+	--cfe-tabs--list--link--border-color--dark: var( --cfe-box--border-color--dark );
+	--cfe-tabs--list--link--bg-color: #{rgba( $color: black, $alpha: 8% )};
+	--cfe-tabs--list--link--bg-color--dark: #{rgba( $color: white, $alpha: 8% )};
 }
