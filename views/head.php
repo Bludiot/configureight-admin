@@ -25,13 +25,13 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 	<title><?php echo $layout['title']; ?></title>
 
 	<meta charset="<?php echo CHARSET; ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<meta name="robots" content="noindex,nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+	<meta name="robots" content="noindex,nofollow" />
 
 	<?php // Preconnect and preload files. ?>
 	<link rel="preconnect" href="//fonts.adobe.com" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 	<?php
 
