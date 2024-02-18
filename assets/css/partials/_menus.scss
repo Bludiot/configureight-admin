@@ -29,6 +29,17 @@
 
 		li {
 			margin: 0;
+			padding: 0;
+			font-family: var( --cfe-admin-menu--item--font-family, inherit );
+			font-size: var( --cfe-admin-menu--item--font-size, 1rem );
+			font-weight: var( --cfe-admin-menu--item--font-weight );
+			font-style: var( --cfe-admin-menu--item--font-style, inherit );
+			font-variant: var( --cfe-admin-menu--item--font-variant, inherit );
+			line-height: var( --cfe-admin-menu--item--line-height, inherit );
+			letter-spacing: var( --cfe-admin-menu--item--letter-spacing, normal );
+			word-spacing: var( --cfe-admin-menu--item--word-spacing, normal );
+			text-decoration: var( --cfe-admin-menu--item--text-decoration );
+			text-transform: var( --cfe-admin-menu--item--text-transform );
 
 			@media ( max-width: $break-max-lg ) {
 				margin: 0.325rem 0;
@@ -43,7 +54,6 @@
 			a {
 				width: 100%;
 				max-width: 100%;
-				min-height: 2.5em;
 				display: inline-flex;
 				flex-wrap: nowrap;
 				align-items: center;

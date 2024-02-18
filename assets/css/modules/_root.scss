@@ -48,6 +48,7 @@ $color_six_dark:   $medium_gray;
 	--cfe-fonts--sans-stack: #{$fonts_sans};
 	--cfe-fonts--serif-stack: #{$fonts_serif};
 	--cfe-fonts--monospace-stack: #{$fonts_monospace};
+	--cfe-fonts--display-stack: #{$fonts_sans};
 
 	// Layout general.
 	--cfe-spacing--horz: 2rem;
@@ -122,7 +123,6 @@ $color_six_dark:   $medium_gray;
 	--cfe-select--padding: 0.5em 1em;
 
 	--cfe-button--padding: 0.75rem 1rem;
-	--cfe-button--font-weight: 700;
 	--cfe-button--bg-color: var( --cfe-scheme-color--three );
 	--cfe-button--bg-color--dark: var( --cfe-scheme-color--three--dark );
 	--cfe-button--action--bg-color: var( --cfe-scheme-color--four );

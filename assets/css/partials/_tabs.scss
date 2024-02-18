@@ -41,14 +41,14 @@
 		display: var( --cfe-tabs--list--link--display, block );
 		margin: var( --cfe-tabs--list--link--margin, 0 0 0 0 );
 		padding: var( --cfe-tabs--list--link--padding, 0.75rem 1rem );
-		font-family: var( --cfe-tabs--list--link--font-family );
+		font-family: var( --cfe-tabs--list--link--font-family, var( --cfe-display--font-family ) );
 		font-size: var( --cfe-tabs--list--link--font-size, var( --cfe-body--font-size, inherit ) );
-		font-weight: var( --cfe-tabs--list--link--font-weight, 600 );
+		font-weight: var( --cfe-tabs--list--link--font-weight, var( --cfe-display--font-weight ) );
 		font-style: var( --cfe-tabs--list--link--font-style, normal );
 		font-variant: var( --cfe-tabs--list--link--font-variant );
 		text-decoration: var( --cfe-tabs--list--link--text-decoration, none );
 		text-transform: var( --cfe-tabs--list--link--text-transform, capitalize );
-		letter-spacing: var( --cfe-tabs--list--link--letter-spacing, normal );
+		letter-spacing: var( --cfe-tabs--list--link--letter-spacing, var( --cfe-display--letter-spacing ) );
 		word-spacing: var( --cfe-tabs--list--link--word-spacing, normal );
 		white-space: var( --cfe-tabs--list--link--text-transform );
 		word-break: var( --cfe-tabs--list--link--text-transform );

@@ -352,7 +352,11 @@ h6 {
 }
 
 code {
-	background-color: #e7e7e7;
+	background-color: rgba( $color: black, $alpha: 0.1 );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: rgba( $color: white, $alpha: 0.1 );
+	}
 }
 
 code.select {
