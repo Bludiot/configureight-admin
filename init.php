@@ -14,6 +14,15 @@ if ( ! defined( 'BLUDIT' ) ) {
 	die();
 }
 
+/**
+ * Restore the default admin theme if the
+ * Configure 8 frontend theme is not active.
+ */
+if ( 'configureight' != $site->theme() ) {
+	restore_default_theme();
+	return;
+}
+
 include( 'includes/classes/class-bootstrap.php' );
 
 /**
@@ -275,14 +284,6 @@ function restore_default_theme() {
 
 	// Write theme into the database file.
 	file_put_contents ( $db_file, $content );
-}
-
-/**
- * Restore the default admin theme if the
- * Configure 8 frontend theme is not active.
- */
-if ( 'configureight' != $site->theme() ) {
-	restore_default_theme();
 }
 
 /**
