@@ -22,6 +22,11 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 	$view_page = DOMAIN_BASE . $view_slug;
 }
 
+$view_text = '';
+if ( str_contains( $url->slug(), 'edit-content' ) ) {
+	$view_text = ( $page->isStatic() ? $L->get( 'View Page' ) : $L->get( 'View Post' ) );
+}
+
 // Get a username or fallback.
 $user = new User( Session :: get( 'username' ) );
 $name = $L->get( 'profile-link-default' );
@@ -53,17 +58,11 @@ if ( $user->profilePicture() ) {
 <section id="admin-toolbar" class="admin-toolbar" data-admin-user-toolbar>
 	<nav class="admin-toolbar-nav toolbar-user-action">
 		<ul class="admin-toolbar-nav-list">
-			<?php if ( $site->logo() ) : ?>
 			<li class="top-level-item">
-				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo DOMAIN_BASE; ?>" title="<?php $L->p( 'View Site' ); ?>">
-					<img class="admin-toolbar-logo" src="<?php echo $site->logo(); ?>" alt="<?php $L->p( 'View Site' ); ?>" />
+				<a target="_blank" href="<?php echo DOMAIN_BASE; ?>" title="<?php $L->p( 'View Site' ); ?>">
+					<?php svg_icon( 'house' ); ?><?php $L->p( 'Site' ); ?>
 				</a>
 			</li>
-			<?php else : ?>
-			<li class="top-level-item">
-				<a class="admin-toolbar-logo-link" target="_blank" href="<?php echo DOMAIN_BASE; ?>"><?php $L->p( 'View Site' ); ?></a>
-			</li>
-			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="top-level-item has-submenu">
@@ -108,7 +107,7 @@ if ( $user->profilePicture() ) {
 
 					<?php if ( str_contains( $url->slug(), 'edit-content' ) ) : ?>
 					<li class="top-level-item">
-						<a href="<?php echo $view_page; ?>"><?php $L->p( 'View Page ' ); ?></a>
+						<a href="<?php echo $view_page; ?>"><?php echo $view_text; ?></a>
 					</li>
 					<?php endif; ?>
 				</ul>
@@ -116,7 +115,7 @@ if ( $user->profilePicture() ) {
 
 			<?php if ( str_contains( $url->slug(), 'edit-content' ) ) : ?>
 			<li class="top-level-item">
-				<a href="<?php echo $view_page; ?>"><?php $L->p( 'View Page' ); ?></a>
+				<a href="<?php echo $view_page; ?>"><?php echo $view_text; ?></a>
 			</li>
 			<?php endif; ?>
 
@@ -158,6 +157,26 @@ if ( $user->profilePicture() ) {
 						<a href="<?php echo DOMAIN_ADMIN . 'configure-plugin/' . plugin()->className(); ?>"><?php $L->p( 'Options' ); ?></a>
 					</li>
 					<?php endif; ?>
+				</ul>
+			</li>
+			<?php endif; ?>
+			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
+			<li class="top-level-item has-submenu">
+				<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className(); ?>"><?php svg_icon( 'book-open' ); ?><?php $L->p( 'Help' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+
+				<ul>
+					<li>
+						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className(); ?>"><?php $L->p( 'Theme Guide' ); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=colors'; ?>"><?php $L->p( 'Colors Reference' ); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=fonts'; ?>"><?php $L->p( 'Fonts Reference' ); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=database'; ?>"><?php $L->p( 'Database' ); ?></a>
+					</li>
 				</ul>
 			</li>
 			<?php endif; ?>
