@@ -68,6 +68,7 @@ $color_six_dark:   $medium_gray;
 	// Body & general text.
 	--cfe-body--font-family: var( --cfe-fonts--sans-stack );
 	--cfe-body--font-size: 1rem;
+	--cfe-body--line-height: 1.5;
 	--cfe-body--bg-color: var( --cfe-scheme-color--body );
 	--cfe-body--bg-color--dark: var( --cfe-scheme-color--body--dark );
 	--cfe-body--text-color: var( --cfe-scheme-color--text );
@@ -102,7 +103,9 @@ $color_six_dark:   $medium_gray;
 	--cfe-legend-font-size: 1em;
 	--cfe-legend-font-weight: 700;
 
-	--cfe-form-element--padding: 0.5em 1em;
+	--cfe-form-element--padding-x: 1em;
+	--cfe-form-element--padding-y: 0.5em;
+	--cfe-form-element--padding: var( --cfe-form-element--padding-y ) var( --cfe-form-element--padding-x );
 	--cfe-form-element--border-style: solid;
 	--cfe-form-element--border-width: 1px;
 	--cfe-form-element--border-color: var( --cfe-box--border-color );
@@ -111,6 +114,7 @@ $color_six_dark:   $medium_gray;
 	--cfe-form-element--action--border-color--dark: var( --cfe-scheme-color--two--dark );
 	--cfe-form-element--border: var( --cfe-form-element--border-style ) var( --cfe-form-element--border-width ) var( --cfe-form-element--border-color );
 	--cfe-form-element--border--dark: var( --cfe-form-element--border-style ) var( --cfe-form-element--border-width ) var( --cfe-form-element--border-color--dark );
+	--cfe-form-element--font-size: var( --cfe-body--font-size );
 	--cfe-form-element--font-weight: 400;
 	--cfe-form--placeholder-color: #{$light_gray};
 	--cfe-form--placeholder-color--dark: #{$light_gray};
