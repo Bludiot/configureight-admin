@@ -2101,6 +2101,10 @@ select[disabled] {
   min-width: 10ch;
 }
 
+.form-range-preview-image {
+  margin: 0 0 0.5rem 0;
+}
+
 p + .multi-check-wrap {
   margin-top: 1rem;
 }
@@ -2238,6 +2242,14 @@ select option:hover {
 
 .text-above-field {
   margin: 0.5rem 0;
+}
+
+.code-field {
+  font-family: var(--cfe-code-field--font-family, var(--cfe-fonts--monospace-stack));
+  font-size: var(--cfe-code-field--font-size, 1em);
+  font-weight: var(--cfe-code-field--font-weight, 500);
+  background-color: var(--cfe-scheme-color--body--dark);
+  color: var(--cfe-scheme-color--text--dark);
 }
 
 .upload-album-empty {

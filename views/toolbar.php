@@ -59,7 +59,7 @@ if ( $user->profilePicture() ) {
 	<nav class="admin-toolbar-nav toolbar-user-action">
 		<ul class="admin-toolbar-nav-list">
 			<li class="top-level-item">
-				<a target="_blank" href="<?php echo DOMAIN_BASE; ?>" title="<?php $L->p( 'View Site' ); ?>">
+				<a href="<?php echo DOMAIN_BASE; ?>" title="<?php $L->p( 'View Site' ); ?>">
 					<?php svg_icon( 'house' ); ?><?php $L->p( 'Site' ); ?>
 				</a>
 			</li>
@@ -175,7 +175,7 @@ if ( $user->profilePicture() ) {
 						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=fonts'; ?>"><?php $L->p( 'Fonts Reference' ); ?></a>
 					</li>
 					<li>
-						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=database'; ?>"><?php $L->p( 'Database' ); ?></a>
+						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=database'; ?>"><?php $L->p( 'Options Database' ); ?></a>
 					</li>
 				</ul>
 			</li>

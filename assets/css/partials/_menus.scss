@@ -238,6 +238,7 @@
 				display: inline-flex;
 				align-items: center;
 				gap: 0.5em;
+				white-space: var( --cfe-toolbar--link--white-space, nowrap );
 				text-decoration: none;
 				color: var( --cfe-toolbar--link--text-color );
 
