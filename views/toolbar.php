@@ -60,13 +60,13 @@ if ( $user->profilePicture() ) {
 		<ul class="admin-toolbar-nav-list">
 			<li class="top-level-item">
 				<a href="<?php echo DOMAIN_BASE; ?>" title="<?php $L->p( 'View Site' ); ?>">
-					<?php svg_icon( 'house' ); ?><?php $L->p( 'Site' ); ?>
+					<?php svg_icon( 'house' ); ?><span class="top-level-text"><?php $L->p( 'Site' ); ?></span>
 				</a>
 			</li>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="top-level-item has-submenu">
-				<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); $L->p( 'Admin' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); ?><span class="top-level-text"><?php $L->p( 'Admin' ); ?></span><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<li>
@@ -82,13 +82,13 @@ if ( $user->profilePicture() ) {
 				</ul>
 			</li>
 			<?php else : ?>
-			<li>
-				<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php $L->p( 'Dashboard' ); ?></a>
+			<li class="top-level-item">
+				<a href="<?php echo DOMAIN_ADMIN . 'dashboard'; ?>"><?php svg_icon( 'gauge' ); ?><span class="top-level-text"><?php $L->p( 'Dashboard' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<li class="top-level-item has-submenu">
-				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php svg_icon( 'file' ); ?><?php $L->p( 'Content' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'content';?>"><?php svg_icon( 'file' ); ?><span class="top-level-text"><?php $L->p( 'Content' ); ?></span><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<li>
@@ -121,7 +121,7 @@ if ( $user->profilePicture() ) {
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="top-level-item has-submenu">
-				<a href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><?php $L->p( 'Manage' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php svg_icon( 'gear' ); ?><span class="top-level-text"><?php $L->p( 'Manage' ); ?></span><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
@@ -160,9 +160,30 @@ if ( $user->profilePicture() ) {
 				</ul>
 			</li>
 			<?php endif; ?>
+			<?php
+			if (
+				checkRole( [ 'admin', 'editor' ], false ) &&
+				plugin_sidebars_count() > 0
+			) : ?>
+			<li class="top-level-item has-submenu">
+				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php svg_icon( 'banner-v' ); ?><span class="top-level-text"><?php $L->p( 'Features' ); ?></span><?php svg_icon( 'angle-down' ); ?></a>
+				<ul>
+					<?php
+					foreach ( $plugins['adminSidebar'] as $link ) {
+						if ( 'theme' == $link->type() ) {
+							continue;
+						}
+						printf(
+							'<li>%s</li>',
+							$link->adminSidebar()
+						);
+					} ?>
+				</ul>
+			</li>
+			<?php endif; ?>
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="top-level-item has-submenu">
-				<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className(); ?>"><?php svg_icon( 'book-open' ); ?><?php $L->p( 'Help' ); ?><?php svg_icon( 'angle-down' ); ?></a>
+				<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className(); ?>"><?php svg_icon( 'book-open' ); ?><span class="top-level-text"><?php $L->p( 'Help' ); ?></span><?php svg_icon( 'angle-down' ); ?></a>
 
 				<ul>
 					<li>
@@ -177,26 +198,6 @@ if ( $user->profilePicture() ) {
 					<li>
 						<a href="<?php echo DOMAIN_ADMIN . 'plugin/' . plugin()->className() . '?page=database'; ?>"><?php $L->p( 'Options Database' ); ?></a>
 					</li>
-				</ul>
-			</li>
-			<?php endif; ?>
-			<?php
-			if (
-				checkRole( [ 'admin', 'editor' ], false ) &&
-				plugin_sidebars_count() > 0
-			) : ?>
-			<li class="top-level-item has-submenu">
-				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'settings'; ?>"><?php svg_icon( 'banner-v' ); ?><?php $L->p( 'Features' ); ?><?php svg_icon( 'angle-down' ); ?></a>
-				<ul>
-					<?php
-					foreach ( $plugins['adminSidebar'] as $link ) {
-						if ( 'theme' != $link->type() ) {
-							printf(
-								'<li>%s</li>',
-								$link->adminSidebar()
-							);
-						}
-					} ?>
 				</ul>
 			</li>
 			<?php endif; ?>
