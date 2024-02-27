@@ -5478,7 +5478,6 @@ fieldset:disabled a.btn {
 .admin-menu .admin-menu-list li.has-icon-link {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .admin-menu .admin-menu-list li a {
   width: 100%;
