@@ -1606,3 +1606,19 @@ select {
 		fill: currentColor;
 	}
 }
+
+// Easy MDE plugin (markdown editor).
+.EasyMDEContainer {
+
+	.editor-toolbar {
+		button {
+			height: auto;
+			line-height: 1;
+			padding: 0.5rem;
+
+			.fa {
+				margin: 0;
+			}
+		}
+	}
+}
