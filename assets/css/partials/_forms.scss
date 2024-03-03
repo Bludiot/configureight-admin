@@ -1272,8 +1272,17 @@ form {
 		justify-content: space-between;
 		margin: var( --cfe-element--margin, calc( var( --cfe-spacing--vert ) / 2 ) 0 0 0 );
 
+		@media screen and ( max-width: $break-min_md ) {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
 		.float-right {
 			float: none !important;
+			@media screen and ( max-width: $break-min_sm ) {
+				align-self: flex-end;
+			}
 		}
 
 		.page-title {
