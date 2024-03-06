@@ -28,18 +28,18 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 }
 
 // Get a username or fallback.
-$user = new User( Session :: get( 'username' ) );
+$session_user = new User( Session :: get( 'username' ) );
 $name = $L->get( 'profile-link-default' );
 
-if ( $user->nickname() ) {
-	$name = $user->nickname();
-} elseif ( $user->firstName() ) {
-	$name = $user->firstName();
+if ( $session_user->nickname() ) {
+	$name = $session_user->nickname();
+} elseif ( $session_user->firstName() ) {
+	$name = $session_user->firstName();
 }
 
 // User avatar & profile link.
-if ( $user->profilePicture() ) {
-	$avatar  = $user->profilePicture();
+if ( $session_user->profilePicture() ) {
+	$avatar  = $session_user->profilePicture();
 	$profile = sprintf(
 		'%sedit-user/%s',
 		DOMAIN_ADMIN,
