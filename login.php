@@ -53,7 +53,7 @@ if ( defined( 'DEBUG_MODE' ) && DEBUG_MODE ) {
 <body class="bl-admin bl-admin-login">
 
 	<?php Theme :: plugins( 'loginBodyBegin' ); ?>
-	<?php include( 'html/alert.php' ); ?>
+	<?php include( 'views/alert.php' ); ?>
 
 	<div class="container">
 		<div class="row justify-content-md-center site-branding">
