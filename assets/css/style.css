@@ -5451,7 +5451,11 @@ fieldset:disabled a.btn {
   }
 }
 .admin-menu {
-  width: 200px;
+  width: 100%;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   margin: 0;
   padding: 0 0 1rem 0;
   background-color: var(--cfe-admin-menu--bg-color, #333333);

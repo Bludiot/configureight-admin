@@ -23,7 +23,9 @@ if ( 'configureight' != $site->theme() ) {
 	return;
 }
 
-include( 'includes/classes/class-bootstrap.php' );
+if ( ! class_exists( 'Bootstrap' ) ) {
+	include( 'includes/classes/class-bootstrap.php' );
+}
 
 /**
  * Constant: plugin class
