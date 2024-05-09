@@ -2750,6 +2750,7 @@ code.select {
 }
 .admin-wrapper {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
 }
@@ -5912,9 +5913,10 @@ h6.border-bottom {
   width: 100%;
 }
 
-#dashboard-options h2,
-#database-list h2 {
-  margin: 0;
+.database-list {
+  margin-top: 2rem;
+}
+.database-list h2 {
   font-family: var(--cfe-heading-secondary--font-family);
   font-size: var(--cfe-heading-secondary--font-size);
   font-weight: var(--cfe-heading-secondary--font-weight);
@@ -5928,35 +5930,26 @@ h6.border-bottom {
   text-transform: var(--cfe-heading-secondary--text-transform);
   color: var(--cfe-heading-secondary--text-color, var(--cfe-text-color));
 }
-#dashboard-options p,
-#database-list p {
+.database-list p {
   margin: 0;
 }
-#dashboard-options ul,
-#database-list ul {
+.database-list ul {
   list-style: none;
-  max-width: -moz-max-content;
-  max-width: max-content;
 }
-#dashboard-options ul li,
-#database-list ul li {
+.database-list ul li {
   padding: 0.25em 0.5em;
 }
-#dashboard-options ul li:nth-of-type(odd),
-#database-list ul li:nth-of-type(odd) {
+.database-list ul li:nth-of-type(odd) {
   background-color: #e8e8e8;
 }
-#dashboard-options ul span,
-#database-list ul span {
+.database-list ul span {
   display: inline-block;
 }
-#dashboard-options .option-name,
-#database-list .option-name {
+.database-list .option-name {
   font-family: var(--cfe-fonts--monospace-stack, monospace);
   font-weight: 500;
 }
-#dashboard-options .option-value,
-#database-list .option-value {
+.database-list .option-value {
   font-weight: 600;
 }
 

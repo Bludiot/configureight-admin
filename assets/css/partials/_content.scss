@@ -152,11 +152,10 @@ h6 {
 	}
 }
 
-#dashboard-options,
-#database-list {
+.database-list {
+	margin-top: 2rem;
 
 	h2 {
-		margin: 0;
 		font-family: var( --cfe-heading-secondary--font-family );
 		font-size: var( --cfe-heading-secondary--font-size );
 		font-weight: var( --cfe-heading-secondary--font-weight );
@@ -177,7 +176,6 @@ h6 {
 
 	ul {
 		list-style: none;
-		max-width: max-content;
 
 		li {
 			padding: 0.25em 0.5em;
