@@ -351,16 +351,31 @@ h6 {
 	text-align: left;
 }
 
+pre {
+	white-space: pre-wrap;
+	white-space: break-spaces;
+	padding: 1em;
+	background-color: rgba( $color: black, $alpha: 0.0625 );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: rgba( $color: white, $alpha: 0.0625 );
+	}
+
+	&.select {
+		user-select: all;
+	}
+}
+
 code {
 	background-color: rgba( $color: black, $alpha: 0.1 );
 
 	@media ( prefers-color-scheme: dark ) {
 		background-color: rgba( $color: white, $alpha: 0.1 );
 	}
-}
 
-code.select {
-	user-select: all;
+	&.select {
+		user-select: all;
+	}
 }
 
 .text-muted {
