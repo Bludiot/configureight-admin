@@ -748,6 +748,23 @@ h6 {
   text-align: left;
 }
 
+pre {
+  white-space: pre-wrap;
+  white-space: break-spaces;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.0625);
+}
+@media (prefers-color-scheme: dark) {
+  pre {
+    background-color: rgba(255, 255, 255, 0.0625);
+  }
+}
+pre.select {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+}
+
 code {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -756,7 +773,6 @@ code {
     background-color: rgba(255, 255, 255, 0.1);
   }
 }
-
 code.select {
   -webkit-user-select: all;
      -moz-user-select: all;
@@ -5596,7 +5612,7 @@ fieldset:disabled a.btn {
   list-style: none;
 }
 
-.admin-toolbar {
+.user-toolbar {
   position: fixed;
   top: 0;
   z-index: 8888;
@@ -5615,21 +5631,21 @@ fieldset:disabled a.btn {
   border-bottom-color: rgba(255, 255, 255, 0.125);
 }
 @media (max-width: 767.98px) {
-  .admin-toolbar {
+  .user-toolbar {
     height: var(--cfe-toolbar--mobile--height);
     line-height: var(--cfe-toolbar--mobile--height);
   }
 }
-.admin-toolbar ul {
+.user-toolbar ul {
   list-style: none;
   margin: 0;
 }
-.admin-toolbar ul.admin-toolbar-nav-list {
+.user-toolbar ul.user-toolbar-nav-list {
   display: flex;
   gap: 0;
   padding: 0;
 }
-.admin-toolbar ul li {
+.user-toolbar ul li {
   position: relative;
   margin: 0;
   padding: var(--cfe-toolbar--link--padding);
@@ -5640,40 +5656,40 @@ fieldset:disabled a.btn {
   color: var(--cfe-toolbar--link--text-color);
 }
 @media (max-width: 991.98px) {
-  .admin-toolbar ul li {
+  .user-toolbar ul li {
     padding: var(--cfe-toolbar--link--mobile--padding);
     max-height: var(--cfe-toolbar--mobile--height);
   }
 }
-.admin-toolbar ul li.has-submenu {
+.user-toolbar ul li.has-submenu {
   display: inline-flex;
   align-items: center;
   gap: 0 0.5em;
   cursor: pointer;
 }
-.admin-toolbar ul li:hover, .admin-toolbar ul li:focus {
+.user-toolbar ul li:hover, .user-toolbar ul li:focus {
   background-color: var(--cfe-toolbar--link--action--bg-color);
   color: var(--cfe-toolbar--link--action--text-color);
 }
-.admin-toolbar ul li:hover ul {
+.user-toolbar ul li:hover ul {
   left: 0;
 }
-.admin-toolbar ul li:hover ul.user-actions-sublist {
+.user-toolbar ul li:hover ul.user-actions-sublist {
   left: auto;
   right: 0;
 }
-.admin-toolbar ul li span {
+.user-toolbar ul li span {
   display: inline-block;
 }
-.admin-toolbar ul li span.svg-icon {
+.user-toolbar ul li span.svg-icon {
   cursor: pointer;
 }
 @media (max-width: 991.98px) {
-  .admin-toolbar ul li span.svg-icon svg {
+  .user-toolbar ul li span.svg-icon svg {
     height: 1.25rem;
   }
 }
-.admin-toolbar ul li a {
+.user-toolbar ul li a {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -5682,24 +5698,24 @@ fieldset:disabled a.btn {
   color: var(--cfe-toolbar--link--text-color);
 }
 @media (max-width: 767.98px) {
-  .admin-toolbar ul li a {
+  .user-toolbar ul li a {
     gap: 0 0.75em;
   }
 }
-.admin-toolbar ul li a:hover {
+.user-toolbar ul li a:hover {
   background-color: var(--cfe-toolbar--link--action--bg-color);
   color: var(--cfe-toolbar--link--action--text-color);
 }
-.admin-toolbar ul li a.admin-toolbar-logo-link {
+.user-toolbar ul li a.user-toolbar-logo-link {
   height: var(--cfe-toolbar--height);
   display: inline-flex;
   align-items: center;
 }
-.admin-toolbar ul li a .top-level-text {
+.user-toolbar ul li a .top-level-text {
   display: inline;
 }
 @media (max-width: 767.98px) {
-  .admin-toolbar ul li a .top-level-text {
+  .user-toolbar ul li a .top-level-text {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
@@ -5713,7 +5729,7 @@ fieldset:disabled a.btn {
     word-wrap: normal !important;
   }
 }
-.admin-toolbar ul ul {
+.user-toolbar ul ul {
   display: block;
   position: absolute;
   top: 100%;
@@ -5722,11 +5738,11 @@ fieldset:disabled a.btn {
   width: 160px;
   background-color: var(--cfe-toolbar--submenu--bg-color, inherit);
 }
-.admin-toolbar ul ul.user-actions-sublist {
+.user-toolbar ul ul.user-actions-sublist {
   left: auto;
   right: -9999em;
 }
-.admin-toolbar ul ul li {
+.user-toolbar ul ul li {
   margin: 0;
   max-height: 100%;
   padding: 0;
@@ -5734,45 +5750,45 @@ fieldset:disabled a.btn {
   color: transparent;
 }
 @media (max-width: 767.98px) {
-  .admin-toolbar ul ul li {
+  .user-toolbar ul ul li {
     height: var(--cfe-toolbar--height);
     line-height: var(--cfe-toolbar--height);
   }
 }
-.admin-toolbar ul ul li a {
+.user-toolbar ul ul li a {
   display: block;
   padding: 0 1rem;
   background-color: var(--cfe-toolbar--submenu--link--bg-color, inherit);
   color: var(--cfe-toolbar--submenu--link--text-color, inherit);
 }
 @media (max-width: 767.98px) {
-  .admin-toolbar ul ul li a {
+  .user-toolbar ul ul li a {
     padding: 0 1rem;
   }
 }
 @media (prefers-color-scheme: dark) {
-  .admin-toolbar ul ul li a {
+  .user-toolbar ul ul li a {
     background-color: var(--cfe-toolbar--submenu--link--bg-color--dark, inherit);
   }
 }
-.admin-toolbar ul ul li a:hover, .admin-toolbar ul ul li a:focus {
+.user-toolbar ul ul li a:hover, .user-toolbar ul ul li a:focus {
   background-color: var(--cfe-toolbar--submenu--link--action--bg-color, inherit);
   color: var(--cfe-toolbar--submenu--link--action--text-color, inherit);
 }
 @media (prefers-color-scheme: dark) {
-  .admin-toolbar ul ul li a:hover, .admin-toolbar ul ul li a:focus {
+  .user-toolbar ul ul li a:hover, .user-toolbar ul ul li a:focus {
     background-color: var(--cfe-toolbar--submenu--link--action--bg-color--dark, inherit);
     color: var(--cfe-toolbar--submenu--link--action--text-color--dark, inherit);
   }
 }
-.admin-toolbar ul img {
+.user-toolbar ul img {
   display: inline-block;
 }
-.admin-toolbar ul img.toolbar-avatar {
+.user-toolbar ul img.toolbar-avatar {
   margin: 0 0.5em;
 }
 @media (max-width: 767.98px) {
-  .admin-toolbar #profile-link span {
+  .user-toolbar #profile-link span {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
@@ -5786,7 +5802,7 @@ fieldset:disabled a.btn {
     word-wrap: normal !important;
   }
 }
-.admin-toolbar .admin-toolbar-logo {
+.user-toolbar .user-toolbar-logo {
   max-height: 24px;
 }
 
