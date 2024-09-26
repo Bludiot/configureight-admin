@@ -74,6 +74,14 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 				<?php menu_link( 'content' ); ?><?php svg_icon( 'file' ); ?><?php $L->p( 'Pages' ); ?></a>
 			</li>
 
+			<?php if ( getPlugin( 'Post_Comments' ) ) : ?>
+			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
+			<li class="admin-menu-item has-icon-link">
+				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'plugin/Post_Comments'; ?>"><?php svg_icon( 'comments' ); ?><?php $L->p( 'Comments' ); ?></a>
+				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'configure-plugin/Post_Comments'; ?>"><?php svg_icon( 'gear' ); ?><span class="screen-reader-text"><?php $L->p( 'Comments Settings' ); ?></span></a>
+			</li>
+			<?php endif; endif; ?>
+
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
 				<?php menu_link( 'categories' ); ?><?php svg_icon( 'folder' ); ?><?php $L->p( 'Categories' ); ?></a>
