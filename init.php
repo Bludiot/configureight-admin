@@ -295,9 +295,12 @@ function restore_default_theme() {
  * admin menu. Adds a current page class.
  *
  * @since  1.0.0
+ * @param  string $slug The admin page slug.
+ * @param  string $classes CSS classes for the `<a>` element.
+ * @param  mixed $title Title attribute for the `<a>` element.
  * @return void
  */
-function menu_link( $slug = '', $classes = '' ) {
+function menu_link( $slug = '', $classes = '', $title = false ) {
 
 	// Access global variables.
 	global $url;
@@ -315,11 +318,20 @@ function menu_link( $slug = '', $classes = '' ) {
 			$class .= ' current-link';
 		}
 
-		$tag = sprintf(
-			'<a class="%s" href="%s">',
-			$class,
-			DOMAIN_ADMIN . $slug
-		);
+		if ( $title ) {
+			$tag = sprintf(
+				'<a class="%s" href="%s" title="%s">',
+				$class,
+				DOMAIN_ADMIN . $slug,
+				$title
+			);
+		} else {
+			$tag = sprintf(
+				'<a class="%s" href="%s">',
+				$class,
+				DOMAIN_ADMIN . $slug
+			);
+		}
 	}
 	echo $tag;
 }
