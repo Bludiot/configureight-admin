@@ -66,12 +66,9 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 			</li>
 			<?php endif; ?>
 
-			<li class="admin-menu-item">
-				<?php menu_link( 'new-content' ); ?><?php svg_icon( 'pencil' ); ?><?php echo ucwords( $L->get( 'Compose' ) ); ?></a>
-			</li>
-
-			<li class="admin-menu-item">
+			<li class="admin-menu-item has-icon-link">
 				<?php menu_link( 'content' ); ?><?php svg_icon( 'file' ); ?><?php $L->p( 'Pages' ); ?></a>
+				<?php menu_link( 'new-content', 'icon-link' ); ?><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add Content' ); ?></span></a>
 			</li>
 
 			<?php if ( getPlugin( 'Post_Comments' ) ) : ?>
