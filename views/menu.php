@@ -78,7 +78,7 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
 				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'plugin/Post_Comments'; ?>"><?php svg_icon( 'comments' ); ?><?php $L->p( 'Comments' ); ?></a>
-				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'configure-plugin/Post_Comments'; ?>"><?php svg_icon( 'gear' ); ?><span class="screen-reader-text"><?php $L->p( 'Comments Settings' ); ?></span></a>
+				<a class="nav-link icon-link" href="<?php echo DOMAIN_ADMIN . 'configure-plugin/Post_Comments'; ?>"><?php svg_icon( 'gear' ); ?><span class="screen-reader-text"><?php $L->p( 'Comments Settings' ); ?></span></a>
 			</li>
 			<?php endif; endif; ?>
 
