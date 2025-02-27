@@ -6636,6 +6636,12 @@ img.profilePicture {
   font-weight: var(--cfe-heading-secondary--font-weight, 700);
 }
 
+.info-plugin-installed {
+  margin-left: 0.5em;
+  font-size: 0.85em;
+  color: #00aa00;
+}
+
 .nav-tabs {
   list-style: none;
   width: var(--cfe-tabs--list--width, 100%);
