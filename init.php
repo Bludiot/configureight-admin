@@ -296,11 +296,12 @@ function restore_default_theme() {
  *
  * @since  1.0.0
  * @param  string $slug The admin page slug.
+ * @param  string $icon Optional SVG icon filename.
  * @param  string $classes CSS classes for the `<a>` element.
- * @param  mixed $title Title attribute for the `<a>` element.
+ * @param  mixed  $title Title attribute for the `<a>` element.
  * @return void
  */
-function menu_link( $slug = '', $classes = '', $title = false ) {
+function menu_link( $slug = '', $icon = '', $classes = '', $title = false ) {
 
 	// Access global variables.
 	global $url;
@@ -318,7 +319,22 @@ function menu_link( $slug = '', $classes = '', $title = false ) {
 			$class .= ' current-link';
 		}
 
-		if ( $title ) {
+		if ( ! empty( $icon ) && $title ) {
+			$tag = sprintf(
+				'<a class="%s" href="%s" title="%s"><span class="svg-icon">%s</span>',
+				$class,
+				DOMAIN_ADMIN . $slug,
+				$title,
+				get_svg_icon( $icon )
+			);
+		} elseif ( ! empty( $icon ) ) {
+			$tag = sprintf(
+				'<a class="%s" href="%s"><span class="svg-icon">%s</span>',
+				$class,
+				DOMAIN_ADMIN . $slug,
+				get_svg_icon( $icon )
+			);
+		} elseif ( $title ) {
 			$tag = sprintf(
 				'<a class="%s" href="%s" title="%s">',
 				$class,

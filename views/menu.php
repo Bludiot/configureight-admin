@@ -33,19 +33,19 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 
 		<ul>
 			<li class="admin-menu-item has-icon-link">
-				<?php menu_link( 'dashboard' ); ?><?php svg_icon( 'gauge' ); ?><?php $L->p( 'Dashboard' ); ?></a>
+				<?php menu_link( 'dashboard', 'gauge' ); ?><span class="admin-menu-text"><?php $L->p( 'Dashboard' ); ?></span></a>
 
 				<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
-					<?php menu_link( 'developers', 'icon-link', $L->get( 'System information' ) ); ?><?php svg_icon( 'info' ); ?><span class="screen-reader-text"><?php $L->p( 'System Info' ); ?></span></a>
+					<?php menu_link( 'developers',  'info' , 'icon-link', $L->get( 'System information' ) ); ?><span class="screen-reader-text"><?php $L->p( 'System Info' ); ?></span></a>
 				<?php endif; ?>
 			</li>
 
 			<li class="admin-menu-item">
-				<?php menu_link( 'edit-user/' . $login->username() ); ?><?php svg_icon( 'id-tag' ); ?><?php $L->p( 'Your Profile' ); ?></a>
+				<?php menu_link( 'edit-user/' . $login->username(), 'id-tag' ); ?><span class="admin-menu-text"><?php $L->p( 'Your Profile' ); ?></span></a>
 			</li>
 
 			<li class="admin-menu-item has-icon-link">
-				<a class="nav-link" href="<?php echo DOMAIN_BASE; ?>"><?php svg_icon( 'house' ); ?><?php $L->p( 'View Site' ); ?></a>
+				<a class="nav-link" href="<?php echo DOMAIN_BASE; ?>"><?php svg_icon( 'house' ); ?><span class="admin-menu-text"><?php $L->p( 'View Site' ); ?></span></a>
 
 				<a class="nav-link icon-link" href="<?php echo DOMAIN_BASE; ?>" target="_blank" title="<?php $L->p( 'View site in new tab' ); ?>"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Site in New Tab' ); ?></span></a>
 			</li>
@@ -60,29 +60,29 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 		<ul>
 			<?php if ( str_contains( $url->slug(), 'edit-content' ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<a href="<?php echo $view_page; ?>"><?php svg_icon( 'screen' ); ?><?php $L->p( 'View Page' ); ?></a>
+				<a href="<?php echo $view_page; ?>"><?php svg_icon( 'screen' ); ?><span class="admin-menu-text"><?php $L->p( 'View Page' ); ?></span></a>
 
-				<a class="nav-link icon-link" href="<?php echo $view_page; ?>" target="_blank"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Page in New Tab' ); ?></span></a>
+				<a class="nav-link icon-link" href="<?php echo $view_page; ?>" target="_blank" title="<?php $L->p( 'View page in new tab' ); ?>"><?php svg_icon( 'external-link' ); ?><span class="screen-reader-text"><?php $L->p( 'View Page in New Tab' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<li class="admin-menu-item has-icon-link">
-				<?php menu_link( 'content' ); ?><?php svg_icon( 'file' ); ?><?php $L->p( 'Pages' ); ?></a>
-				<?php menu_link( 'new-content', 'icon-link', $L->get( 'Add new content' ) ); ?><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add Content' ); ?></span></a>
+				<?php menu_link( 'content', 'file' ); ?><span class="admin-menu-text"><?php $L->p( 'Pages' ); ?></span></a>
+				<?php menu_link( 'new-content', 'plus', 'icon-link', $L->get( 'Add new content' ) ); ?><span class="screen-reader-text"><?php $L->p( 'Add Content' ); ?></span></a>
 			</li>
 
 			<?php if ( getPlugin( 'Post_Comments' ) ) : ?>
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'plugin/Post_Comments'; ?>"><?php svg_icon( 'comments' ); ?><?php $L->p( 'Comments' ); ?></a>
+				<a class="nav-link" href="<?php echo DOMAIN_ADMIN . 'plugin/Post_Comments'; ?>"><?php svg_icon( 'comments' ); ?><span class="admin-menu-text"><?php $L->p( 'Comments' ); ?></span></a>
 				<a class="nav-link icon-link" href="<?php echo DOMAIN_ADMIN . 'configure-plugin/Post_Comments'; ?>" title="<?php $L->p( 'Comments settings' ); ?>"><?php svg_icon( 'gear' ); ?><span class="screen-reader-text"><?php $L->p( 'Comments Settings' ); ?></span></a>
 			</li>
 			<?php endif; endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<?php menu_link( 'categories' ); ?><?php svg_icon( 'folder' ); ?><?php $L->p( 'Categories' ); ?></a>
-				<?php menu_link( 'new-category', 'icon-link', $L->get( 'Add new category' ) ); ?><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add Category' ); ?></span></a>
+				<?php menu_link( 'categories', 'folder' ); ?><span class="admin-menu-text"><?php $L->p( 'Categories' ); ?></span></a>
+				<?php menu_link( 'new-category', 'plus', 'icon-link', $L->get( 'Add new category' ) ); ?><span class="screen-reader-text"><?php $L->p( 'Add Category' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 		</ul>
@@ -96,27 +96,27 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 		<ul>
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item">
-				<?php menu_link( 'settings' ); ?><?php svg_icon( 'gear' ); ?><?php $L->p( 'Settings' ); ?></a>
+				<?php menu_link( 'settings', 'gear' ); ?><span class="admin-menu-text"><?php $L->p( 'Settings' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<?php menu_link( 'users' ); ?><?php svg_icon( 'user' ); ?><?php $L->p( 'Users' ); ?></a>
-				<?php menu_link( 'new-user', 'icon-link', $L->get( 'Add new user' ) ); ?><?php svg_icon( 'plus' ); ?><span class="screen-reader-text"><?php $L->p( 'Add User' ); ?></span></a>
+				<?php menu_link( 'users', 'user' ); ?><span class="admin-menu-text"><?php $L->p( 'Users' ); ?></span></a>
+				<?php menu_link( 'new-user', 'plus', 'icon-link', $L->get( 'Add new user' ) ); ?><span class="screen-reader-text"><?php $L->p( 'Add User' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<?php menu_link( 'plugins' ); ?><?php svg_icon( 'plug' ); ?><?php $L->p( 'Plugins' ); ?></a>
-				<?php menu_link( 'plugins-position', 'icon-link', $L->get( 'Sort sidebar plugins' ) ); ?><?php svg_icon( 'arrows-v' ); ?><span class="screen-reader-text"><?php $L->p( 'Sort Plugins' ); ?></span></a>
+				<?php menu_link( 'plugins', 'plug' ); ?><span class="admin-menu-text"><?php $L->p( 'Plugins' ); ?></span></a>
+				<?php menu_link( 'plugins-position', 'arrows-v', 'icon-link', $L->get( 'Sort sidebar plugins' ) ); ?><span class="screen-reader-text"><?php $L->p( 'Sort Plugins' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
 			<?php if ( checkRole( [ 'admin' ], false ) ) : ?>
 			<li class="admin-menu-item">
-				<?php menu_link( 'themes' ); ?><?php svg_icon( 'paint-roller' ); ?><?php $L->p( 'Themes' ); ?></a>
+				<?php menu_link( 'themes', 'paint-roller' ); ?><span class="admin-menu-text"><?php $L->p( 'Themes' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 
@@ -126,8 +126,8 @@ if ( str_contains( $url->slug(), 'edit-content' ) ) {
 				plugin()
 			) : ?>
 			<li class="admin-menu-item has-icon-link">
-				<?php menu_link( 'configure-plugin/' . plugin()->className() ); ?><?php svg_icon( 'paint-brush' ); ?><?php $L->p( 'Options' ); ?></a>
-				<?php menu_link( 'plugin/' . plugin()->className(), 'icon-link', $L->get( 'Options guide' ) ); ?><?php svg_icon( 'book-open' ); ?><span class="screen-reader-text"><?php $L->p( 'Options Guide' ); ?></span></a>
+				<?php menu_link( 'configure-plugin/' . plugin()->className(), 'paint-brush' ); ?><span class="admin-menu-text"><?php $L->p( 'Options' ); ?></span></a>
+				<?php menu_link( 'plugin/' . plugin()->className(), 'book-open', 'icon-link', $L->get( 'Options guide' ) ); ?><span class="screen-reader-text"><?php $L->p( 'Options Guide' ); ?></span></a>
 			</li>
 			<?php endif; ?>
 		</ul>
