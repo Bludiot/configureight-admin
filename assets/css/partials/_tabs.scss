@@ -54,6 +54,7 @@
 		word-break: var( --cfe-tabs--list--link--text-transform );
 		line-height: var( --cfe-tabs--list--link--line-height, 1 );
 		border: var( --cfe-tabs--list--link--border-style ) var( --cfe-tabs--list--link--border-width ) var( --cfe-tabs--list--link--border-color );
+		border-bottom: var( --cfe-tabs--list--link--border-bottom, none );
 		border-top-left-radius: var( --cfe-tabs--list--corner-radius, 0.25rem );
 		border-top-right-radius: var( --cfe-tabs--list--corner-radius, 0.25rem );
 		background-color: var( --cfe-tabs--list--link--bg-color, var( --cfe-body--bg-color ) );
