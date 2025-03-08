@@ -490,9 +490,9 @@ code {
 	right: 1rem;
 	margin: 0;
 	padding: 0.5rem;
-	background-color: #333333;
-	color: #ffffff;
-	border: 0;
+	background-color: var( --cfe-button--bg-color, var( --cfe-body--bg-color, inherit ) );
+	border: solid 1px var( --cfe-button--border-color, #555555 );
+	color: var( --cfe-button--text-color, var( --cfe-text-color, #333333 ) );
 	text-align: center;
 }
 
