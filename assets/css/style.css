@@ -6803,6 +6803,31 @@ img.profilePicture {
   border-top-right-radius: 0;
 }
 
+.dark-mode .nav-tabs {
+  border-color: var(--cfe-tabs--list--border-color--dark);
+  border-bottom-color: var(--cfe-tabs--list--border-bottom-color--dark);
+  background-color: var(--cfe-tabs--list--bg-color--dark);
+  color: var(--cfe-tabs--list--text-color--dark);
+}
+.dark-mode .nav-tabs .nav-link {
+  border-color: var(--cfe-tabs--list--link--border-color--dark);
+  background-color: var(--cfe-tabs--list--link--bg-color--dark, var(--cfe-body--bg-color--dark));
+  color: var(--cfe-tabs--list--link--text-color--dark);
+}
+.dark-mode .nav-tabs .nav-link:hover, .dark-mode .nav-tabs .nav-link:focus {
+  border-color: var(--cfe-tabs--list--link--action--border-color--dark, var(--cfe-tabs--list--link--border-color--dark));
+  background-color: var(--cfe-tabs--list--link--action--bg-color--dark);
+  color: var(--cfe-tabs--list--link--action--text-color--dark, var(--cfe-tabs--list--link--text-color--dark));
+}
+.dark-mode .nav-tabs .nav-link.active,
+.dark-mode .nav-tabs .nav-item.active .nav-link,
+.dark-mode .nav-tabs .nav-item.show .nav-link {
+  border: var(--cfe-tabs--list--link--border-style) var(--cfe-tabs--list--link--border-width) var(--cfe-tabs--list--link--border-color--dark);
+  border-bottom-color: var(--cfe-body--bg-color--dark);
+  background-color: var(--cfe-body--bg-color--dark);
+  color: var(--cfe-tabs--list--link--active--text-color--dark);
+}
+
 .tab-content .tab-pane {
   display: none;
   padding: var(--cfe-tabs--content--pane--padding, 1rem 0 0 0);

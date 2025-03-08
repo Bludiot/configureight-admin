@@ -110,6 +110,35 @@
 	}
 }
 
+.dark-mode .nav-tabs {
+	border-color: var( --cfe-tabs--list--border-color--dark );
+	border-bottom-color: var( --cfe-tabs--list--border-bottom-color--dark );
+	background-color: var( --cfe-tabs--list--bg-color--dark );
+	color: var( --cfe-tabs--list--text-color--dark );
+
+	.nav-link {
+		border-color: var( --cfe-tabs--list--link--border-color--dark );
+		background-color: var( --cfe-tabs--list--link--bg-color--dark, var( --cfe-body--bg-color--dark ) );
+		color: var( --cfe-tabs--list--link--text-color--dark );
+
+		&:hover,
+		&:focus {
+			border-color: var( --cfe-tabs--list--link--action--border-color--dark, var( --cfe-tabs--list--link--border-color--dark ) );
+			background-color: var( --cfe-tabs--list--link--action--bg-color--dark );
+			color: var( --cfe-tabs--list--link--action--text-color--dark, var( --cfe-tabs--list--link--text-color--dark ) );
+		}
+	}
+
+	.nav-link.active,
+	.nav-item.active .nav-link,
+	.nav-item.show .nav-link {
+		border: var( --cfe-tabs--list--link--border-style ) var( --cfe-tabs--list--link--border-width ) var( --cfe-tabs--list--link--border-color--dark );
+		border-bottom-color: var( --cfe-body--bg-color--dark );
+		background-color: var( --cfe-body--bg-color--dark );
+		color: var( --cfe-tabs--list--link--active--text-color--dark );
+	}
+}
+
 .tab-content {
 
 	.tab-pane {
