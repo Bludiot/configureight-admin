@@ -1209,6 +1209,10 @@ select[disabled] {
 	background-clip: padding-box;
 	border: var( --cfe-form-element--border );
 
+	@media ( prefers-color-scheme: dark ) {
+		border: var( --cfe-form-element--border--dark ) !important;
+	}
+
 	&.px-range-value,
 	&.rem-range-value {
 		min-width: 10ch;

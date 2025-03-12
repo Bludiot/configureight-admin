@@ -2181,6 +2181,11 @@ select[disabled] {
   background-clip: padding-box;
   border: var(--cfe-form-element--border);
 }
+@media (prefers-color-scheme: dark) {
+  .form-range-value {
+    border: var(--cfe-form-element--border--dark) !important;
+  }
+}
 .form-range-value.px-range-value, .form-range-value.rem-range-value {
   min-width: 10ch;
 }

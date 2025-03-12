@@ -94,10 +94,18 @@ h6 {
 
 		&:not( :first-of-type ) {
 			border-top: var( --cfe-box--border-style ) var( --cfe-box--border-width ) var( --cfe-box--border-color );
+
+			@media ( prefers-color-scheme: dark ) {
+				border-top-color: var( --cfe-box--border-color--dark );
+			}
 		}
 
 		&:hover {
 			color: var( --cfe-link--text-color );
+
+			@media ( prefers-color-scheme: dark ) {
+				color: var( --cfe-link--text-color--dark );
+			}
 		}
 
 		&.sortable-dragging {
