@@ -5,22 +5,38 @@
 .table {
 	width: 100%;
 	margin-bottom: 1rem;
-	color: #212529;
+	color: var( --cfe-body--text-color );
+
+	@media ( prefers-color-scheme: dark ) {
+		color: var( --cfe-body--text-color--dark );
+	}
 
 	th,
 	td {
 		padding: 0.75rem;
 		vertical-align: top;
-		border-top: 1px solid #dee2e6;
+		border-top: var( --cfe-box--border );
+
+		@media ( prefers-color-scheme: dark ) {
+			border-top: var( --cfe-box--border--dark );
+		}
 	}
 
 	thead th {
 		vertical-align: bottom;
-		border-bottom: 2px solid #dee2e6;
+		border-bottom: var( --cfe-box--border );
+
+		@media ( prefers-color-scheme: dark ) {
+			border-bottom: var( --cfe-box--border--dark );
+		}
 	}
 
 	tbody + tbody {
-		border-top: 2px solid #dee2e6;
+		border-top: var( --cfe-box--border );
+
+		@media ( prefers-color-scheme: dark ) {
+			border-top: var( --cfe-box--border--dark );
+		}
 	}
 
 	&.table-sm {
@@ -33,9 +49,17 @@
 	&.table-bordered {
 		border: var( --cfe-box--border );
 
+		@media ( prefers-color-scheme: dark ) {
+			border: var( --cfe-box--border--dark );
+		}
+
 		th,
 		td {
-			border: 1px solid #dee2e6;
+			border: var( --cfe-box--border );
+
+			@media ( prefers-color-scheme: dark ) {
+				border: var( --cfe-box--border--dark );
+			}
 		}
 	}
 
@@ -49,7 +73,11 @@
 	}
 
 	&.table-striped tbody tr:nth-of-type( odd ) {
-		background-color: var( --cfe-table--striped-bg-color, var( --cfe-striped--bg-color, #eeeeee ) );
+		background-color: var( --cfe-table--striped--bg-color, var( --cfe-striped--bg-color, #{rgba( $color: black, $alpha: 8% )} ) );
+
+		@media ( prefers-color-scheme: dark ) {
+			background-color: var( --cfe-table--striped--bg-color--dark, var( --cfe-striped--bg-color--dark, #{rgba( $color: white, $alpha: 8% )} ) );
+		}
 	}
 }
 

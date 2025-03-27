@@ -40,6 +40,18 @@
   --cfe-scheme-color--four--dark: #555555;
   --cfe-scheme-color--five--dark: #333333;
   --cfe-scheme-color--six--dark: #555555;
+  --cfe-text-color--red: #dd0000;
+  --cfe-text-color--orange: #ee6600;
+  --cfe-text-color--yellow: #ffdd00;
+  --cfe-text-color--green: #00aa00;
+  --cfe-text-color--blue: #0044aa;
+  --cfe-text-color--violet: #551188;
+  --cfe-bg-color--red: #dd0000;
+  --cfe-bg-color--orange: #ee6600;
+  --cfe-bg-color--yellow: #ffdd00;
+  --cfe-bg-color--green: #00aa00;
+  --cfe-bg-color--blue: #0044aa;
+  --cfe-bg-color--violet: #551188;
   --cfe-fonts--sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --cfe-fonts--serif-stack: NonBreakingSpaceOverride, Hoefler Text, Baskerville Old Face, Garamond, Times, Times New Roman, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --cfe-fonts--monospace-stack: Source Code Pro, Roboto Mono, Fira Code, Liberation Mono, Inconsolata, Menlo, Monaco, Consolas, Cascadia Mono, Segoe UI Mono, Oxygen Mono, Ubuntu Monospace, Fira Mono, Droid Sans Mono, Courier New, Courier, ui-monospace, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -834,6 +846,22 @@ code.select {
 
 .text-muted {
   color: var(--cfe-text-muted--text-color, #555555);
+}
+
+.text-success {
+  color: var(--cfe-text-color--green, #00aa00);
+}
+
+.text-info {
+  color: var(--cfe-text-color--blue, #0044aa);
+}
+
+.text-warning {
+  color: var(--cfe-text-color--orange, #ee6600);
+}
+
+.text-danger {
+  color: var(--cfe-text-color--red, #dd0000);
 }
 
 .avatar {
@@ -3184,20 +3212,41 @@ code.select {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: var(--cfe-body--text-color);
+}
+@media (prefers-color-scheme: dark) {
+  .table {
+    color: var(--cfe-body--text-color--dark);
+  }
 }
 .table th,
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #dee2e6;
+  border-top: var(--cfe-box--border);
+}
+@media (prefers-color-scheme: dark) {
+  .table th,
+  .table td {
+    border-top: var(--cfe-box--border--dark);
+  }
 }
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
+  border-bottom: var(--cfe-box--border);
+}
+@media (prefers-color-scheme: dark) {
+  .table thead th {
+    border-bottom: var(--cfe-box--border--dark);
+  }
 }
 .table tbody + tbody {
-  border-top: 2px solid #dee2e6;
+  border-top: var(--cfe-box--border);
+}
+@media (prefers-color-scheme: dark) {
+  .table tbody + tbody {
+    border-top: var(--cfe-box--border--dark);
+  }
 }
 .table.table-sm th,
 .table.table-sm td {
@@ -3206,9 +3255,20 @@ code.select {
 .table.table-bordered {
   border: var(--cfe-box--border);
 }
+@media (prefers-color-scheme: dark) {
+  .table.table-bordered {
+    border: var(--cfe-box--border--dark);
+  }
+}
 .table.table-bordered th,
 .table.table-bordered td {
-  border: 1px solid #dee2e6;
+  border: var(--cfe-box--border);
+}
+@media (prefers-color-scheme: dark) {
+  .table.table-bordered th,
+  .table.table-bordered td {
+    border: var(--cfe-box--border--dark);
+  }
 }
 .table.table-borderless th,
 .table.table-borderless td,
@@ -3217,7 +3277,12 @@ code.select {
   border: none;
 }
 .table.table-striped tbody tr:nth-of-type(odd) {
-  background-color: var(--cfe-table--striped-bg-color, var(--cfe-striped--bg-color, #eeeeee));
+  background-color: var(--cfe-table--striped--bg-color, var(--cfe-striped--bg-color, rgba(0, 0, 0, 0.08)));
+}
+@media (prefers-color-scheme: dark) {
+  .table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--cfe-table--striped--bg-color--dark, var(--cfe-striped--bg-color--dark, rgba(255, 255, 255, 0.08)));
+  }
 }
 
 .table-hover tbody tr:hover {
@@ -6405,6 +6470,15 @@ h6.border-bottom {
   background-color: #cce5ff;
 }
 
+#dashboard > div.row {
+  gap: var(--cfe-spacing--vert) var(--cfe-spacing--horz);
+  flex-wrap: nowrap;
+}
+@media (max-width: 767.98px) {
+  #dashboard > div.row {
+    flex-direction: column;
+  }
+}
 #dashboard .list-group.list-group-striped {
   list-style: none;
 }
@@ -6415,7 +6489,12 @@ h6.border-bottom {
   padding: 0.5rem 1rem;
 }
 #dashboard .list-group.list-group-striped li:nth-of-type(even) {
-  background-color: var(--cfe-striped--bg-color, #eeeeee);
+  background-color: var(--cfe-table--striped--bg-color, var(--cfe-striped--bg-color, rgba(0, 0, 0, 0.08)));
+}
+@media (prefers-color-scheme: dark) {
+  #dashboard .list-group.list-group-striped li:nth-of-type(even) {
+    background-color: var(--cfe-table--striped--bg-color--dark, var(--cfe-striped--bg-color--dark, rgba(255, 255, 255, 0.08)));
+  }
 }
 #dashboard #hello-message .fa {
   display: none !important;

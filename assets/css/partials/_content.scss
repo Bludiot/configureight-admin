@@ -116,6 +116,16 @@ h6 {
 
 // Dashboard.
 #dashboard {
+
+	& > div.row {
+		gap: var( --cfe-spacing--vert ) var( --cfe-spacing--horz );
+		flex-wrap: nowrap;
+
+		@media ( max-width: $break-max_md ) {
+			flex-direction: column;
+		}
+	}
+
 	.list-group.list-group-striped {
 		list-style: none;
 
@@ -129,7 +139,11 @@ h6 {
 			}
 
 			&:nth-of-type( even ) {
-				background-color: var( --cfe-striped--bg-color, #eeeeee );
+				background-color: var( --cfe-table--striped--bg-color, var( --cfe-striped--bg-color, #{rgba( $color: black, $alpha: 8% )} ) );
+
+				@media ( prefers-color-scheme: dark ) {
+					background-color: var( --cfe-table--striped--bg-color--dark, var( --cfe-striped--bg-color--dark, #{rgba( $color: white, $alpha: 8% )} ) );
+				}
 			}
 		}
 	}
