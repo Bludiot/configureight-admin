@@ -6081,7 +6081,8 @@ fieldset:disabled a.btn {
     margin: 0.325rem 0;
   }
 }
-.admin-menu .admin-menu-list li.has-icon-link {
+.admin-menu .admin-menu-list li.has-icon-link,
+.admin-menu .admin-menu-list li span.has-icon-link {
   display: flex;
   justify-content: space-between;
 }

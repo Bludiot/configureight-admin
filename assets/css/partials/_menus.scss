@@ -47,7 +47,8 @@
 				margin: 0.325rem 0;
 			}
 
-			&.has-icon-link {
+			&.has-icon-link,
+			span.has-icon-link {
 				display: flex;
 				justify-content: space-between;
 			}
