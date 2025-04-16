@@ -1292,6 +1292,16 @@ form {
 		.page-title {
 			margin: 0;
 		}
+
+		// If no form buttons.
+		h1 {
+			width: 100%;
+		}
+
+		// If form buttons.
+		div + h1 {
+			width: auto;
+		}
 	}
 
 	label {

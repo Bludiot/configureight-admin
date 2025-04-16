@@ -2287,6 +2287,12 @@ form div.align-middle:first-of-type .float-right {
 form div.align-middle:first-of-type .page-title {
   margin: 0;
 }
+form div.align-middle:first-of-type h1 {
+  width: 100%;
+}
+form div.align-middle:first-of-type div + h1 {
+  width: auto;
+}
 form label {
   display: block;
   margin: 0 !important;
