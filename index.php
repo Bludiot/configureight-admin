@@ -14,6 +14,8 @@ use function CFE_Admin_Theme\{
 	body_classes
 };
 
+global $layout;
+
 // Site direction.
 $dir = 'ltr';
 if ( is_rtl() ) {
@@ -78,16 +80,18 @@ include( 'views/alert.php' ); ?>
 	</div>
 
 	<div id="admin-content" class="admin-content">
-	<?php
-		if ( Sanitize :: pathFile( PATH_ADMIN_VIEWS, $layout['view'] . '.php' ) ) {
-			include( PATH_ADMIN_VIEWS . $layout['view'] . '.php' );
-		} elseif ( $layout['plugin'] && method_exists( $layout['plugin'], 'adminView' ) ) {
-			echo $layout['plugin']->adminView();
-		} else {
-			echo '<h1 class="text-center">' . $L->g( 'Page not found' ) . '</h1>';
-			echo '<h2 class="text-center">' . $L->g( 'Choose a page from the menu.' ) . '</h2>';
-		}
-	?>
+		<div class="col-lg-10 pt-3 pb-1 h-100">
+		<?php
+			if ( \Sanitize :: pathFile( PATH_ADMIN_VIEWS, $layout['view'] . '.php' ) ) {
+				include( PATH_ADMIN_VIEWS . $layout['view'] . '.php' );
+			} elseif ( $layout['plugin'] && method_exists( $layout['plugin'], 'adminView' ) ) {
+				echo $layout['plugin']->adminView();
+			} else {
+				echo '<h1 class="text-center">' . $L->g( 'Page not found' ) . '</h1>';
+				echo '<h2 class="text-center">' . $L->g( 'Choose a page from the menu.' ) . '</h2>';
+			}
+		?>
+		</div>
 	</div>
 </div>
 
