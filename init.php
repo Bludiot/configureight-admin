@@ -48,8 +48,8 @@ function plugin() {
 	global $site;
 
 	$plugin = false;
-	if ( getPlugin( $site->theme() ) ) {
-		$plugin = getPlugin( $site->theme() );
+	if ( getPlugin( THEME_PLUGIN ) ) {
+		$plugin = getPlugin( THEME_PLUGIN );
 	}
 	return $plugin;
 }
