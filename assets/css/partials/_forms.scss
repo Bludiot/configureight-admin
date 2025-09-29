@@ -147,10 +147,16 @@ textarea.form-control {
 	height: auto;
 }
 
-input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
-  width: 100%;
+.btn,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	word-break: keep-all;
+
+	&.btn-block {
+		width: 100%;
+	}
 }
 
 .form-group {

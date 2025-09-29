@@ -1237,6 +1237,15 @@ textarea.form-control {
   height: auto;
 }
 
+.btn,
+.button,
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  word-break: keep-all;
+}
+.btn.btn-block,
+.button.btn-block,
 input[type=submit].btn-block,
 input[type=reset].btn-block,
 input[type=button].btn-block {
