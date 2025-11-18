@@ -3257,6 +3257,7 @@ code.select {
   padding: 0.75rem;
   vertical-align: top;
   border-top: var(--cfe-box--border);
+  word-break: keep-all;
 }
 @media (prefers-color-scheme: dark) {
   .table th,
