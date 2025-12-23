@@ -54,13 +54,11 @@
 	&.btn-primary,
 	&.button-primary {
 		background-color: var( --cfe-button--primary--bg-color, var( --cfe-link--text-color ) );
-		border-color: var( --cfe-button--primary--border-color, var( --cfe-link--text-color ) );
 		color: var( --cfe-button--primary--text-color, #ffffff );
 
 		&:hover,
 		&:focus {
 			background-color: var( --cfe-button--primary--action--bg-color, var( --cfe-link--action--text-color ) );
-			border-color: var( --cfe-button--primary--action--border-color, var( --cfe-link--action--text-color ) );
 			color: var( --cfe-button--primary--action--text-color, #ffffff );
 		}
 	}
