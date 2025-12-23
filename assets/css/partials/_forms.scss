@@ -1470,6 +1470,7 @@ select[disabled] {
 	padding: .375rem 1ch;
 	font-size: 1rem;
 	line-height: 1.5;
+	text-wrap: nowrap;
 	background-clip: padding-box;
 	border: var( --cfe-form-element--border );
 
